@@ -1,0 +1,16 @@
+# CI build output
+_site/
+
+# Local Marp HTML/PDF exports
+*.html
+*.pdf
+
+# Node dependencies (if marp-cli installed locally via npm)
+node_modules/
+
+# macOS
+.DS_Store
+
+# Template folder contents (keep folder, ignore contents)
+slides/_template/*
+!slides/_template/.gitkeep

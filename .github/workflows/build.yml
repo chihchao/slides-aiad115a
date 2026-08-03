@@ -1,0 +1,196 @@
+name: Build and Deploy Marp Slides
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '20'
+
+      - name: Install Marp CLI
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Build slides
+        run: |
+          echo "marp $(marp --version)"
+
+          mkdir -p _site
+
+          THEME_ARGS=""
+          for css in themes/*.css; do
+            [ -f "$css" ] && THEME_ARGS="$THEME_ARGS --theme-set $(realpath "$css")"
+          done
+          echo "Theme args:${THEME_ARGS:- (none)}"
+
+          build_failed=0
+          for dir in slides/*/; do
+            [ -f "${dir}slide.md" ] || continue
+            name=$(basename "$dir")
+            mkdir -p "_site/$name"
+
+            # --theme gaia is the default, but front matter theme: takes precedence.
+            # marp-cli v4 --theme flag overrides front matter, so only pass it when
+            # the slide has no theme declaration.
+            if grep -qE '^theme:' "${dir}slide.md"; then
+              DEFAULT_THEME=""
+            else
+              DEFAULT_THEME="--theme gaia"
+            fi
+
+            set +e
+            # shellcheck disable=SC2086
+            marp "${dir}slide.md" \
+              $DEFAULT_THEME \
+              $THEME_ARGS \
+              --html \
+              -o "_site/$name/index.html" 2>&1
+            marp_exit=$?
+            set -e
+
+            if [ ! -f "_site/$name/index.html" ]; then
+              echo "ERROR: no output for $name (marp exit $marp_exit)"
+              build_failed=1
+            elif [ $marp_exit -ne 0 ]; then
+              echo "WARNING: marp exit $marp_exit for $name — output created, continuing"
+            fi
+
+            [ -d "${dir}assets" ] && cp -r "${dir}assets/." "_site/$name/assets/"
+          done
+
+          [ $build_failed -eq 0 ] || exit 1
+
+      - name: Generate index page
+        run: |
+          python3 << 'PYEOF'
+          import os, re, html as html_mod
+
+          slides = []
+          slides_dir = 'slides'
+          for name in sorted(os.listdir(slides_dir)):
+              slide_md = f'{slides_dir}/{name}/slide.md'
+              html_out  = f'_site/{name}/index.html'
+              if not os.path.isfile(slide_md) or not os.path.isfile(html_out):
+                  continue
+
+              content = open(slide_md, encoding='utf-8').read()
+              title = None
+
+              m = re.search(r'^---\r?\n(.*?)\r?\n---', content, re.S)
+              if m:
+                  t = re.search(r'^title:\s*(.+)', m.group(1), re.M)
+                  if t:
+                      title = t.group(1).strip().strip('"\'')
+
+              if not title:
+                  m = re.search(r'^# (.+)', content, re.M)
+                  if m:
+                      title = m.group(1).strip()
+
+              slides.append({'name': name, 'title': title or name})
+
+          items_html = '\n'.join(
+              f'    <li>'
+              f'<a href="{s["name"]}/">'
+              f'<span class="t">{html_mod.escape(s["title"])}</span>'
+              f'<span class="s">{html_mod.escape(s["name"])}</span>'
+              f'</a></li>'
+              for s in slides
+          )
+
+          page = f"""<!DOCTYPE html>
+          <html lang="zh-TW">
+          <head>
+          <meta charset="UTF-8">
+          <meta name="viewport" content="width=device-width, initial-scale=1">
+          <title>Presentations</title>
+          <style>
+            *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0; }}
+            body {{
+              font-family: "Calibri", "Arial", "Helvetica Neue", sans-serif;
+              background: #f4f6fb;
+              color: #1A2035;
+              min-height: 100vh;
+            }}
+            header {{
+              background: #1A2E5C;
+              color: #fff;
+              padding: 32px 48px 28px;
+              border-bottom: 4px solid #2D4A8A;
+            }}
+            header h1 {{ font-size: 22px; font-weight: 700; letter-spacing: .03em; }}
+            header p  {{ font-size: 13px; color: #8FACD8; margin-top: 4px; }}
+            main {{ max-width: 860px; margin: 48px auto; padding: 0 24px; }}
+            ul {{ list-style: none; display: flex; flex-direction: column; gap: 12px; }}
+            li a {{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              background: #fff;
+              border-left: 5px solid #1A2E5C;
+              padding: 18px 24px;
+              text-decoration: none;
+              color: inherit;
+              box-shadow: 0 1px 4px rgba(0,0,0,.07);
+              transition: box-shadow .15s, border-color .15s;
+            }}
+            li a:hover {{ box-shadow: 0 3px 12px rgba(0,0,0,.12); border-color: #2D4A8A; }}
+            .t {{ font-size: 16px; font-weight: 700; color: #1A2E5C; }}
+            .s {{ font-size: 12px; color: #5A6478; font-family: monospace; }}
+            footer {{
+              text-align: center;
+              padding: 32px;
+              font-size: 12px;
+              color: #8A93A8;
+            }}
+          </style>
+          </head>
+          <body>
+          <header>
+            <h1>Presentations</h1>
+            <p>{len(slides)} slide deck{"s" if len(slides) != 1 else ""}</p>
+          </header>
+          <main>
+            <ul>
+          {items_html}
+            </ul>
+          </main>
+          <footer>Built with Marp · GitHub Pages</footer>
+          </body>
+          </html>"""
+
+          with open('_site/index.html', 'w', encoding='utf-8') as f:
+              f.write(page)
+
+          print(f"Index generated with {len(slides)} slide(s).")
+          PYEOF
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -1,0 +1,123 @@
+/* @theme gaia-cust */
+
+/* ----------------------------------------------------------------
+   AI lecture theme for Marp
+   Extends the built-in gaia theme, palette: white / soft blue
+   Slide types: cover · section-page · (default)
+   ---------------------------------------------------------------- */
+
+@import 'gaia';
+
+:root {
+  --color-background: #fff;
+  --color-foreground: #333;
+  --color-highlight: #69f;
+  --color-dimmed: #888;
+}
+
+section p,
+section li {
+  font-size: 0.9em;
+}
+
+section th,
+section td {
+  font-size: 0.9em;
+}
+
+/* ── Slide type: cover ──────────────────────────────────────────
+   Usage:
+     <!-- _class: cover -->
+     # Title
+     Author
+   ─────────────────────────────────────────────────────────────── */
+
+section.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── Slide type: lead (啟用官方 gaia 內建置中版面) ──────────────────
+   Usage:
+     <!-- _class: lead -->
+     # Title
+     ## Subtitle
+   Since this theme `@import 'gaia'`, the official `.lead` rules
+   (centered headings/paragraphs, table centering, blockquote/list
+   exceptions) are already inherited. Marp's gaia theme intentionally
+   ships `.lead` without `display: flex` so authors opt in — this is
+   that opt-in.
+   ─────────────────────────────────────────────────────────────── */
+
+section.lead {
+  display: flex;
+}
+
+/* ── Slide type: section-page ─────────────────────────────────────
+   Usage:
+     <!-- _class: section-page -->
+     ### Section title
+     ![](image.png)
+   ─────────────────────────────────────────────────────────────── */
+
+section.section-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* ── Slide type: compare (three-column comparison) ────────────────
+   Usage:
+     <!-- _class: compare -->
+     <div>### A</div>
+     <div>### B</div>
+     <div>### C</div>
+   ─────────────────────────────────────────────────────────────── */
+
+section.compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+section.compare h3 {
+  font-size: 1.0em;
+  margin-bottom: 0.3em;
+}
+
+section.compare p,
+section.compare li {
+  font-size: 0.75em;
+}
+
+/* ── Slide type: quad (four-column grid) ───────────────────────────
+   Usage:
+     <!-- _class: quad -->
+     <div>### A</div>
+     <div>### B</div>
+     <div>### C</div>
+     <div>### D</div>
+   ─────────────────────────────────────────────────────────────── */
+
+section.quad {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+section.quad h3 {
+  font-size: 0.9em;
+  margin-bottom: 0.3em;
+}
+
+section.quad p,
+section.quad li {
+  font-size: 0.68em;
+}

@@ -1,0 +1,508 @@
+/* @theme corporate */
+
+/* ----------------------------------------------------------------
+   Corporate theme for Marp
+   Palette: deep navy / light blue / white
+   Font: Calibri / Arial
+   Slide types: cover · section-page · (default) · cols · stats · closing
+   ---------------------------------------------------------------- */
+
+:root {
+  --navy:    #1A2E5C;
+  --blue:    #2D4A8A;
+  --card:    #E8EDF8;
+  --white:   #FFFFFF;
+  --text:    #1A2035;
+  --muted:   #5A6478;
+  --divider: #C8D3E8;
+  --font:    "Calibri", "Arial", "Helvetica Neue", sans-serif;
+}
+
+/* ── Global ─────────────────────────────────────────────────── */
+
+section {
+  /* matches Marp's official gaia theme root font size, so 1em is consistent across themes */
+  font-size: 35px;
+  background: var(--white);
+  color: var(--text);
+  font-family: var(--font);
+  padding: 62px 60px 52px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  width: 1280px;
+  height: 720px;
+}
+
+*, em, i { font-style: normal !important; }
+
+/* top accent bar */
+section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 6px;
+  background: var(--navy);
+}
+
+/* page number */
+section::after {
+  font-family: var(--font);
+  font-size: 0.5em;
+  color: var(--muted);
+  padding: 0 20px 16px 0;
+}
+
+/* ── Typography ─────────────────────────────────────────────── */
+
+hr {
+  border: none;
+  border-top: 1.5px solid var(--divider);
+  margin: 0 0 20px;
+}
+
+h1 {
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+/* content slide title */
+h3 {
+  font-size: 1.2em;
+  font-weight: 700;
+  color: var(--navy);
+  border-left: 5px solid var(--navy);
+  padding-left: 14px;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+h4 {
+  font-size: 1em;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+p {
+  font-size: 0.9em;
+  color: var(--text);
+  line-height: 1.65;
+  margin: 0 0 10px;
+}
+
+ul, ol {
+  font-size: 0.9em;
+  color: var(--text);
+  line-height: 1.7;
+  /* outside position gives a hanging indent: wrapped lines align under the
+     first line's text instead of under the marker */
+  list-style-position: outside;
+  padding-left: 1.3em;
+  margin: 0 0 10px;
+}
+
+li { margin-bottom: 4px; }
+
+em     { color: var(--blue); font-weight: 600; }
+strong { font-weight: 700; color: var(--navy); }
+a      { color: var(--blue); text-decoration: none; }
+
+/* ── Blockquote — card block ────────────────────────────────── */
+
+blockquote {
+  background: var(--card);
+  border-left: 5px solid var(--navy);
+  border-top: none;
+  border-right: none;
+  border-bottom: none;
+  padding: 14px 20px;
+  margin: 0 0 12px;
+  box-shadow: 1px 2px 6px rgba(0,0,0,.06);
+}
+
+blockquote p {
+  font-size: 0.9em;
+  line-height: 1.65;
+  margin: 0;
+  color: var(--text);
+}
+
+blockquote > p:first-child strong {
+  /* markdown emits "**重點**<br>text" inside one <p>; the <br> already
+     provides the line break, so this must stay inline or the break doubles up */
+  font-size: 0.9em;
+  color: var(--navy);
+}
+
+/* ── Table ──────────────────────────────────────────────────── */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 0.9em;
+}
+
+thead tr  { background: var(--navy); }
+
+thead th {
+  color: #ffffff;
+  font-weight: 700;
+  padding: 9px 14px;
+  text-align: left;
+  border: none;
+}
+
+tbody tr:nth-child(odd)  { background: var(--white); }
+tbody tr:nth-child(even) { background: var(--card); }
+
+tbody td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--divider);
+  color: var(--text);
+}
+
+/* ── Code ───────────────────────────────────────────────────── */
+
+code {
+  background: var(--card);
+  color: var(--navy);
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-size: .8em;
+}
+
+pre {
+  background: var(--card);
+  border-left: 5px solid var(--navy);
+  padding: 16px 20px;
+  margin: 0 0 16px;
+}
+
+pre code { background: transparent; padding: 0; color: var(--text); }
+
+/* ── Slide type: cover ──────────────────────────────────────────
+   Usage:
+     <!-- _class: cover -->
+     # Title
+     ## Subtitle · Date · Organisation
+     <hr>
+     Author / Department
+   ─────────────────────────────────────────────────────────────── */
+
+section.cover {
+  border-left: 8px solid var(--navy);
+  padding-left: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.cover::before,
+section.cover::after { display: none; }
+
+section.cover h1 {
+  font-size: 1.5em;
+  color: var(--navy);
+  margin-bottom: 8px;
+  line-height: 1.15;
+}
+
+section.cover h2 {
+  font-size: 1.25em;
+  font-weight: 400;
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+section.cover hr {
+  width: 480px;
+  margin: 24px 0 18px;
+}
+
+section.cover p {
+  font-size: 0.9em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+/* ── Slide type: lead (Marp gaia 內建置中版面) ───────────────────
+   Usage:
+     <!-- _class: lead -->
+     # Title
+     ## Subtitle
+   Ports the official Marp gaia theme's `.lead` behaviour: flex
+   centering plus centered headings/paragraphs, with blockquote,
+   list-item and table alignment kept at gaia's defaults.
+   ─────────────────────────────────────────────────────────────── */
+
+section.lead {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  justify-content: center;
+}
+
+section.lead h1,
+section.lead h2,
+section.lead h3,
+section.lead h4,
+section.lead h5,
+section.lead h6,
+section.lead p {
+  text-align: center;
+  border-left: none;
+}
+
+section.lead blockquote > h1,
+section.lead blockquote > h2,
+section.lead blockquote > h3,
+section.lead blockquote > h4,
+section.lead blockquote > h5,
+section.lead blockquote > h6,
+section.lead blockquote > p {
+  text-align: left;
+}
+
+section.lead ul > li > p,
+section.lead ol > li > p {
+  text-align: left;
+}
+
+section.lead table {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── Slide type: section-page ───────────────────────────────────
+   Usage:
+     <!-- _class: section-page -->
+     <span class="num">01</span>
+     ## Chapter Title
+     <hr>
+     Optional description
+   ─────────────────────────────────────────────────────────────── */
+
+section.section-page {
+  border-left: 8px solid var(--navy);
+  padding-left: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.section-page::before { display: none; }
+
+section.section-page h2 {
+  font-size: 1.3em;
+  color: var(--navy);
+  position: relative;
+  z-index: 2;
+  margin-bottom: 6px;
+}
+
+section.section-page hr {
+  width: 380px;
+  margin: 10px 0 14px;
+  position: relative;
+  z-index: 2;
+}
+
+section.section-page p {
+  font-size: 0.9em;
+  color: var(--muted);
+  position: relative;
+  z-index: 2;
+}
+
+section.section-page .num {
+  position: absolute;
+  right: 56px;
+  top: 50%;
+  transform: translateY(-50%);
+  /* markdown wraps the lone <span> in a <p>, so this is relative to that <p>'s 0.4em, not the root */
+  font-size: 7.5em;
+  font-weight: 700;
+  color: var(--card);
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  font-family: var(--font);
+}
+
+/* ── Slide type: cols (two-column comparison) ───────────────────
+   Usage:
+     <!-- _class: cols -->
+     ### Title
+     <hr>
+     <div class="col-wrap">
+       <div class="col">## Left<br>content</div>
+       <div class="col alt">## Right<br>content</div>
+     </div>
+   ─────────────────────────────────────────────────────────────── */
+
+section.cols .col-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+section.cols .col {
+  background: var(--card);
+  border-left: 5px solid var(--navy);
+  padding: 18px 20px;
+}
+
+section.cols .col.alt {
+  background: var(--white);
+  border: 1.5px solid var(--divider);
+  border-left: 5px solid var(--divider);
+}
+
+section.cols .col h2 {
+  font-size: 0.4571em;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--divider);
+}
+
+section.cols .col p { font-size: 0.4em; }
+
+/* li's actual parent is <ul> (already 0.4286em of root), so its em is relative to that, not root */
+section.cols .col li { font-size: 0.9333em; }
+
+/* ── Slide type: quad (four-column grid) ────────────────────────
+   Usage:
+     <!-- _class: quad -->
+     ### Title
+     <hr>
+     <div class="quad-wrap">
+       <div class="item">#### A<br>content</div>
+       <div class="item">#### B<br>content</div>
+       <div class="item">#### C<br>content</div>
+       <div class="item">#### D<br>content</div>
+     </div>
+   ─────────────────────────────────────────────────────────────── */
+
+section.quad .quad-wrap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+section.quad .item {
+  background: var(--card);
+  border-left: none;
+  padding: 14px 16px;
+}
+
+section.quad .item h4 {
+  font-size: 1em;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--divider);
+}
+
+section.quad .item p { font-size: 0.9em; }
+
+/* li's actual parent is <ul>, already scaled by the global ul rule, so this is relative to that */
+section.quad .item li { font-size: 0.9em; }
+
+/* ── Slide type: stats (KPI cards) ─────────────────────────────
+   Usage:
+     <!-- _class: stats -->
+     ### Title
+     <hr>
+     <div class="stat-wrap">
+       <div class="stat"><span class="n">98%</span><hr><span class="l">Label</span></div>
+       <div class="stat hi"><span class="n">2.4x</span><hr><span class="l">Label</span></div>
+       <div class="stat"><span class="n">340</span><hr><span class="l">Label</span></div>
+     </div>
+   ─────────────────────────────────────────────────────────────── */
+
+section.stats .stat-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+section.stats .stat {
+  background: var(--card);
+  padding: 28px 20px 22px;
+  text-align: center;
+}
+
+section.stats .stat.hi { background: var(--navy); }
+
+section.stats .stat .n {
+  display: block;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+}
+
+section.stats .stat.hi .n { color: #ffffff; }
+
+section.stats .stat hr {
+  width: 56%;
+  margin: 14px auto 12px;
+  border-color: var(--divider);
+}
+
+section.stats .stat.hi hr { border-color: #3D5E9C; }
+
+section.stats .stat .l {
+  display: block;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+section.stats .stat.hi h4 { color: #ffffff; }
+section.stats .stat.hi p { color: #8FACD8; }
+
+/* ── Slide type: closing ────────────────────────────────────────
+   Usage:
+     <!-- _class: closing -->
+     # Thank You
+     <hr>
+     Any questions are welcome.
+     contact@example.com
+   ─────────────────────────────────────────────────────────────── */
+
+section.closing {
+  border-left: 8px solid var(--navy);
+  padding-left: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+section.closing::before,
+section.closing::after { display: none; }
+
+section.closing h1 {
+  font-size: 1.5em;
+  color: var(--navy);
+}
+
+section.closing hr {
+  width: 480px;
+  margin: 20px 0 18px;
+}
+
+section.closing p {
+  font-size: 0.9em;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
