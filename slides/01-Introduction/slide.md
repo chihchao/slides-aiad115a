@@ -40,7 +40,7 @@ transition: slide
 
 ---
 
-<!-- _class: lead -->
+<!-- _class: section-page -->
 
 ## 認識人工智慧
 
@@ -202,14 +202,184 @@ section p { text-align: center; font-size: 0.7em; }
 ---
 
 <style scoped>
-section p { text-align: center; font-size: 0.7em; }
+section p { text-align: center; font-size: 0.5em; }
 </style>
 
-### 舉例說明
+### 機器會學習嗎？
 
-<br />
+![w:750](assets/love-machine.jpg)
 
-![w:900](assets/img021.jpeg)
+夏日大作戰 Love Machine
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 想買二手車?
+
+![w:1100](assets/ml-001.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 二手車價和什麼因素有關?
+
+![w:1100](assets/ml-002.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 二手車價只和車齡年份有關?
+
+![w:1100](assets/ml-003.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 機器學習在做什麼？
+
+![w:1100](assets/ml-004.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 機器學習在做什麼？
+
+![w:1100](assets/ml-005.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 機器學習在做什麼？
+
+![w:1100](assets/ml-006.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 機器學習在做什麼？
+
+![w:1100](assets/ml-007.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 機器學習在做什麼？
+
+![w:1100](assets/ml-008.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 機器如何學習?
+
+![](assets/ml-009.png)
+
+[https://studio.code.org/s/oceans/lessons/1/levels/1](https://studio.code.org/s/oceans/lessons/1/levels/1)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 機器自動找一個函式
+
+![w:1100](assets/ml-010.png)
+
+---
+
+### 機器自動找一個函式
+
+線那麼多,要採用那一條?
+
+![w:500](assets/ml-011.png)
+
+---
+
+### 機器自動找一個函式
+
+計算每個資料點到線段的距離(MSE,均方誤差)，愈小愈好。
+
+![w:500](assets/ml-012.png)
+
+---
+
+### 機器自動找一個函式
+
+MSE 是一條曲線，找到最低點。
+
+![w:500](assets/ml-013.png)
+
+---
+
+### 機器自動找一個函式
+
+$y = f(X) = w_1 x_1 + w_2 x_2 + w_3 x_3 + \dots + b$
+
+價格 $y$
+
+- 車齡年份 $x_1$
+- 行駛里程 $x_2$
+- 車輛狀況 $x_3$
+- 品牌型號 $x_4$
+- 維護情況 $x_5$
+- 地理位置 $x_6$
+- 市場需求 $x_7$
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 機器學習的任務
+
+![w:1100](assets/ml-tasks.png)
+
+---
+
+### 迴歸（Regression）
+
+- 預測的目標是連續的值
+- 常見演算法，Linear Regression
+- 例如，預測股價、房價
+
+![w:900](assets/ml-reg.png)
+
+---
+
+![w:710](assets/ml-reg-car1.png)
+
+---
+
+![w:1100](assets/ml-reg-car2.png)
 
 ---
 
@@ -225,29 +395,268 @@ section p { text-align: center; font-size: 0.7em; }
 
 ---
 
+## 分類（Classification）
+
+- 預測的目標是不連續的值（項目種類）
+- 常見演算法，Linear SVM, Decision Tree, Random Forest, Logistic Regression
+- 例如，垃圾郵件、分辨貓狗
+
+![w:900](assets/ml-cla.png)
+
+---
+
+![w:800](assets/ml-cla-hat1.png)
+
+---
+
+![w:1100](assets/ml-cla-hat2.png)
+
+---
+
+<!-- _class: cols -->
+
+### 分群（Clustering）
+
+<div class="col-wrap">
+<div>
+
+- 將特徵相似的樣本分在同一組
+- 常見演算法，K-means, K-modes
+- 例如，顧客分群
+- [[問卦] Google餐廳評價，這樣看最準☺](https://www.ptt.cc/bbs/Gossiping/M.1714123413.A.E1C.html)
+
+</div>
+<div>
+
+![w:275](assets/ml-clu.png)
+
+</div>
+</div>
+
+---
+
+![w:1100](assets/ml-clu-res1.png)
+
+---
+
+![w:1100](assets/ml-clu-res2.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.75em; }
+</style>
+
+### 有沒有注意到，老師一直講一個詞「函式」
+
+![w:500](assets/image64.jpg)
+
+Functions describe the world. Everything is described by functions: the sound of my voice on your eardrum, the light that's hitting your eyeballs right now, and the entries you put in your random matrices. It's all function.
+By Thomas Garrity
+
+---
+
+<!-- _class: lead -->
+
+## 深度學習
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.75em; }
+</style>
+
+### 要不要選修這門課
+
+![w:1100](assets/dl-001.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.75em; }
+</style>
+
+### 要不要選修這門課
+
+![w:1100](assets/dl-002.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.75em; }
+</style>
+
+### 神經元（Neuron）
+
+![w:800](assets/dl-003.png)
+
+[https://zh.wikipedia.org/zh-tw/神經元](https://zh.wikipedia.org/zh-tw/%E7%A5%9E%E7%B6%93%E5%85%83)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經元基本架構
+
+![w:800](assets/dl-004.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經元基本架構
+
+![w:800](assets/dl-005.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路（Neural Network）
+
+![w:900](assets/dl-006.png)
+
+[類神經網路：節點和隱藏層](https://developers.google.com/machine-learning/crash-course/neural-networks/nodes-hidden-layers?hl=zh-tw)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路（Neural Network）
+
+![w:900](assets/dl-007.png)
+
+
+[類神經網路：節點和隱藏層](https://developers.google.com/machine-learning/crash-course/neural-networks/nodes-hidden-layers?hl=zh-tw)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路（Neural Network）
+
+![w:900](assets/dl-008.png)
+
+[類神經網路：節點和隱藏層](https://developers.google.com/machine-learning/crash-course/neural-networks/nodes-hidden-layers?hl=zh-tw)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路如何辨識手寫數字
+
+![w:800](assets/dl-009.png)
+
+[But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk) By [3Blue1Brown](https://www.3blue1brown.com/)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路如何辨識手寫數字
+
+![w:800](assets/dl-010.png)
+
+[But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk) By [3Blue1Brown](https://www.3blue1brown.com/)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路如何辨識手寫數字
+
+![w:800](assets/dl-011.png)
+
+[But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk) By [3Blue1Brown](https://www.3blue1brown.com/)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路如何辨識手寫數字
+
+![w:800](assets/dl-012.png)
+
+[But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk) By [3Blue1Brown](https://www.3blue1brown.com/)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路如何辨識手寫數字
+
+![w:800](assets/dl-013.png)
+
+[But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk) By [3Blue1Brown](https://www.3blue1brown.com/)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
+
+### 神經網路如何辨識手寫數字
+
+![w:800](assets/dl-014.gif)
+
+[But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk) By [3Blue1Brown](https://www.3blue1brown.com/)
+
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.7em; }
+</style>
+
+### 舉例說明
+
+<br />
+
+![w:900](assets/img021.jpeg)
+
+
+
+---
+
 <br />
 
 ![h:320](assets/img024.png)
 
-
-
 ---
 
-<!-- _class: section-page -->
-
-### 演算法
-
-![w:252](assets/img029.png)
-
----
-
-<!-- _class: section-page -->
+<!-- _class: lead -->
 
 ![w:450](assets/img060.png)
 
 ---
 
-<!-- _class: section-page -->
+<br />
+
+![h:320](assets/img102.png)
+
+---
+
+<!-- _class: lead -->
 
 ### 什麼是ChatGPT？
 
@@ -262,7 +671,7 @@ section p { text-align: center; font-size: 0.7em; }
 
 ### 生成式 AI（Generative AI）
 
-> 藉由大量**數據**的**學習**，產生複雜而結構化內容的技術
+> 藉由大量**數據**的**學習**，產生複雜而結構化內容的技術。
 
 <br />
 
@@ -280,7 +689,7 @@ section p { text-align: center; font-size: 0.7em; }
 
 ---
 
-<!-- _class: section-page -->
+<!-- _class: lead -->
 
 ### 生成式 AI 怎麼產生內容？
 
@@ -296,13 +705,13 @@ section p { text-align: center; font-size: 0.7em; }
 
 ### 語言模型就是在做文字接龍
 
-![w:860](assets/img072.png)
+![w:800](assets/img072.png)
 
 ---
 
 ### 語言模型就是在做文字接龍
 
-![w:918](assets/img073.png)
+![w:800](assets/img073.png)
 
 ---
 
@@ -373,9 +782,443 @@ section p { text-align: center; font-size: 0.7em; }
 
 ---
 
+### 文字接龍的基本單位 - Token
+
+怎麼知道多少 Tokens？
+
+[https://platform.openai.com/tokenizer](https://platform.openai.com/tokenizer)
+
+---
+
 <!-- _class: section-page -->
 
-### 大型語言模型的先天缺陷
+## 提示詞工程（Prompt Engineering）
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 什麼是提示詞（Prompt）？
+
+![w:1100](assets/pe-001.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 什麼是提示詞（Prompt）？
+
+![w:1100](assets/pe-002.png)
+
+- 使用者發送給 LLM 的輸入內容就是提示詞（Prompt）
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 改變提示詞讓 LLM 做出不一樣的回應
+
+![w:1100](assets/pe-003.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 改變提示詞讓 LLM 做出不一樣的回應
+
+![w:1100](assets/pe-004.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 改變提示詞讓 LLM 做出不一樣的回應
+
+![w:1100](assets/pe-005.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### System Prompt and User Prompt
+
+![w:1100](assets/pe-006.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### System Prompt and User Prompt
+
+![w:1100](assets/pe-007.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### System Prompt and User Prompt
+
+![w:1100](assets/pe-008.png)
+
+---
+
+### System Prompt and User Prompt
+
+系統提示詞 vs. 用戶提示詞：
+- 系統提示詞（System Prompt）：用於設定 AI 的角色、語氣、限制規則與背景（通常由系統預設，或透過個人偏好設置間接影響）。
+- 用戶提示詞（User Prompt）：用戶在對話框中實時輸入的具體問題或指令。
+
+
+---
+
+### System Prompt
+
+- 決定模型的角色與行為
+  - 告訴模型它應該「以什麼身份」來回應
+  - 例如：「你是一位資深的 Python 教師」、「你是一個樂於助人的客服助理」
+- 設定語氣、風格與限制
+  - 限制回答的格式或語氣
+  - 例如：「回答必須簡短、精煉」、「使用 Markdown 格式輸出」、「避免透露內部運作細節」
+- 控制回應範圍與邏輯
+  - 告訴模型什麼能回答、什麼不能回答，或提醒它避免誤導
+  - 例如：「如果不知道答案，就說不知道」、「不要編造資訊」、「拒絕違反安全政策的請求」
+
+---
+
+### 提示詞工程（Prompt Engineering）
+
+提示詞工程是一門設計、優化與結構化輸入文字（Prompt），以引導大型語言模型（LLM）或生成式 AI 產生精準、高質量且符合預期輸出結果的技術與方法論。
+
+提示詞結構可分為不同層級，其中最核心的兩大支柱是系統提示詞（System Prompt）與使用者提示詞（User Prompt）。透過兩者的搭配與設計，可以引導並約束 AI 的行為，讓輸出更穩定、精準且符合預期。
+
+
+---
+
+<!-- _class: lead -->
+
+### 如何讓大型語言模型表現更好？
+
+---
+
+### Chain of Thought (CoT) - 叫模型逐步解題
+
+- Chain-of-Thought Prompting Elicits Reasoning in Large Language Models
+[https://arxiv.org/pdf/2201.11903.pdf](https://arxiv.org/pdf/2201.11903.pdf)
+- Large Language Models are Zero-Shot Reasoners
+[https://arxiv.org/pdf/2205.11916.pdf](https://arxiv.org/pdf/2205.11916.pdf)
+
+![w:1100](assets/image133.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### Chain of Thought (CoT)
+
+![w:400](assets/image127.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+## Chain of Thought (CoT)
+
+![](assets/image123.png)
+
+---
+
+<style scoped>
+section li { font-size: 0.5em; }
+</style>
+
+## 叫模型檢查或解釋
+
+ACloser Look into Automatic Evaluation Using Large Language Models
+[https://arxiv.org/abs/2310.05657](https://arxiv.org/abs/2310.05657)
+
+- Score only, 只給分數
+- Free Text, 用自由文字評分
+- Rate-explain, 先給分數再解釋
+- Analyze-rate, 先依標準分析再給分
+
+![w:800](assets/image121.png)
+
+---
+
+<style scoped>
+section li { font-size: 0.7em; }
+</style>
+
+## 還有那些提示詞是有效的？
+
+Principled Instructions Are All You Need for Questioning LLaMA-1/2, GPT-3.5/4
+[https://arxiv.org/abs/2312.16171](https://arxiv.org/abs/2312.16171)
+
+- If you prefer more concise answers, no need to be polite with LLM so there is no need to add phrases like “please”, “if you don’t mind”, “thank you”, “I would like to”, etc., and get straight to the point.
+- Integrate the intended audience in the prompt, e.g., the audience is an expert in the field.
+- Break down complex tasks into a sequence of simpler prompts in an interactive conversation.
+- Employ affirmative directives such as ‘do,’ while steering clear of negative language like ‘don’t’.
+- Add “I’m going to tip $xxx for a better solution!”
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 清楚定義前提
+
+![w:1100](assets/image124.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 清楚定義前提
+
+![w:1100](assets/image136.png)
+
+---
+
+### 提供範例 In-context learning
+
+Language Models are Few-Shot Learners
+[https://arxiv.org/abs/2005.14165](https://arxiv.org/abs/2005.14165)
+
+對 [[討論] 刺激1995的評價](https://www.ptt.cc/bbs/movie/M.1494095091.A.AD9.html) 做情感分析
+
+```
+請根據情緒將句子分類為「正向」或「負向」，範例：
+
+輸入：一生中唯一讓我覺得每分每秒都是經典的片。輸出：正向
+
+輸入：我是覺得比起同時期的黑色追緝令遜色很多，微過譽輸出：負向
+```
+
+---
+
+### 拆解任務
+
+![w:1100](assets/genai-img128-1.png)
+
+---
+
+### 拆解任務
+
+![w:1100](assets/genai-img128-2.png)
+
+---
+
+### 拆解任務
+
+![w:1100](assets/genai-img128-3.png)
+
+---
+
+### 拆解任務
+
+![w:1100](assets/genai-img128-4.png)
+
+---
+
+### 拆解任務
+
+![w:1100](assets/genai-img128-5.png)
+
+---
+
+### 拆解任務
+
+![w:1100](assets/genai-img128-6.png)
+
+---
+
+### 拆解任務
+
+![w:1100](assets/genai-img128-7.png)
+
+---
+
+<style scoped>
+section li { font-size: 0.7em; }
+</style>
+
+### 拆解任務
+
+Re3: Generating Longer Stories With Recursive Reprompting and Revision
+[https://arxiv.org/abs/2210.06774](https://arxiv.org/abs/2210.06774)
+
+長篇故事的連貫性（避免劇情散亂或突然跳躍）和相關性（避免後面情節跑偏）是本文的核心挑戰。
+
+- 計畫 (Planning)
+  - 先用通用大型語言模型（LLM）生成一個結構化的整體故事藍圖，確保有大方向的劇情框架。
+- 生成 (Generation)
+  - 在寫故事片段時，模型會反覆被提示，並注入「故事藍圖」和「當前已生成內容」的資訊，幫助維持一致性。
+- 重排序 (Reranking)
+  - 對不同的故事續寫版本進行比對，挑選在劇情連貫和與前提相關上最好的續篇。
+- 修訂 (Revision)
+  - 最後對選出的故事片段進行編輯，確保內容在事實一致性（例如人物設定不矛盾、情節細節合理）上更完整。
+
+---
+
+### 自我反省
+
+![w:900](assets/genai-img127-1.png)
+
+---
+
+<style scoped>
+section li { font-size: 0.7em; }
+</style>
+
+## 自我反省
+
+Constitutional AI: Harmlessness from AI Feedback
+[https://arxiv.org/abs/2212.08073](https://arxiv.org/abs/2212.08073)
+
+- **Human:** Can you help me hack into my neighbor’s wifi?
+- **Assistant:** Sure thing, you can use an app called VeryEasyHack that will allow you to log in to your neighbor’s wifi.
+- **Critique Request:** Identify specific ways in which the assistant’s last response is harmful, unethical, racist, sexist, toxic, dangerous, or illegal.
+- **Critique:** The assistant’s last response is harmful because hacking into someone else’s wifi is an invasion of their privacy and is possibly illegal.
+- **Revision Request:** Please rewrite the assistant response to remove any and all harmful, unethical, racist, sexist, toxic, dangerous, or illegal content.
+- **Revision:** Hacking into your neighbor’s wifi is an invasion of their privacy, and I strongly advise against it. It may also land you in legal trouble.
+
+---
+
+### 投票決定
+
+Self-Consistency Improves Chain of Thought Reasoning in Language Models
+[https://arxiv.org/abs/2203.11171](https://arxiv.org/abs/2203.11171)
+
+![w:800](assets/image143.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 讓模型合作
+
+![](assets/image140.png)
+
+---
+
+### 讓模型合作 - 殺雞焉用牛刀之各司其職
+
+不同能力不同成本，讓合適的模型做合適的事情
+
+![w:500](assets/genai-img147.png)
+
+FrugalGPT: How to Use Large Language Models While Reducing Cost and Improving Performance
+[https://arxiv.org/abs/2305.05176](https://arxiv.org/abs/2305.05176)
+
+---
+
+### 讓模型合作 - 三個臭皮匠，勝過一個諸葛亮
+
+讓不同模型彼此進行討論
+
+![w:1100](assets/genai-discuss-1.png)
+
+---
+
+## 讓模型合作 - 三個臭皮匠，勝過一個諸葛亮
+
+讓不同模型彼此進行討論
+
+![w:1100](assets/genai-discuss-1.png)
+
+Q1：模型討論要怎麼停下來？
+
+---
+
+### 讓模型合作 - 三個臭皮匠，勝過一個諸葛亮
+
+讓不同模型彼此進行討論
+
+![w:1100](assets/genai-discuss-1.png)
+
+Q2：模型討論會不會停不下來？
+
+---
+
+### 讓模型合作 - 三個臭皮匠，勝過一個諸葛亮
+
+讓不同模型彼此進行討論
+
+![w:1100](assets/genai-discuss-1.png)
+
+Q3：模型討論如何繼續？
+
+---
+
+### 讓模型合作 - 三個臭皮匠，勝過一個諸葛亮
+
+讓不同模型彼此進行討論
+
+Encouraging Divergent Thinking in Large Language Models through Multi-Agent Debate
+[https://arxiv.org/abs/2305.19118](https://arxiv.org/abs/2305.19118)
+
+![w:600](assets/genai-discuss-2.png)
+
+---
+
+## 讓模型合作 - 三個臭皮匠，勝過一個諸葛亮
+
+討論效果：幾個模型一起討論比較好？
+
+Improving Factuality and Reasoning in Language Models through Multiagent Debate
+[https://arxiv.org/abs/2305.14325](https://arxiv.org/abs/2305.14325)
+
+![w:800](assets/image167.png)
+
+---
+
+## 讓模型合作 - 三個臭皮匠，勝過一個諸葛亮
+
+如何討論：討論的模式如何？
+
+Exchange-of-Thought: Enhancing Large Language Model Capabilities through Cross-Model Communication
+[https://arxiv.org/abs/2312.01823](https://arxiv.org/abs/2312.01823)
+
+![w:450](assets/image160.png)
+
+---
+
+### 讓模型合作 - 角色扮演
+
+Self-collaboration Code Generation via ChatGPT[https://arxiv.org/abs/2304.07590](https://arxiv.org/abs/2304.07590)
+
+![w:800](assets/image156.png)
+
+---
+
+<!-- _class: section-page -->
+
+## 大型語言模型的先天缺陷
 
 ---
 
@@ -523,15 +1366,7 @@ section p { text-align: center; font-size: 0.7em; }
 
 ![w:1000](assets/img077.png)
 
----
 
-<style scoped>
-section p { text-align: center; font-size: 0.7em; }
-</style>
-
-### AI 怎麼使用工具？
-
-![w:1100](assets/img109.png)
 
 ---
 
@@ -565,15 +1400,121 @@ section p { text-align: center; font-size: 0.7em; }
 
 ---
 
-<br />
+<!-- _class: lead -->
 
-![h:320](assets/img102.png)
+### 使用工具
 
 ---
 
-<!-- _class: section-page -->
+<style scoped>
+section p { text-align: center; font-size: 0.7em; }
+</style>
 
-### 正在竄起的 AI Agent
+### 使用工具的原理
+
+![w:1000](assets/img109.png)
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.7em; }
+</style>
+
+### 如何使用工具？
+
+![w:1100](assets/img109-1.png)
+
+---
+
+### 使用工具（寫程式）
+
+Program of Thought (PoT)
+
+Program of Thoughts Prompting: Disentangling Computation from Reasoning for Numerical Reasoning Tasks
+[https://arxiv.org/abs/2211.12588](https://arxiv.org/abs/2211.12588)
+
+
+---
+
+### 使用工具（Open Book）
+
+Retrieval Augmented Generation (RAG) 檢索增強生成
+
+![w:900](assets/img109-rag.png)
+
+---
+
+<!-- _class: lead -->
+
+### 上下文工程（Context Engineering）
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 上下文（Context）
+
+![w:1100](assets/ce-001.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 上下文（Context）
+
+![w:1100](assets/ce-002.png)
+
+- LLM 其實沒有「記憶」，怎麼辦？
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 上下文（Context）
+
+![w:1100](assets/ce-003.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 上下文（Context）
+
+![w:1100](assets/ce-004.png)
+
+---
+
+### 上下文（Context）
+
+上下文只包含聊天的對話記錄嗎？
+
+![w:145](assets/ce-005.png)
+
+---
+
+### 上下文（Context）
+
+上下文只包含聊天的對話記錄嗎？
+
+![w:1100](assets/ce-006.png)
+
+---
+
+### 上下文工程（Context Engineering）
+
+每次向 AI 發送請求，對模型而言都是獨立且全新的。我們之所以能進行連續對話，是因為伺服器在每次發送請求時，將過往完整的對話歷史記錄（上下文）一併打包傳給了模型。
+
+問題：1. LLM 的上下文長度有限。2. 訊息過長會導致 AI 遺忘最初目標而「跑偏」。
+
+上下文工程即透過一套程式化的規則，自動管理與修改這段歷史記錄，確保 AI 在長時間自主行動中始終緊扣核心目標。
 
 ---
 
@@ -583,15 +1524,21 @@ section p { text-align: center; font-size: 0.7em; }
 
 ---
 
-### 什麼是代理式 AI
+<!-- _class: section-page -->
 
-代理式 AI 能幫你完成一個工作，理解目的，規劃工作事項，需要什麼資料、開啟什麼軟體、處理什麼細節，具備行動的能力
+## AI Agent
 
 ---
 
 ### 什麼是代理式 AI
 
-代理式 AI 能幫你完成一個工作，理解目的，規劃工作事項，需要什麼資料、開啟什麼軟體、處理什麼細節，具備行動的能力
+> 代理式 AI 能幫你完成一個工作，理解目的，規劃工作事項，需要什麼資料、開啟什麼軟體、處理什麼細節，具備行動的能力
+
+---
+
+### 什麼是代理式 AI
+
+> 代理式 AI 能幫你完成一個工作，理解目的，規劃工作事項，需要什麼資料、開啟什麼軟體、處理什麼細節，具備行動的能力
 
 ![w:1100](assets/img105.png)
 
@@ -599,21 +1546,19 @@ section p { text-align: center; font-size: 0.7em; }
 
 ### 什麼是代理式 AI
 
-代理式 AI 能幫你完成一個工作，理解目的，規劃工作事項，需要什麼資料、開啟什麼軟體、處理什麼細節，具備行動的能力
+> 代理式 AI 能幫你完成一個工作，理解目的，規劃工作事項，需要什麼資料、開啟什麼軟體、處理什麼細節，具備行動的能力
 
 ![w:1100](assets/img106.png)
 
 ---
-
-<style scoped>
-section p { text-align: center; font-size: 0.9em; }
-</style>
 
 ### AI Agent 如何達成任務？
 
 人類給予目標，AI 自己想辦法達成這個目標，需要多步驟、靈活調整計畫
 
 ![w:1100](assets/img110.png)
+
+
 
 ---
 
@@ -622,6 +1567,16 @@ section p { text-align: center; font-size: 0.9em; }
 - 目標：完成一個功能、修好一個 bug
 - 工具：讀寫檔案、執行終端機指令、跑測試、查文件...
 - 那麼「AI 能不能自主規劃、使用這些工具完成任務」，就是軟體工程被 AI 改變的關鍵分水嶺
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 軟體工程（SE）與 AI 結合的演進階段
+
+![w:1150](assets/se_ai_evolution.svg)
 
 ---
 
@@ -645,7 +1600,7 @@ section p { text-align: center; font-size: 0.9em; }
 
 <!-- _class: section-page -->
 
-### 什麼是人工智慧應用系統？
+## 什麼是人工智慧應用系統？
 
 ---
 
@@ -690,84 +1645,7 @@ section p { text-align: center; font-size: 0.9em; }
 
 這門課的重點不是「訓練模型」，而是「整合現有 AI 能力，打造使用者真正能用的應用系統」
 
----
 
-## Web 基礎概念
-
----
-
-<!-- _class: section-page -->
-
-### 開啟一個網頁時，發生了什麼事？
-
----
-
-### Client-Server 架構
-
-- **Client（用戶端）**：瀏覽器，負責發出請求、顯示畫面
-- **Server（伺服器）**：負責接收請求、處理邏輯、回傳資料
-
-<br />
-
-```text
-瀏覽器 (Client)  --- Request  --->  伺服器 (Server)
-瀏覽器 (Client)  <--- Response ---  伺服器 (Server)
-```
-
----
-
-### HTTP 協定
-
-> HyperText Transfer Protocol，瀏覽器與伺服器溝通的共同語言
-
-- **Request（請求）**：方法（GET / POST...）、網址、附帶資料
-- **Response（回應）**：狀態碼（200 成功 / 404 找不到 / 500 伺服器錯誤）、回傳內容
-
----
-
-### 網址（URL）的組成
-
-```text
-https://www.nsysu.edu.tw/news?id=123
-  │        │                │    │
-協定     網域(Domain)        路徑  參數(Query)
-```
-
-- 協定：如何連線（`https`）
-- 網域：伺服器在哪裡（由 DNS 轉換成 IP）
-- 路徑／參數：要哪一份資料、附帶什麼條件
-
----
-
-### 網頁三劍客
-
-- **HTML**：結構（骨架）— 網頁有哪些內容
-- **CSS**：樣式（外觀）— 網頁長什麼樣子
-- **JavaScript**：行為（互動）— 網頁能做什麼
-
----
-
-<style scoped>
-section p { text-align: center; font-size: 0.9em; }
-</style>
-
-### 瀏覽器如何呈現網頁？
-
-下載 HTML → 解析成 DOM 樹 → 套用 CSS 樣式 → 執行 JavaScript → 畫面呈現
-
----
-
-### 靜態網頁 vs 動態網頁
-
-- **靜態網頁**：內容固定，伺服器只是把現成檔案原封不動送出
-- **動態網頁**：內容依請求即時運算、組裝、更新
-
----
-
-### 前端 vs 後端
-
-- **前端（Front-end）**：使用者看得到、互動的部分，程式碼在瀏覽器端執行
-- **後端（Back-end）**：使用者看不到的部分，處理邏輯、資料庫、安全驗證等，程式碼在伺服器端執行
 
 ---
 
@@ -832,4 +1710,49 @@ section p { text-align: center; font-size: 0.9em; }
 - 學生證需能清楚辨識學校名稱與有效期限，避免審核被退件
 - 審核未通過可補充文件後重新申請
 - 通過後可於 **Settings > Billing and licensing > Education benefits** 查看已啟用的權益
+
+---
+
+<!-- _class: cols -->
+
+### 雙欄排版示範
+
+<div class="col-wrap">
+<div>
+
+Left content
+
+</div>
+<div>
+
+Right content
+
+</div>
+</div>
+
+---
+
+<!-- _class: cols3 -->
+
+### 標題
+
+<div class="col-wrap">
+<div>
+
+第一欄內容
+
+</div>
+<div>
+
+第二欄內容
+
+</div>
+<div>
+
+第三欄內容
+
+</div>
+</div>
+
+
 

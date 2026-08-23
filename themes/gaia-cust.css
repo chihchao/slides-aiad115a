@@ -121,3 +121,63 @@ section.quad p,
 section.quad li {
   font-size: 0.68em;
 }
+
+/* ── Slide type: cols (top title, two-column body) ─────────────────
+   Usage:
+     <!-- _class: cols -->
+     ### Title
+     <div class="col-wrap">
+       <div>
+
+       Left content
+
+       </div>
+       <div>
+
+       Right content
+
+       </div>
+     </div>
+   ─────────────────────────────────────────────────────────────── */
+
+section.cols .col-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── Slide type: cols3 (top title, three-column body) ──────────────
+   Usage:
+     <!-- _class: cols3 -->
+     ### Title
+     <div class="col-wrap">
+       <div>
+
+       Column A
+
+       </div>
+       <div>
+
+       Column B
+
+       </div>
+       <div>
+
+       Column C
+
+       </div>
+     </div>
+   ─────────────────────────────────────────────────────────────── */
+
+section.cols3 .col-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+section.cols3 .col-wrap p,
+section.cols3 .col-wrap li {
+  font-size: 0.85em;
+}

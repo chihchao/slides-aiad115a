@@ -22,6 +22,87 @@ cchsu@mail.nsysu.edu.tw
 
 ---
 
+<!-- _class: section-page -->
+
+## Web 基礎概念
+
+---
+
+<!-- _class: lead -->
+
+### 開啟一個網頁時，發生了什麼事？
+
+---
+
+### Client-Server 架構
+
+- **Client（用戶端）**：瀏覽器，負責發出請求、顯示畫面
+- **Server（伺服器）**：負責接收請求、處理邏輯、回傳資料
+
+<br />
+
+```text
+瀏覽器 (Client)  --- Request  --->  伺服器 (Server)
+瀏覽器 (Client)  <--- Response ---  伺服器 (Server)
+```
+
+---
+
+### HTTP 協定
+
+> HyperText Transfer Protocol，瀏覽器與伺服器溝通的共同語言
+
+- **Request（請求）**：方法（GET / POST...）、網址、附帶資料
+- **Response（回應）**：狀態碼（200 成功 / 404 找不到 / 500 伺服器錯誤）、回傳內容
+
+---
+
+### 網址（URL）的組成
+
+```text
+https://www.nsysu.edu.tw/news?id=123
+  │        │                │    │
+協定     網域(Domain)        路徑  參數(Query)
+```
+
+- 協定：如何連線（`https`）
+- 網域：伺服器在哪裡（由 DNS 轉換成 IP）
+- 路徑／參數：要哪一份資料、附帶什麼條件
+
+---
+
+### 網頁三劍客
+
+- **HTML**：結構（骨架）— 網頁有哪些內容
+- **CSS**：樣式（外觀）— 網頁長什麼樣子
+- **JavaScript**：行為（互動）— 網頁能做什麼
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.9em; }
+</style>
+
+### 瀏覽器如何呈現網頁？
+
+下載 HTML → 解析成 DOM 樹 → 套用 CSS 樣式 → 執行 JavaScript → 畫面呈現
+
+---
+
+### 靜態網頁 vs 動態網頁
+
+- **靜態網頁**：內容固定，伺服器只是把現成檔案原封不動送出
+- **動態網頁**：內容依請求即時運算、組裝、更新
+
+---
+
+### 前端 vs 後端
+
+- **前端（Front-end）**：使用者看得到、互動的部分，程式碼在瀏覽器端執行
+- **後端（Back-end）**：使用者看不到的部分，處理邏輯、資料庫、安全驗證等，程式碼在伺服器端執行
+
+---
+
 <!-- _class: lead -->
 
 ## 靜態網頁是什麼？
@@ -1077,12 +1158,233 @@ Notes: DevTools 是前端開發者最重要的工具，從第一天就應該學�
 
 ---
 
-<!-- .slide: class="closing" -->
+<!-- .slide: class="section-page" -->
 
-### 謝謝大家！
+<div class="num">06</div>
+
+## Gemini Canvas
 
 <hr>
 
-有任何問題歡迎發問
+用 AI 生成網頁：讓對話直接變成 HTML/CSS/JS
 
-聯絡：imchihchao@gmail.com
+---
+
+### 什麼是 Gemini Canvas？
+
+<hr>
+
+> Google Gemini（gemini.google.com）內建的**互動式程式碼／文件編輯環境**，會在對話旁開一個「畫布」即時顯示產生的結果
+
+- 請 Gemini 用文字描述一個網頁，它會**直接寫出 HTML/CSS/JS**
+- 畫布會**即時預覽**渲染後的畫面，不只是顯示程式碼
+- 可以繼續用**自然語言下指令修改**，不需要自己改程式碼
+- 適合快速做出 prototype、Landing Page、小工具
+
+---
+
+<!-- class: "cols" -->
+
+### 基本工作流程
+
+<hr>
+
+<div class="col-wrap">
+<div class="col alt">
+
+**Step 1～2**
+
+1. 在 Gemini 輸入你想要的網頁描述
+2. Gemini 產生程式碼，畫布同步顯示**即時預覽**
+
+</div>
+<div class="col alt">
+
+**Step 3～4**
+
+3. 用一句話描述要修改的地方（改顏色、加按鈕…）
+4. 滿意後**下載程式碼**或複製到自己的專案繼續開發
+
+</div>
+</div>
+
+---
+
+### Prompt 的技巧
+
+<hr>
+
+<div class="col-wrap">
+<div class="col alt">
+
+**寫得不清楚**
+
+```
+幫我做一個網頁
+```
+
+AI 只能自由發揮，結果通常很陽春、
+不一定符合你想要的方向
+
+</div>
+<div class="col alt">
+
+**寫得清楚**
+
+```
+製作 html/css/js 網頁。
+網頁內容是咖啡店的 Landing Page，要有：
+- 頂部大圖 + 店名標語
+- 三個特色介紹卡片
+- 「立即預約」按鈕
+- 淺棕色系配色
+參考資訊：...
+```
+
+</div>
+</div>
+
+Notes: 和寫程式一樣，需求描述得越具體（版面、內容、配色、互動），Gemini 產出的結果就越接近你要的樣子。
+
+---
+
+### 用自然語言持續修改
+
+<hr>
+
+畫布產生初版後，直接對話即可迭代調整：
+
+> 「把按鈕顏色改成綠色，字體加大一點」
+
+> 「在卡片區塊加上滑鼠移過去的放大效果」
+
+> 「幫我加一個聯絡表單，送出後用 alert 顯示謝謝訊息」
+
+> 「這個網頁在手機上跑版了，幫我修成響應式排版」
+
+---
+
+### 匯出與接續開發
+
+<hr>
+
+- Canvas 產生的程式碼可以**下載成 .html / 拆成三個檔案**
+- 下載後就是一般的靜態網頁，可以用 VS Code 打開繼續修改
+- 部署方式與一般靜態網頁相同：GitHub Pages、Netlify、Vercel…
+
+---
+
+<!-- class: "cols" -->
+
+### 使用時的注意事項
+
+<hr>
+
+<div class="col-wrap">
+<div class="col alt">
+
+**要做的事**
+
+- 通讀一遍 AI 產生的程式碼，理解它在做什麼
+- 測試各種操作與畫面尺寸，確認沒有壞掉
+- 把不需要的功能或範例文字清乾淨
+
+</div>
+<div class="col alt">
+
+**要避免的事**
+
+- 完全不檢查就直接拿去交作業／上線
+- 把帳密、API 金鑰等敏感資訊寫進 prompt
+- 誤以為「AI 寫的就是對的」，跳過理解直接複製
+
+</div>
+</div>
+
+Notes: AI 生成工具能大幅加速「從想法到雛形」的過程，但理解程式碼、能自己除錯，仍然是這門課真正要練的能力。
+
+---
+
+### EX Landing Page
+
+任務：任意挑選一個主題，設計一個 Landing Page，並使用 HTML、CSS、JavaScript 完成。
+
+Landing Page（引導頁）是網路行銷與廣告中的一個獨立網頁。當使用者點擊廣告、社群媒體連結、電子郵件或搜尋引擎結果後，會「降落」或進入這個頁面。
+
+核心特徵與目的
+單一明確的目標：每個 Landing Page 都只有一個主要任務，例如：填寫表單領取優惠、註冊免費試用、購買特定商品、報名活動或下載電子書。
+
+高度聚焦的內容：頁面排版和文案完全繞著「這個特定的推廣目標」展開，不會有過多干擾訪客注意力的導覽列或無關的連結。
+
+專為轉換率設計：它的設計邏輯是透過吸引人的標題、痛點剖析、產品優勢、客戶見證與強而有力的行動呼籲按鈕（CTA 按鈕），引導訪客完成轉換。
+
+---
+
+<!-- _class: cols -->
+
+### 參考資源
+
+<div class="col-wrap">
+<div>
+
+#### 設計風格
+
+- [Pinterest](https://www.pinterest.com/) — 圖片靈感牆，搜尋主題找配色與版面參考
+- [Awwwards](https://www.awwwards.com/) — 精選得獎網站作品，看頂尖視覺與互動設計
+- [Land-book](https://land-book.com/) — 專門收錄 Landing Page 案例，最貼近作業主題
+
+</div>
+<div>
+
+#### 線上圖庫
+
+- [Unsplash](https://unsplash.com/) — 高解析度攝影作品，風格質感佳
+- [Pexels](https://www.pexels.com/) — 免費圖片與影片，種類豐富好搜尋
+- [Pixabay](https://pixabay.com/) — 圖片、插畫、向量圖都有，選擇多元
+
+</div>
+</div>
+Note: Gemini Canvas 開發的網頁，無法使用上傳的圖片，必須使用網路上可直接存取的圖片網址。
+
+---
+
+<!-- _class: cols -->
+
+### 雙欄排版示範
+
+<div class="col-wrap">
+<div>
+
+Left content
+
+</div>
+<div>
+
+Right content
+
+</div>
+</div>
+
+---
+
+<!-- _class: cols3 -->
+
+### 標題
+
+<div class="col-wrap">
+<div>
+
+第一欄內容
+
+</div>
+<div>
+
+第二欄內容
+
+</div>
+<div>
+
+第三欄內容
+
+</div>
+</div>
