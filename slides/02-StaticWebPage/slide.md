@@ -85,7 +85,7 @@ section p { text-align: center; font-size: 0.9em; }
 
 ### 瀏覽器如何呈現網頁？
 
-下載 HTML → 解析成 DOM 樹 → 套用 CSS 樣式 → 執行 JavaScript → 畫面呈現
+![w:1100](assets/browser-rendering-flowchart.svg)
 
 ---
 
@@ -109,7 +109,7 @@ section p { text-align: center; font-size: 0.9em; }
 
 ---
 
-<!-- .slide: class="cols" -->
+<!-- _class: "cols" -->
 
 ### 靜態 vs 動態網頁
 
@@ -142,61 +142,53 @@ Notes: 靜態網頁雖然「靜態」，但 JavaScript 仍可讓它有豐富的�
 
 ---
 
-<!-- .slide: class="stats" -->
+<!-- _class: "cols3" -->
 
 ### 網頁三要素：HTML, CSS, Javascript
 
 <hr>
 
 
-<div class="stat-wrap">
-<div class="stat">
+<div class="col-wrap">
+<div>
 
-**HTML**
+**HTML** / 結構與內容
 
-結構與內容
-
-<div style="text-align: left">
-
-- 告訴瀏覽器「這裡有什麼」
+- 告訴瀏覽器「有什麼內容」
 - 標題、段落、圖片、按鈕…
 - 像房子的**骨架與牆壁**
-</div>
 
 </div>
-<div class="stat">
+<div>
 
-**CSS**
-
-樣式與外觀
-
-<div style="text-align: left">
+**CSS** / 樣式與外觀
 
 - 告訴瀏覽器「長什麼樣子」
 - 顏色、字型、排版、動畫…
 - 像房子的**裝潢與油漆**
+
 </div>
-</div>
-<div class="stat">
+<div>
 
-**JavaScript**
-
-行為與互動
-
-<div style="text-align: left">
+**JavaScript** / 行為與互動
 
 - 告訴瀏覽器「做什麼事」
 - 點擊、計算、更新畫面…
 - 像房子的**電路與機關**
-</div>
 
 </div>
 </div>
-
 
 Notes: 三者分工合作——HTML 定義內容，CSS 負責呈現，JS 處理邏輯。初學時三個都寫在同一個 .html 檔最方便。
 
 ---
+
+<style scoped>
+pre code {
+  font-size: 0.5em;   /* 原本約 1em，改小 */
+  line-height: 1.15;
+}
+</style>
 
 ### 網頁三要素：HTML, CSS, Javascript
 
@@ -978,119 +970,7 @@ Notes: Cookies 因為容量小、且每次 HTTP 請求都會帶上，主要用�
 
 Notes: XSS（Cross-Site Scripting）是最常見的網頁安全漏洞之一，攻擊者注入惡意 JS 後可直接呼叫 localStorage.getItem() 竊取資料。
 
----
 
-<!-- .slide: class="section-page" -->
-
-<div class="num">05</div>
-
-## 綜合實作範例
-
-<hr>
-
-把三個技術組合在一起
-
----
-
-### 範例：計數器
-
-<hr>
-
-```html
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-  <title>計數器</title>
-  <style>
-    h2     { font-size: 80px; text-align: center; }
-    button { font-size: 24px; padding: 8px 20px; margin: 4px; }
-  </style>
-</head>
-<body>
-  <h2 id="display">0</h2>
-  <button id="minus">－</button>
-  <button id="plus">＋</button>
-  <button id="reset">重設</button>
-
-  <script>
-    let count = 0;
-    const display = document.querySelector("#display");
-
-    document.querySelector("#plus").addEventListener("click", () => {
-      count++;
-      display.textContent = count;
-    });
-    document.querySelector("#minus").addEventListener("click", () => {
-      count--;
-      display.textContent = count;
-    });
-    document.querySelector("#reset").addEventListener("click", () => {
-      count = 0;
-      display.textContent = count;
-    });
-  </script>
-</body>
-</html>
-```
-
-Notes: 存成 index.html，直接用瀏覽器開啟就能執行，不需要任何伺服器。
-
----
-
-### 範例：待辦清單（To-Do List）+ LocalStorage
-
-<hr>
-
-```html
-<!DOCTYPE html>
-<html lang="zh-TW">
-<head>
-  <meta charset="UTF-8">
-  <title>待辦清單</title>
-  <style>
-    li { cursor: pointer; padding: 4px 0; }
-    li:hover { text-decoration: line-through; color: gray; }
-  </style>
-</head>
-<body>
-  <input id="task-input" type="text" placeholder="輸入待辦事項">
-  <button id="add-btn">新增</button>
-  <ul id="task-list"></ul>
-
-  <script>
-    const input  = document.querySelector("#task-input");
-    const addBtn = document.querySelector("#add-btn");
-    const list   = document.querySelector("#task-list");
-
-    function saveTasks() {
-      const tasks = [...list.querySelectorAll("li")].map(li => li.textContent);
-      localStorage.setItem("tasks", JSON.stringify(tasks));
-    }
-
-    function addTask(text) {
-      const li = document.createElement("li");
-      li.textContent = text;
-      li.addEventListener("click", () => { li.remove(); saveTasks(); }); // 點擊刪除
-      list.appendChild(li);
-    }
-
-    // 頁面載入時還原儲存的清單
-    JSON.parse(localStorage.getItem("tasks") || "[]").forEach(addTask);
-
-    addBtn.addEventListener("click", () => {
-      const text = input.value.trim();
-      if (text === "") return;       // 空白不新增
-      addTask(text);
-      saveTasks();
-      input.value = "";              // 清空輸入框
-    });
-  </script>
-</body>
-</html>
-```
-
-Notes: 加入 localStorage 後，重新整理頁面清單仍會保留。這是 LocalStorage 最常見的應用場景之一。
 
 ---
 
@@ -1254,13 +1134,10 @@ Notes: 和寫程式一樣，需求描述得越具體（版面、內容、配色�
 
 畫布產生初版後，直接對話即可迭代調整：
 
-> 「把按鈕顏色改成綠色，字體加大一點」
-
-> 「在卡片區塊加上滑鼠移過去的放大效果」
-
-> 「幫我加一個聯絡表單，送出後用 alert 顯示謝謝訊息」
-
-> 「這個網頁在手機上跑版了，幫我修成響應式排版」
+- 「把按鈕顏色改成綠色，字體加大一點」
+- 「在卡片區塊加上滑鼠移過去的放大效果」
+- 「幫我加一個聯絡表單，送出後用 alert 顯示謝謝訊息」
+- 「這個網頁在手機上跑版了，幫我修成響應式排版」
 
 ---
 
@@ -1305,9 +1182,44 @@ Notes: AI 生成工具能大幅加速「從想法到雛形」的過程，但理�
 
 ---
 
-### EX Landing Page
+<!-- _class: cols -->
+
+### SWP01 Pomodoro Technique
+
+<hr>
+
+<div class="col-wrap">
+<div>
+
+#### 任務
+
+使用 Gemini Canvas 製作一個「番茄鐘」網頁，並使用 HTML、CSS、JavaScript 完成。
+
+#### 要求
+
+1. 顯示倒數計時的時鐘
+2. 開始/暫停按鈕
+3. 直接以 Gemini 共用連結分享
+
+
+</div>
+
+<div>
+
+番茄鐘（又稱番茄工作法，Pomodoro Technique）是一種在1980年代末期由義大利人弗朗西斯科·西里洛創立的時間管理方法。它透過將工作時間切割成多個短週期，幫助大腦保持高度專注並減少疲勞。
+
+</div>
+</div>
+
+---
+
+### SWP02 Landing Page
 
 任務：任意挑選一個主題，設計一個 Landing Page，並使用 HTML、CSS、JavaScript 完成。
+
+#### 要求
+
+- 部署至 Google Sites
 
 Landing Page（引導頁）是網路行銷與廣告中的一個獨立網頁。當使用者點擊廣告、社群媒體連結、電子郵件或搜尋引擎結果後，會「降落」或進入這個頁面。
 
@@ -1317,6 +1229,20 @@ Landing Page（引導頁）是網路行銷與廣告中的一個獨立網頁。�
 高度聚焦的內容：頁面排版和文案完全繞著「這個特定的推廣目標」展開，不會有過多干擾訪客注意力的導覽列或無關的連結。
 
 專為轉換率設計：它的設計邏輯是透過吸引人的標題、痛點剖析、產品優勢、客戶見證與強而有力的行動呼籲按鈕（CTA 按鈕），引導訪客完成轉換。
+
+---
+
+### 如何將 Landing Page 部署到 Google Sites？
+
+<hr>
+
+1. 前往 [Google Sites](https://sites.google.com)，建立一個新網站
+2. 把 HTML、CSS、JavaScript 整合成單一 `.html` 檔案（直接複製 Gemini Canvas 產生的程式碼）
+3. 在編輯畫面右側選單點選「插入」→「嵌入」→「嵌入程式碼」
+4. 貼上完整的 HTML 原始碼，並調整嵌入框大小以符合版面
+5. 點選右上角「發布」，設定網址後正式公開
+
+Notes: Google Sites 的嵌入程式碼是在 sandboxed iframe 中執行，部分 JavaScript 功能可能受限；圖片等外部資源需使用可公開存取的網址，無法直接上傳本機圖片。
 
 ---
 
@@ -1345,6 +1271,42 @@ Landing Page（引導頁）是網路行銷與廣告中的一個獨立網頁。�
 </div>
 </div>
 Note: Gemini Canvas 開發的網頁，無法使用上傳的圖片，必須使用網路上可直接存取的圖片網址。
+
+
+
+---
+
+### SWP03 待辦清單（To-Do List）+ LocalStorage
+
+
+
+Notes: 加入 localStorage 後，重新整理頁面清單仍會保留。這是 LocalStorage 最常見的應用場景之一。
+
+---
+
+### SWP04 便利貼看板
+
+---
+
+<!-- _class: section-page -->
+
+## API
+
+---
+
+### 什麼是 API？
+
+---
+
+### SWP05 資訊看板
+
+---
+
+### SWP06 地圖資訊 API
+
+---
+
+### 申請 Gemini API Key
 
 ---
 

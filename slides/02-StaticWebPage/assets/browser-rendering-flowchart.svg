@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="40 20 1422 467" width="1422" height="467" style="background-color: #ffffff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Noto Sans TC', Helvetica, Arial, sans-serif;">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#868e96" />
+    </marker>
+    <filter id="card-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="4" stdDeviation="4" flood-opacity="0.06" />
+    </filter>
+  </defs>
+  <text x="80" y="88" font-size="28" font-weight="700" fill="#1e293b" text-anchor="start">網頁渲染關鍵流程 (Web Rendering Pipeline)</text>
+  <text x="80" y="124" font-size="16" font-weight="500" fill="#64748b" text-anchor="start">從 HTML 下載到畫面呈現的五大關鍵步驟生命週期</text>
+  <rect x="80" y="160" width="230" height="175" rx="12" ry="12" fill="#e7f5ff" stroke="#339af0" stroke-width="2" filter="url(#card-shadow)" />
+  <rect x="96" y="176" width="72" height="24" rx="12" ry="12" fill="#339af0" stroke="#339af0" stroke-width="1" />
+  <text x="132.0" y="192.2" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">STEP 01</text>
+  <text x="96" y="226" font-size="18" font-weight="600" fill="#212529" text-anchor="start">下載 HTML</text>
+  <text x="96" y="256" font-size="14" font-weight="400" fill="#495057" text-anchor="start">
+    <tspan x="96" dy="0">• 發送 HTTP 請求</tspan>
+    <tspan x="96" dy="20.3">• 接收 HTML 字節流</tspan>
+    <tspan x="96" dy="20.3">• 傳遞至解析器</tspan>
+  </text>
+  <line x1="316" y1="247" x2="352" y2="247" stroke="#868e96" stroke-width="2" marker-end="url(#arrowhead)" stroke-linecap="round" />
+  <rect x="358" y="160" width="230" height="175" rx="12" ry="12" fill="#e6fcf5" stroke="#20c997" stroke-width="2" filter="url(#card-shadow)" />
+  <rect x="374" y="176" width="72" height="24" rx="12" ry="12" fill="#20c997" stroke="#20c997" stroke-width="1" />
+  <text x="410.0" y="192.2" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">STEP 02</text>
+  <text x="374" y="226" font-size="18" font-weight="600" fill="#212529" text-anchor="start">解析成 DOM 樹</text>
+  <text x="374" y="256" font-size="14" font-weight="400" fill="#495057" text-anchor="start">
+    <tspan x="374" dy="0">• Token 詞法分析</tspan>
+    <tspan x="374" dy="20.3">• 標籤轉為 Node 節點</tspan>
+    <tspan x="374" dy="20.3">• 構建樹狀 DOM 模型</tspan>
+  </text>
+  <line x1="594" y1="247" x2="630" y2="247" stroke="#868e96" stroke-width="2" marker-end="url(#arrowhead)" stroke-linecap="round" />
+  <rect x="636" y="160" width="230" height="175" rx="12" ry="12" fill="#f3f0ff" stroke="#845ef7" stroke-width="2" filter="url(#card-shadow)" />
+  <rect x="652" y="176" width="72" height="24" rx="12" ry="12" fill="#845ef7" stroke="#845ef7" stroke-width="1" />
+  <text x="688.0" y="192.2" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">STEP 03</text>
+  <text x="652" y="226" font-size="18" font-weight="600" fill="#212529" text-anchor="start">套用 CSS 樣式</text>
+  <text x="652" y="256" font-size="14" font-weight="400" fill="#495057" text-anchor="start">
+    <tspan x="652" dy="0">• 解析 CSS 生成 CSSOM</tspan>
+    <tspan x="652" dy="20.3">• 結合 DOM 與 CSSOM</tspan>
+    <tspan x="652" dy="20.3">• 構建 Render Tree</tspan>
+  </text>
+  <line x1="872" y1="247" x2="908" y2="247" stroke="#868e96" stroke-width="2" marker-end="url(#arrowhead)" stroke-linecap="round" />
+  <rect x="914" y="160" width="230" height="175" rx="12" ry="12" fill="#fff9db" stroke="#fcc419" stroke-width="2" filter="url(#card-shadow)" />
+  <rect x="930" y="176" width="72" height="24" rx="12" ry="12" fill="#fcc419" stroke="#fcc419" stroke-width="1" />
+  <text x="966.0" y="192.2" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">STEP 04</text>
+  <text x="930" y="226" font-size="18" font-weight="600" fill="#212529" text-anchor="start">執行 JavaScript</text>
+  <text x="930" y="256" font-size="14" font-weight="400" fill="#495057" text-anchor="start">
+    <tspan x="930" dy="0">• JS 引擎解譯與執行</tspan>
+    <tspan x="930" dy="20.3">• 操作 DOM / CSSOM</tspan>
+    <tspan x="930" dy="20.3">• 必要時觸發重排重繪</tspan>
+  </text>
+  <line x1="1150" y1="247" x2="1186" y2="247" stroke="#868e96" stroke-width="2" marker-end="url(#arrowhead)" stroke-linecap="round" />
+  <rect x="1192" y="160" width="230" height="175" rx="12" ry="12" fill="#ebfbee" stroke="#51cf66" stroke-width="2" filter="url(#card-shadow)" />
+  <rect x="1208" y="176" width="72" height="24" rx="12" ry="12" fill="#51cf66" stroke="#51cf66" stroke-width="1" />
+  <text x="1244.0" y="192.2" font-size="12" font-weight="700" fill="#ffffff" text-anchor="middle">STEP 05</text>
+  <text x="1208" y="226" font-size="18" font-weight="600" fill="#212529" text-anchor="start">畫面呈現</text>
+  <text x="1208" y="256" font-size="14" font-weight="400" fill="#495057" text-anchor="start">
+    <tspan x="1208" dy="0">• 計算位置 (Layout)</tspan>
+    <tspan x="1208" dy="20.3">• 繪製像素 (Paint)</tspan>
+    <tspan x="1208" dy="20.3">• 圖層合成 (Composite)</tspan>
+  </text>
+  <rect x="80" y="371" width="1342" height="76" rx="12" ry="12" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1" stroke-dasharray="6,6" />
+  <text x="100" y="401" font-size="14" font-weight="400" fill="#495057" text-anchor="start">
+    <tspan x="100" dy="0">📌 核心原理：HTML/CSS 解析生成 DOM 與 CSSOM 並結合成 Render Tree；JavaScript 可動態操作節點與樣式；</tspan>
+    <tspan x="100" dy="20.3">瀏覽器依據計算結果進行排版 (Layout) 與像素繪製 (Paint)，最終合成圖層顯示於螢幕。</tspan>
+  </text>
+</svg>

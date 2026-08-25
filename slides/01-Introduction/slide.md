@@ -1558,7 +1558,17 @@ section p { text-align: center; }
 
 ![w:1100](assets/img110.png)
 
+---
 
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 為什麼我的 Agent 效能不穩定？
+
+- 為什麼使用相同的底層大模型、甚至調校了上百個版本的提示詞，別人做出來的 Agent 可以連續穩定運行、成功率極高，但到了自己手裡卻總是效果不穩定，甚至莫名其妙「跑偏」？ 
+
+![w:250](https://upload.wikimedia.org/wikipedia/zh/3/37/R2-D2_%26_C-3PO_%28Star_Wars%29.jpg)
 
 ---
 
@@ -1567,6 +1577,14 @@ section p { text-align: center; }
 - 目標：完成一個功能、修好一個 bug
 - 工具：讀寫檔案、執行終端機指令、跑測試、查文件...
 - 那麼「AI 能不能自主規劃、使用這些工具完成任務」，就是軟體工程被 AI 改變的關鍵分水嶺
+
+---
+
+### Harness Engineering
+
+真正決定一個 AI 系統能否穩定落地的，往往不是模型本身，而是包覆在模型外面的那套運行系統
+
+
 
 ---
 
