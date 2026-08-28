@@ -46,13 +46,14 @@ transition: slide
 
 ### About This Course
 
-- Google Gemini
-- GitHub
-- VS Code
+- [Google Gemini](https://gemini.google.com/)
+- [GitHub](https://github.com/)
+- [Vercel](https://vercel.com/)
+- [VS Code](https://code.visualstudio.com/)
 
 ---
 
-### AI Apply
+### Student AI & Developer Benefits
 
 - Google Gemini
   - [Google AI Plus 大學生免費方案](https://gemini.google/tw/students/?hl=zh-TW)
@@ -641,32 +642,11 @@ section p { text-align: center; font-size: 0.5em; }
 
 [But what is a neural network? | Deep learning chapter 1](https://www.youtube.com/watch?v=aircAruvnKk) By [3Blue1Brown](https://www.3blue1brown.com/)
 
-
----
-
-<style scoped>
-section p { text-align: center; font-size: 0.7em; }
-</style>
-
-### 舉例說明
-
-<br />
-
-![w:900](assets/img021.jpeg)
-
-
-
 ---
 
 <br />
 
 ![h:320](assets/img024.png)
-
----
-
-<!-- _class: lead -->
-
-![w:450](assets/img060.png)
 
 ---
 
@@ -676,13 +656,25 @@ section p { text-align: center; font-size: 0.7em; }
 
 ---
 
+<!-- _class: section-page -->
+
+## 生成式 AI
+
+---
+
+<!-- _class: lead -->
+
+![w:450](assets/img060.png)
+
+---
+
 <!-- _class: lead -->
 
 ### 什麼是ChatGPT？
 
 ---
 
-<!-- _class: section-page -->
+<!-- _class: lead -->
 
 ### 大型語言模型（LLM）
 ### Large Language Model
@@ -1580,11 +1572,15 @@ section p { text-align: center; }
 
 ---
 
+<style scoped>
+section p { text-align: center; }
+</style>
+
 ### 現在有哪些 AI Agent？
 
-![h:100](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Openclaw-logo-text-dark.svg/330px-Openclaw-logo-text-dark.svg.png?utm_source=zh-yue.wikipedia.org&utm_campaign=index&utm_content=thumbnail)
-![h:200](https://tomsmdt.com/wp-content/uploads/2026/05/hermes.jpeg) ![h:200](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*XOOO4k6O8i00OO0e.jpeg)
-![h:200](https://storage.ghost.io/c/5e/61/5e6189f0-c5e0-49a0-97b4-5eddd3f43c77/content/images/size/w2000/2026/02/MR5Wz9Rr-1.jpeg) ![h:200](https://blog-cdn.skywork.ai/wp-content/uploads/2025/11/1280x1280-1-1763627291.png)
+![h:200](https://www.freelogovectors.net/wp-content/uploads/2026/03/openclaw_logo-freelogovectors.net_.png) ![h:200](https://tomsmdt.com/wp-content/uploads/2026/05/hermes.jpeg)
+
+![h:180](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*XOOO4k6O8i00OO0e.jpeg) ![h:180](https://storage.ghost.io/c/5e/61/5e6189f0-c5e0-49a0-97b4-5eddd3f43c77/content/images/size/w2000/2026/02/MR5Wz9Rr-1.jpeg) ![h:180](https://blog-cdn.skywork.ai/wp-content/uploads/2025/11/1280x1280-1-1763627291.png)
 
 ---
 
@@ -1708,13 +1704,11 @@ AI 模型／API  +  使用者介面／應用邏輯／資料儲存  =  AI 應用�
 
 ---
 
-<style scoped>
-section p { text-align: center; font-size: 0.9em; }
-</style>
+<!-- _class: lead -->
 
 ### 這門課要做什麼？
 
-> 這門課的重點不是「訓練模型」，而是「整合現有 AI 能力，打造使用者真正能用的 AI 應用系統」
+> 這門課的重點不是「訓練模型」，而是「運用現有 AI 能力，打造讓一般使用者可以運用的 AI 應用系統」
 
 
 
