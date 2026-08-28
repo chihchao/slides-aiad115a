@@ -1272,8 +1272,6 @@ Notes: Google Sites 的嵌入程式碼是在 sandboxed iframe 中執行，部分
 </div>
 Note: Gemini Canvas 開發的網頁，無法使用上傳的圖片，必須使用網路上可直接存取的圖片網址。
 
-
-
 ---
 
 ### SWP03 待辦清單（To-Do List）+ LocalStorage
@@ -1308,45 +1306,4 @@ Notes: 加入 localStorage 後，重新整理頁面清單仍會保留。這是 L
 
 ### 申請 Gemini API Key
 
----
 
-<!-- _class: cols -->
-
-### 雙欄排版示範
-
-<div class="col-wrap">
-<div>
-
-Left content
-
-</div>
-<div>
-
-Right content
-
-</div>
-</div>
-
----
-
-<!-- _class: cols3 -->
-
-### 標題
-
-<div class="col-wrap">
-<div>
-
-第一欄內容
-
-</div>
-<div>
-
-第二欄內容
-
-</div>
-<div>
-
-第三欄內容
-
-</div>
-</div>
