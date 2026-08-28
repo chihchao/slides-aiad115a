@@ -24,6 +24,8 @@ transition: slide
 <cchsu@mail.nsysu.edu.tw>
 - 課程目標：
 培養應用人工智慧技術協助開發人工智慧應用系統的能力。
+- 課程網站：
+[中山網路大學](https://elearn.nsysu.edu.tw/)
 - 計分方法
     - 出席: 10%
     - 作業: 75%
@@ -33,10 +35,33 @@ transition: slide
 
 ### About This Course
 
-- Static Web Page
-- Google Apps Script
-- Single Page Application
-- Full Stack Web Application
+| 單元 | 對應概念 |
+| --- | --- |
+| Static Web Page | 純前端，無伺服器邏輯 |
+| Google Apps Script | Google 服務自動化的雲端程式開發平台 |
+| Single Page Application | 前端框架，動態切換畫面、不整頁重新載入 |
+| Full Stack Web Application | 前端＋後端＋資料庫，完整系統 |
+
+---
+
+### About This Course
+
+- Google Gemini
+- GitHub
+- VS Code
+
+---
+
+### AI Apply
+
+- Google Gemini
+  - [Google AI Plus 大學生免費方案](https://gemini.google/tw/students/?hl=zh-TW)
+  - [Gemini 學生免費用一年！Google AI Plus申請方式、SheerID驗證、到期扣款全攻略（2026最新）](https://www.cw.com.tw/article/5142543)
+- GitHub Copilot
+  - [GitHub Education](https://github.com/education/students)
+  - [Github Education 申請教學](https://hackmd.io/@ruiyang0630/HkVKvJQ9bx)
+
+
 
 ---
 
@@ -183,11 +208,6 @@ section p { text-align: center; font-size: 0.7em; }
 ### 人工智慧、機器學習、深度學習、生成式AI 的關係
 
 ![w:750](assets/ai-ml-dl-genai.png)
-
----
-
-### 機器學習及深度學習的任務
-
 
 ---
 
@@ -1560,15 +1580,71 @@ section p { text-align: center; }
 
 ---
 
+### 現在有哪些 AI Agent？
+
+![h:100](https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Openclaw-logo-text-dark.svg/330px-Openclaw-logo-text-dark.svg.png?utm_source=zh-yue.wikipedia.org&utm_campaign=index&utm_content=thumbnail)
+![h:200](https://tomsmdt.com/wp-content/uploads/2026/05/hermes.jpeg) ![h:200](https://miro.medium.com/v2/resize:fit:1400/format:webp/0*XOOO4k6O8i00OO0e.jpeg)
+![h:200](https://storage.ghost.io/c/5e/61/5e6189f0-c5e0-49a0-97b4-5eddd3f43c77/content/images/size/w2000/2026/02/MR5Wz9Rr-1.jpeg) ![h:200](https://blog-cdn.skywork.ai/wp-content/uploads/2025/11/1280x1280-1-1763627291.png)
+
+---
+
 <style scoped>
 section p { text-align: center; }
 </style>
 
-### 為什麼我的 Agent 效能不穩定？
+### 為什麼我的 AI Agent 效能不穩定？
 
 - 為什麼使用相同的底層大模型、甚至調校了上百個版本的提示詞，別人做出來的 Agent 可以連續穩定運行、成功率極高，但到了自己手裡卻總是效果不穩定，甚至莫名其妙「跑偏」？ 
 
-![w:250](https://upload.wikimedia.org/wikipedia/zh/3/37/R2-D2_%26_C-3PO_%28Star_Wars%29.jpg)
+![w:225](https://upload.wikimedia.org/wikipedia/zh/3/37/R2-D2_%26_C-3PO_%28Star_Wars%29.jpg)
+
+---
+
+### Prompt Engineering（提示詞工程）
+
+- **核心**：怎麼「問問題」/模型有沒有聽懂你在說什麼？
+- **本質**：研究如何將發給大模型的指令說得更清楚、更準確，讓模型更容易理解使用者的意圖。
+- **焦點**：透過結構化的提示詞擅長激發模型既有的語言和表達能力。
+
+---
+
+### Context Engineering（上下文工程）
+
+- **核心**：怎麼「給信息」/模型有沒有拿到足夠且正確的信息？
+- **本質**：研究如何在最合適的時機，將最合適的內容放入大模型的上下文（Context）中。
+- **焦點**：優秀的上下文工程不只是「塞入更多資料」，關鍵技術包括「上下文壓縮」技術、或是動態檢索外部資料（RAG）、建立 Tool 列表，以及常見的 Agent Skills 實踐便採用「漸進式暴露」思路。
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### Harness Engineering
+
+- 真正決定一個 AI 系統能否穩定落地的，往往不是模型本身，而是包覆在模型外面的那套運行系統
+
+![w:600](https://cdn.pixabay.com/photo/2016/04/01/14/55/carriage-driving-1300900_1280.jpg)
+
+---
+
+### Harness Engineering（韁繩工程）
+
+- **核心**：怎麼「搭系統」/模型在執行過程，能不能持續做對？誰來監督、約束與糾偏？
+- **本質**：「Harness」原意為韁繩、馬具或約束裝置。大語言模型如果不加干預，就會像脫韁野馬一樣容易發散思維、產生嚴重幻覺，無法穩定地給出預期結果。因此，需要一套駕馭與控制模型執行過程的機制。這套用來控制、約束與驅動大模型穩定運作的外部系統，就被稱為 Harness。
+$\text{Agent} = \text{Model} + \text{Harness}$
+- **焦點**：Harness Engineering 的核心是「如何設計一套能讓模型穩定運作的系統」，而不是「如何訓練一個更強大的模型」。
+
+---
+
+<style scoped>
+section p { text-align: center; font-size: 0.7em; }
+</style>
+
+### Harness Engineering 6 Governance Functions
+
+![w:850](assets/harness-engineering-6levels.png)
+[Agent Harness for Large Language Model Agents: A Survey. Preprints.](https://www.preprints.org/manuscript/202604.0428)
 
 ---
 
@@ -1578,11 +1654,6 @@ section p { text-align: center; }
 - 工具：讀寫檔案、執行終端機指令、跑測試、查文件...
 - 那麼「AI 能不能自主規劃、使用這些工具完成任務」，就是軟體工程被 AI 改變的關鍵分水嶺
 
----
-
-### Harness Engineering
-
-真正決定一個 AI 系統能否穩定落地的，往往不是模型本身，而是包覆在模型外面的那套運行系統
 
 
 
@@ -1595,24 +1666,6 @@ section p { text-align: center; }
 ### 軟體工程（SE）與 AI 結合的演進階段
 
 ![w:1150](assets/se_ai_evolution.svg)
-
----
-
-### 軟體工程（SE）與 AI 結合的演進階段
-
-1. SE 1.0：智能補全時代（Code Completion）以 2021 年 GitHub Copilot 的問世為代表。此階段 AI 扮演「文字接龍」的角色，主導權完全在開發者手中，AI 僅根據當前游標前後文預測下一行或下一段程式碼，性質類似手機鍵盤的自動選字。
-
----
-
-### 軟體工程（SE）與 AI 結合的演進階段
-
-2. SE 2.0：對話與 Vibe Coding 時代（Conversational & Vibe Coding）隨著大語言模型（LLM）推理能力突破，Andrej Karpathy 於 2025 年初提出「Vibe Coding」（憑感覺程式設計）一詞。開發者不再逐行編寫或仔細閱讀程式碼，而是透過自然語言提示詞向 AI 描述需求，直接採納生成的程式碼，只要 Demo 可以在本地運作即可。這種模式極大地降低了開發門檻，但產出的程式碼常因缺乏架構審查與測試驗證，呈現高技術債與脆弱性。
-
----
-
-### 軟體工程（SE）與 AI 結合的演進階段
-
-3. SE 3.0：代理人化軟體工程時代（Agentic Software Engineering）隨著工具呼叫、環境沙盒與長上下文推理技術成熟，軟體開發正式跨入 SE 3.0。AI 系統升級為具備目標導向、自主規劃、跨檔案編輯、終端機命令執行、測試驗證與自我修復能力的全功能代理人。開發者角色從「對話發起者」轉變為「代理人系統架構師（Agentic Engineer）」，確立雙向協同夥伴關係。
 
 ---
 
@@ -1661,116 +1714,8 @@ section p { text-align: center; font-size: 0.9em; }
 
 ### 這門課要做什麼？
 
-這門課的重點不是「訓練模型」，而是「整合現有 AI 能力，打造使用者真正能用的應用系統」
+> 這門課的重點不是「訓練模型」，而是「整合現有 AI 能力，打造使用者真正能用的 AI 應用系統」
 
-
-
----
-
-### 這學期的網頁開發地圖
-
-| 單元 | 對應概念 |
-| --- | --- |
-| Static Web Page | 純前端，無伺服器邏輯 |
-| Google Apps Script | 借助 Google 平台快速實作後端邏輯 |
-| Single Page Application | 前端框架，動態切換畫面、不整頁重新載入 |
-| Full Stack Web Application | 前端＋後端＋資料庫，完整系統 |
-
----
-
-## Git and GitHub
-
----
-
-<!-- _class: section-page -->
-
-### 申請 GitHub Education
-
----
-
-### 什麼是 GitHub Education？
-
-- GitHub 提供給學生與教育工作者的免費方案
-- 核心是 **GitHub Student Developer Pack**：整合多家廠商的開發工具、雲端服務與免費額度
-- 學生可免費使用平常需付費的功能，例如 **GitHub Copilot**、GitHub Pro 帳號等
-
----
-
-### 申請資格
-
-- 具有在學學生身分（高中以上皆可，含大學、研究所）
-- 年滿 13 歲
-- 能提供學校核發之在學證明（學校 Email、學生證、註冊證明等）
-
----
-
-### 如何申請 - 步驟
-
-1. 前往 [education.github.com/pack](https://education.github.com/pack)
-2. 使用個人 GitHub 帳號登入（尚未註冊請先建立帳號）
-3. 點選 **Get student benefits**
-4. 選擇身分為 **Student**
-5. 依畫面指示驗證在學身分
-
----
-
-### 如何驗證在學身分
-
-- 方式一：使用學校核發的 Email 進行驗證（如 `xxx@mail.nsysu.edu.tw`）
-- 方式二：上傳在學證明文件（學生證正反面照片、註冊證明等），需清楚顯示姓名、學校名稱與有效日期
-- 送出後由 GitHub 自動或人工審核，通常數分鐘至數天不等
-
----
-
-### 申請小提醒
-
-- 建議先在 GitHub 個人資料填寫真實姓名，並與證明文件一致
-- 學生證需能清楚辨識學校名稱與有效期限，避免審核被退件
-- 審核未通過可補充文件後重新申請
-- 通過後可於 **Settings > Billing and licensing > Education benefits** 查看已啟用的權益
-
----
-
-<!-- _class: cols -->
-
-### 雙欄排版示範
-
-<div class="col-wrap">
-<div>
-
-Left content
-
-</div>
-<div>
-
-Right content
-
-</div>
-</div>
-
----
-
-<!-- _class: cols3 -->
-
-### 標題
-
-<div class="col-wrap">
-<div>
-
-第一欄內容
-
-</div>
-<div>
-
-第二欄內容
-
-</div>
-<div>
-
-第三欄內容
-
-</div>
-</div>
 
 
 
