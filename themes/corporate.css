@@ -4,7 +4,7 @@
    Corporate theme for Marp
    Palette: deep navy / light blue / white
    Font: Calibri / Arial
-   Slide types: cover · section-page · (default) · cols · stats · closing
+   Slide types: cover · section-page · (default) · cols · triplet · quad · stats · closing
    ---------------------------------------------------------------- */
 
 :root {
@@ -381,6 +381,53 @@ section.cols .col p { font-size: 0.4em; }
 /* li's actual parent is <ul> (already 0.4286em of root), so its em is relative to that, not root */
 section.cols .col li { font-size: 0.9333em; }
 
+/* ── Slide type: triplet / cols3 (three-column grid) ───────────
+   Usage:
+     <!-- _class: triplet -->
+     ### Title
+     <hr>
+     <div class="triplet-wrap">
+       <div class="item">#### A<br>content</div>
+       <div class="item">#### B<br>content</div>
+       <div class="item">#### C<br>content</div>
+     </div>
+   ─────────────────────────────────────────────────────────────── */
+
+section.triplet .triplet-wrap,
+section.cols3 .col-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+section.triplet .item,
+section.cols3 .col {
+  background: var(--card);
+  border-left: 5px solid var(--navy);
+  padding: 18px 20px;
+}
+
+section.triplet .item.alt,
+section.cols3 .col.alt {
+  background: var(--white);
+  border: 1.5px solid var(--divider);
+  border-left: 5px solid var(--divider);
+}
+
+section.triplet .item h4,
+section.cols3 .col h4 {
+  font-size: 1em;
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--divider);
+}
+
+section.triplet .item p,
+section.cols3 .col p { font-size: 0.85em; }
+
+section.triplet .item li,
+section.cols3 .col li { font-size: 0.85em; }
+
 /* ── Slide type: quad (four-column grid) ────────────────────────
    Usage:
      <!-- _class: quad -->
@@ -469,7 +516,9 @@ section.stats .stat .l {
 }
 
 section.stats .stat.hi h4 { color: #ffffff; }
-section.stats .stat.hi p { color: #8FACD8; }
+section.stats .stat.hi p { color: #E8EDF8; }
+section.stats .stat.hi .l { color: #E8EDF8; }
+section.stats .stat.hi strong { color: #FFFFFF; }
 
 /* ── Slide type: closing ────────────────────────────────────────
    Usage:
