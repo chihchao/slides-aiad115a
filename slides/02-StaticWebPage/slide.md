@@ -118,7 +118,7 @@ section p { text-align: center; font-size: 0.9em; }
 
 <!-- _class: "cols" -->
 
-### 靜態 vs 動態網頁
+### 靜態網頁 vs 動態網頁
 
 <hr>
 
