@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: gaia-cust
-title: 人工智慧應用開發實務/Static Web Page
+title: 人工智慧應用開發實務 / Static Web Page
 size: 16:9
 paginate: true
 transition: slide
@@ -16,9 +16,8 @@ transition: slide
 
 ## 許智超
 
-<hr>
 
-cchsu@mail.nsysu.edu.tw
+<cchsu@mail.nsysu.edu.tw>
 
 ---
 
@@ -36,6 +35,8 @@ cchsu@mail.nsysu.edu.tw
 
 ### Client-Server 架構
 
+<hr>
+
 - **Client（用戶端）**：瀏覽器，負責發出請求、顯示畫面
 - **Server（伺服器）**：負責接收請求、處理邏輯、回傳資料
 
@@ -50,6 +51,8 @@ cchsu@mail.nsysu.edu.tw
 
 ### HTTP 協定
 
+<hr>
+
 > HyperText Transfer Protocol，瀏覽器與伺服器溝通的共同語言
 
 - **Request（請求）**：方法（GET / POST...）、網址、附帶資料
@@ -58,6 +61,8 @@ cchsu@mail.nsysu.edu.tw
 ---
 
 ### 網址（URL）的組成
+
+<hr>
 
 ```text
 https://www.nsysu.edu.tw/news?id=123
@@ -71,7 +76,9 @@ https://www.nsysu.edu.tw/news?id=123
 
 ---
 
-### 網頁三劍客
+### 網頁三要素
+
+<hr>
 
 - **HTML**：結構（骨架）— 網頁有哪些內容
 - **CSS**：樣式（外觀）— 網頁長什麼樣子
