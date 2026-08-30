@@ -96,17 +96,42 @@ section p { text-align: center; font-size: 0.9em; }
 
 ---
 
+<style scoped>
+section p { text-align: center; }
+</style>
+
 ### 靜態網頁 vs 動態網頁
 
 - **靜態網頁**：內容固定，伺服器只是把現成檔案原封不動送出
 - **動態網頁**：內容依請求即時運算、組裝、更新
 
+![w:700](assets/frontend-backend-1.png)
+
 ---
+
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### 靜態網頁 vs 動態網頁
+
+- **靜態網頁**：內容固定，伺服器只是把現成檔案原封不動送出
+- **動態網頁**：內容依請求即時運算、組裝、更新
+
+![w:700](assets/frontend-backend-2.png)
+
+---
+
+<style scoped>
+section p { text-align: center; }
+</style>
 
 ### 前端 vs 後端
 
 - **前端（Front-end）**：使用者看得到、互動的部分，程式碼在瀏覽器端執行
 - **後端（Back-end）**：使用者看不到的部分，處理邏輯、資料庫、安全驗證等，程式碼在伺服器端執行
+
+![w:700](assets/frontend-backend-3.png)
 
 ---
 
@@ -191,10 +216,7 @@ Notes: 三者分工合作——HTML 定義內容，CSS 負責呈現，JS 處理�
 ---
 
 <style scoped>
-pre code {
-  font-size: 0.5em;   /* 原本約 1em，改小 */
-  line-height: 1.15;
-}
+pre code { font-size: 0.5em; line-height: 1.15; }
 </style>
 
 ### 網頁三要素：HTML, CSS, Javascript
@@ -225,19 +247,13 @@ Notes: 實際專案會拆成三個獨立檔案，但初學階段單一檔案更�
 
 ---
 
-<!-- .slide: class="section-page" -->
+<!-- _class: "section-page" -->
 
-<div class="num">02</div>
-
-## HTML
-
-<hr>
-
-HyperText Markup Language — 超文字標記語言
+## HTML (HyperText Markup Language)
 
 ---
 
-<!-- .slide: class="cols" -->
+<!-- _class: "cols" -->
 
 ### HTML 的由來與發展
 
@@ -246,17 +262,17 @@ HyperText Markup Language — 超文字標記語言
 <div class="col-wrap">
 <div class="col alt">
 
-**起源**
+#### 起源
 
-- 1989 年，Tim Berners-Lee 在 CERN 提出
-- 1991 年，HTML 1.0 公開發布
+- HyperText Markup Language — 超文字標記語言
+
+- 1989 年，Tim Berners-Lee 在 CERN 提出，語法靈感來自 SGML（文件標記語言）
 - 目的：讓科學家能透過網路分享文件
-- 語法靈感來自 SGML（文件標記語言）
 
 </div>
 <div class="col alt">
 
-**重要版本里程碑**
+#### 重要版本里程碑
 
 | 年份 | 版本 |
 |------|------|
@@ -268,17 +284,21 @@ HyperText Markup Language — 超文字標記語言
 </div>
 </div>
 
-Notes: HTML5 由 WHATWG 與 W3C 共同維護，引入了 video、canvas、語意標籤等現代功能，大幅降低對 Flash 的依賴。
+Notes: HTML5 由 WHATWG 與 W3C 共同維護，引入了 video、canvas、語意標籤等現代功能。
 
 ---
 
-<!-- .slide: class="text-image" -->
+<!-- _class: "cols" -->
 
-<div class="ti-left">
+<style scoped>
+pre code { font-size: 0.6em; line-height: 1.15; }
+</style>
 
 ### HTML 基本結構
 
-<hr>
+<div class="col-wrap">
+<div class="col alt">
+
 
 ```html
 <!DOCTYPE html>
@@ -298,15 +318,15 @@ Notes: HTML5 由 WHATWG 與 W3C 共同維護，引入了 video、canvas、語意
 </html>
 ```
 
+</div>
+<div class="col alt">
+
+![w:600](assets/html-architecture.svg)
+
+</div>
+</div>
+
 Notes: head 放設定與 CSS；body 放內容；script 擺在 body 底部，確保上方的 HTML 元素已載入完畢。
-
-</div>
-<div class="ti-right">
-
-![Tag Architecture](assets/html-architecture.svg)
-<!-- .element: style="width: 95%;" -->
-
-</div>
 
 ---
 
@@ -327,17 +347,15 @@ Notes: head 放設定與 CSS；body 放內容；script 擺在 body 底部，確�
 
 ---
 
-<!-- .slide: class="section-page" -->
+<!-- _class: "section-page" -->
 
-<div class="num">03</div>
-
-## CSS
-
-<hr>
-
-Cascading Style Sheets — 層疊樣式表
+## CSS (Cascading Style Sheets)
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### CSS 基本語法
 
@@ -367,6 +385,8 @@ h1 {
 Notes: 選擇器有三種：tag、.class、#id，優先級依序提高。
 
 ---
+
+<!-- _class: "cols" -->
 
 ### CSS 常用屬性速查
 
@@ -400,9 +420,7 @@ Notes: 選擇器有三種：tag、.class、#id，優先級依序提高。
 
 ---
 
-<!-- .slide: class="section-page" -->
-
-<div class="num">04</div>
+<!-- _class: "section-page" -->
 
 ## JavaScript
 
@@ -412,39 +430,35 @@ Notes: 選擇器有三種：tag、.class、#id，優先級依序提高。
 
 ---
 
+<!-- _class: "cols" -->
+
 ### JavaScript 的故事
 
 <hr>
 
-<div class="two-col">
+<div class="col-wrap">
 <div>
 
-> **1995 年**
-> Brendan Eich 在 **10 天**內創造出這門語言
-
-> **原名 Mocha → LiveScript**
-> 為了搭 Java 熱潮，改名為 **JavaScript**
-> ⚠️ 和 Java **完全沒有關係**
-
-> **1997 年**
-> 成為 ECMAScript 國際標準，各瀏覽器開始支援
+- **1995 年**
+Brendan Eich 在 **10 天**內創造出這門語言
+- **原名 Mocha → LiveScript**
+為了搭 Java 熱潮，改名為 **JavaScript**
+⚠️ 和 Java **完全沒有關係**
+- **1997 年**
+成為 ECMAScript 國際標準，各瀏覽器開始支援
 
 </div>
 <div>
 
-> **2009 年**
-> Node.js 讓 JavaScript 走出瀏覽器、進入伺服器
-
-> **2015 年（ES6）**
-> 語法大幅現代化，成為主流程式語言
-
-> **今天**
-> 世界上使用人數最多的程式語言之一
+- **2009 年**
+Node.js 讓 JavaScript 走出瀏覽器、進入伺服器
+- **2015 年（ES6）**
+語法大幅現代化，成為主流程式語言
+- **今天**
+世界上使用人數最多的程式語言之一
 
 </div>
 </div>
-
-Notes: 強調「10 天」的趣事，以及 JavaScript 和 Java 名字相似但完全不同這點，學生常常搞混。
 
 ---
 
@@ -452,25 +466,18 @@ Notes: 強調「10 天」的趣事，以及 JavaScript 和 Java 名字相似但�
 
 <hr>
 
-> **操作頁面內容**
-> 讀取或修改 HTML 元素的文字、樣式、屬性
-
-> **回應使用者操作**
-> 監聽點擊、輸入、滾動等事件並執行動作
-
-> **計算與邏輯處理**
-> 條件判斷、迴圈、數學運算、字串處理
-
-> **與伺服器溝通**
-> 透過 `fetch()` 取得或送出資料（AJAX）
-
-Notes: 前三項是靜態網頁最常用的能力，今天主要介紹這些。
+- **操作頁面內容**
+讀取或修改 HTML 元素的文字、樣式、屬性
+- **回應使用者操作**
+監聽點擊、輸入、滾動等事件並執行動作
+- **計算與邏輯處理**
+條件判斷、迴圈、數學運算、字串處理
+- **與伺服器溝通**
+透過 `fetch()` 取得或送出資料（AJAX）
 
 ---
 
-<!-- .slide: class="section-page" -->
-
-<div class="num">04-1</div>
+<!-- _class: "section-page" -->
 
 ## JavaScript 基礎語法
 
@@ -479,6 +486,10 @@ Notes: 前三項是靜態網頁最常用的能力，今天主要介紹這些。
 從變數開始學起
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### 變數宣告
 
@@ -504,6 +515,10 @@ name = "Bob";   // let 可以改
 Notes: 現代 JS 盡量用 const，需要改值才用 let，避免用 var。
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### 資料型別
 
@@ -532,6 +547,10 @@ console.log(student.name);  // → "Alice"
 ```
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### 運算子
 
@@ -562,6 +581,10 @@ Notes: 用 === 而非 ==，避免型別自動轉換的陷阱。
 
 ---
 
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
+
 ### 條件判斷
 
 <hr>
@@ -587,6 +610,10 @@ console.log(status);  // → "通過"
 ```
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### 迴圈
 
@@ -618,6 +645,10 @@ colors.forEach(color => console.log(color));
 ```
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### 函式
 
@@ -652,23 +683,23 @@ Notes: 箭頭函式是現代 JS 常見寫法，特別是在 callback 裡。
 
 ---
 
-<!-- .slide: class="section-page" -->
-
-<div class="num">04-2</div>
+<!-- _class: "section-page" -->
 
 ## 操作網頁元素
-
-<hr>
 
 DOM — Document Object Model
 
 ---
 
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
+
 ### 什麼是 DOM？
 
 <hr>
 
-> 瀏覽器把 HTML 解析成一棵「樹狀結構」，JavaScript 可以透過 DOM API 讀取或修改每個節點。
+瀏覽器把 HTML 解析成一棵「樹狀結構」，JavaScript 可以透過 DOM API 讀取或修改每個節點。
 
 ```html
 <!-- HTML -->
@@ -690,6 +721,10 @@ const allItems = document.querySelectorAll("li");
 ```
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### 修改元素內容與樣式
 
@@ -721,6 +756,10 @@ img.setAttribute("src", "new.jpg"); // 修改
 
 ---
 
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
+
 ### 事件監聽
 
 <hr>
@@ -750,17 +789,17 @@ btn.addEventListener("click", () => {
 
 ---
 
-<!-- .slide: class="section-page" -->
-
-<div class="num">04-3</div>
+<!-- _class: "section-page" -->
 
 ## JSON
-
-<hr>
 
 JavaScript Object Notation — 輕量的資料交換格式
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### 什麼是 JSON？
 
@@ -787,6 +826,8 @@ Notes: JSON 是現代前後端溝通最普遍的格式，幾乎所有 Web API �
 
 ---
 
+<!-- _class: "cols" -->
+
 ### JSON 語法規則
 
 <hr>
@@ -794,7 +835,7 @@ Notes: JSON 是現代前後端溝通最普遍的格式，幾乎所有 Web API �
 <div class="col-wrap">
 <div class="col alt">
 
-**合法 JSON**
+#### 合法 JSON
 
 ```json
 {
@@ -809,7 +850,7 @@ Notes: JSON 是現代前後端溝通最普遍的格式，幾乎所有 Web API �
 </div>
 <div class="col alt">
 
-**常見錯誤**
+#### 常見錯誤
 
 ```json
 {
@@ -819,6 +860,7 @@ Notes: JSON 是現代前後端溝通最普遍的格式，幾乎所有 Web API �
   "note": undefined,   // ✗ 不支援 undefined
   // 這是註解       // ✗ 不支援註解
 }
+
 ```
 
 </div>
@@ -827,6 +869,10 @@ Notes: JSON 是現代前後端溝通最普遍的格式，幾乎所有 Web API �
 Notes: JSON 的鍵名一定要用雙引號，值只能是字串、數字、布林、陣列、物件、null 六種類型。
 
 ---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
 
 ### JSON.stringify() 與 JSON.parse()
 
@@ -854,204 +900,28 @@ Notes: stringify 把物件「打包成字串」才能存進 localStorage 或透�
 
 ---
 
-<!-- .slide: class="section-page" -->
-
-<div class="num">04-4</div>
-
-## 瀏覽器儲存：LocalStorage
-
-<hr>
-
-網頁關掉再開，資料還在！
-
----
-
-### 什麼是 LocalStorage？
-
-<hr>
-
-> 瀏覽器送給你的一個「小型私人儲物櫃」
-
-- HTML5 內建的**鍵值儲存空間**，資料存在使用者的瀏覽器裡
-- 關閉分頁、重新整理、甚至重開電腦後，資料**不會消失**
-- 不需要透過網路向伺服器索取，直接在瀏覽器端讀寫
-
-Notes: 這是一種 client-side storage，完全不依賴後端，非常適合靜態網頁使用。
-
----
-
-### 為什麼需要 LocalStorage？
-
-<hr>
-
-以購物網站的購物車為例：
-
-<div class="col-wrap">
-<div class="col alt">
-
-**沒有 LocalStorage**
-
-商品加入購物車，一重新整理頁面
-
-→ 購物車**清空了**
-
-</div>
-<div class="col alt">
-
-**有了 LocalStorage**
-
-選好的商品偷偷存進儲物櫃，下次再開網站
-
-→ **自動恢復**購物車狀態
-
-</div>
-</div>
-
-Notes: 除了購物車，常見應用還有：記住深色/淺色主題設定、記住使用者名稱、暫存表單草稿等。
-
----
-
-### LocalStorage 的核心特點
-
-<hr>
-
-- **永久性** — 沒有過期時間，只要不主動刪除就會一直存在
-- **容量限制** — 約 **5 MB**，適合設定、偏好、暫存資料，不能存大型檔案
-- **字串格式** — 只能存字串；物件或陣列需先用 `JSON.stringify()` 轉換
-- **網域隔離** — 網站 A 的資料，網站 B 完全讀不到，保護使用者隱私
-
----
-
-### LocalStorage 基本操作
-
-<hr>
-
-```javascript
-// 寫入
-localStorage.setItem("username", "Alice");
-localStorage.setItem("theme", "dark");
-
-// 讀取（key 不存在時回傳 null）
-const name  = localStorage.getItem("username"); // "Alice"
-const theme = localStorage.getItem("theme");    // "dark"
-
-// 刪除單筆 / 清除全部
-localStorage.removeItem("theme");
-localStorage.clear();
-
-// 儲存物件：先轉成 JSON 字串
-const user = { name: "Alice", age: 20 };
-localStorage.setItem("user", JSON.stringify(user));
-
-// 讀取物件：再從 JSON 字串還原
-const loaded = JSON.parse(localStorage.getItem("user"));
-```
-
-Notes: DevTools → Application → Local Storage 可以查看目前存了哪些資料，也可以手動刪除。
-
----
-
-### 與其他儲存方式的比較
-
-<hr>
-
-| 類型 | 生命週期 | 容量 | 常見用途 |
-|------|---------|------|---------|
-| **LocalStorage** | 永久（手動刪除才消失） | ~5 MB | 深色模式、長期購物車 |
-| **SessionStorage** | 關閉分頁後自動刪除 | ~5 MB | 單次登入狀態、表單暫存 |
-| **Cookies** | 可設定過期時間 | ~4 KB | 登入 Token、廣告追蹤 |
-
-Notes: Cookies 因為容量小、且每次 HTTP 請求都會帶上，主要用於伺服器需要知道的資訊（如登入狀態）。靜態網頁通常用 LocalStorage 就夠了。
-
----
-
-### 安全警告
-
-<hr>
-
-> **千萬不要**在 LocalStorage 裡儲存密碼、信用卡號或其他敏感資訊
-
-- 任何執行在該頁面的 JavaScript **都能讀取**到這些資料
-- 若網站存在 **XSS 漏洞**，攻擊者可輕易竊取全部內容
-- LocalStorage 適合存**非敏感**的偏好設定或暫存資料
-
-Notes: XSS（Cross-Site Scripting）是最常見的網頁安全漏洞之一，攻擊者注入惡意 JS 後可直接呼叫 localStorage.getItem() 竊取資料。
-
-
-
----
-
 ### 開發者工具 DevTools
 
 <hr>
 
 開啟方式：`F12` 或 右鍵 → 「檢查」
 
-> **Console**
-> 執行 JS 指令、查看 `console.log()` 輸出、除錯
+- **Console**
+執行 JS 指令、查看 `console.log()` 輸出、除錯
+- **Elements**
+即時查看與修改 HTML 結構和 CSS 樣式
+- **Sources**
+查看 JS 原始碼，設定中斷點 (breakpoint) 一行一行 debug
+- **Network**
+監看網路請求，查看載入的檔案與時間
 
-> **Elements**
-> 即時查看與修改 HTML 結構和 CSS 樣式
-
-> **Sources**
-> 查看 JS 原始碼，設定中斷點 (breakpoint) 一行一行 debug
-
-> **Network**
-> 監看網路請求，查看載入的檔案與時間
-
-
-
-Notes: DevTools 是前端開發者最重要的工具，從第一天就應該學會使用 Console。
+Notes: DevTools 是前端開發者最重要的工具。
 
 ---
 
-<!-- .slide: class="stats" -->
-
-### 今天學到的
-
-<hr>
-
-<div class="stat-wrap">
-<div class="stat">
-<span class="n">HTML</span>
-<hr>
-<span class="l">結構與內容</span>
-</div>
-<div class="stat hi">
-<span class="n">CSS</span>
-<hr>
-<span class="l">樣式與外觀</span>
-</div>
-<div class="stat">
-<span class="n">JS</span>
-<hr>
-<span class="l">互動與邏輯</span>
-</div>
-</div>
-
----
-
-### 下一步怎麼練習？
-
-<hr>
-
-- **動手寫** — 打開 VS Code，從 `index.html` + `style.css` + `script.js` 開始
-- **用 DevTools** — 按 `F12` 在 Console 貼上 JS 程式碼立即執行
-- **模仿改造** — 找一個喜歡的網站，試著用三個檔案重現它的某個區塊
-- **線上資源** — MDN Web Docs（mozilla.org/zh-TW）是最可靠的參考手冊
-
-> **記住：**
-> 寫程式不是在「背語法」，是在練習「解決問題的思路」
-
----
-
-<!-- .slide: class="section-page" -->
-
-<div class="num">06</div>
+<!-- _class: "section-page" -->
 
 ## Gemini Canvas
-
-<hr>
 
 用 AI 生成網頁：讓對話直接變成 HTML/CSS/JS
 
@@ -1061,7 +931,7 @@ Notes: DevTools 是前端開發者最重要的工具，從第一天就應該學�
 
 <hr>
 
-> Google Gemini（gemini.google.com）內建的**互動式程式碼／文件編輯環境**，會在對話旁開一個「畫布」即時顯示產生的結果
+Google Gemini（gemini.google.com）內建的**互動式程式碼／文件編輯環境**，會在對話旁開一個「畫布」即時顯示產生的結果
 
 - 請 Gemini 用文字描述一個網頁，它會**直接寫出 HTML/CSS/JS**
 - 畫布會**即時預覽**渲染後的畫面，不只是顯示程式碼
@@ -1220,22 +1090,31 @@ Notes: AI 生成工具能大幅加速「從想法到雛形」的過程，但理�
 
 ---
 
+<!-- _class: cols -->
+
 ### SWP02 Landing Page
 
-任務：任意挑選一個主題，設計一個 Landing Page，並使用 HTML、CSS、JavaScript 完成。
+<div class="col-wrap">
+<div>
+
+#### 任務
+任意挑選一個主題，設計一個 Landing Page，並使用 HTML、CSS、JavaScript 完成。
 
 #### 要求
 
+- 任意主題的 Landing Page
 - 部署至 Google Sites
+
+</div>
+<div>
 
 Landing Page（引導頁）是網路行銷與廣告中的一個獨立網頁。當使用者點擊廣告、社群媒體連結、電子郵件或搜尋引擎結果後，會「降落」或進入這個頁面。
 
-核心特徵與目的
-單一明確的目標：每個 Landing Page 都只有一個主要任務，例如：填寫表單領取優惠、註冊免費試用、購買特定商品、報名活動或下載電子書。
+核心特徵與目的：
+單一明確的目標，每個 Landing Page 都只有一個主要任務，例如：填寫表單領取優惠、註冊免費試用、購買特定商品、報名活動或下載電子書。
 
-高度聚焦的內容：頁面排版和文案完全繞著「這個特定的推廣目標」展開，不會有過多干擾訪客注意力的導覽列或無關的連結。
-
-專為轉換率設計：它的設計邏輯是透過吸引人的標題、痛點剖析、產品優勢、客戶見證與強而有力的行動呼籲按鈕（CTA 按鈕），引導訪客完成轉換。
+</div>
+</div>
 
 ---
 
@@ -1281,6 +1160,131 @@ Note: Gemini Canvas 開發的網頁，無法使用上傳的圖片，必須使用
 
 ---
 
+<!-- _class: "section-page" -->
+
+## 瀏覽器儲存：LocalStorage
+
+網頁關掉再開，資料還在！
+
+---
+
+### 什麼是 LocalStorage？
+
+<hr>
+
+瀏覽器送給你的一個「小型私人儲物櫃」
+
+- HTML5 內建的**鍵值儲存空間**，資料存在使用者的瀏覽器裡
+- 關閉分頁、重新整理、甚至重開電腦後，資料**不會消失**
+- 不需要透過網路向伺服器索取，直接在瀏覽器端讀寫
+
+Notes: 這是一種 client-side storage，完全不依賴後端，非常適合靜態網頁使用。
+
+---
+
+<!-- _class: "cols" -->
+
+### 為什麼需要 LocalStorage？
+
+<hr>
+
+以購物網站的購物車為例：
+
+<div class="col-wrap">
+<div class="col alt">
+
+**沒有 LocalStorage**
+
+商品加入購物車，一重新整理頁面
+→ 購物車**清空了**
+
+</div>
+<div class="col alt">
+
+**有了 LocalStorage**
+
+選好的商品存進儲物櫃，下次再開網站
+→ **自動恢復**購物車狀態
+
+</div>
+</div>
+
+Notes: 除了購物車，常見應用還有：記住深色/淺色主題設定、記住使用者名稱、暫存表單草稿等。
+
+---
+
+### LocalStorage 的核心特點
+
+<hr>
+
+- **永久性** — 沒有過期時間，只要不主動刪除就會一直存在
+- **容量限制** — 約 **5 MB**，適合設定、偏好、暫存資料，不能存大型檔案
+- **字串格式** — 只能存字串；物件或陣列需先用 `JSON.stringify()` 轉換
+- **網域隔離** — 網站 A 的資料，網站 B 完全讀不到，保護使用者隱私
+
+---
+
+<style scoped>
+pre code { font-size: 0.5em; line-height: 1.15; }
+</style>
+
+### LocalStorage 基本操作
+
+<hr>
+
+```javascript
+// 寫入
+localStorage.setItem("username", "Alice");
+localStorage.setItem("theme", "dark");
+
+// 讀取（key 不存在時回傳 null）
+const name  = localStorage.getItem("username"); // "Alice"
+const theme = localStorage.getItem("theme");    // "dark"
+
+// 刪除單筆 / 清除全部
+localStorage.removeItem("theme");
+localStorage.clear();
+
+// 儲存物件：先轉成 JSON 字串
+const user = { name: "Alice", age: 20 };
+localStorage.setItem("user", JSON.stringify(user));
+
+// 讀取物件：再從 JSON 字串還原
+const loaded = JSON.parse(localStorage.getItem("user"));
+```
+
+Notes: DevTools → Application → Local Storage 可以查看目前存了哪些資料，也可以手動刪除。
+
+---
+
+### 與其他儲存方式的比較
+
+<hr>
+
+| 類型 | 生命週期 | 容量 | 常見用途 |
+|------|---------|------|---------|
+| **LocalStorage** | 永久（手動刪除才消失） | ~5 MB | 深色模式、長期購物車 |
+| **SessionStorage** | 關閉分頁後自動刪除 | ~5 MB | 單次登入狀態、表單暫存 |
+| **Cookies** | 可設定過期時間 | ~4 KB | 登入 Token、廣告追蹤 |
+
+Notes: Cookies 因為容量小、且每次 HTTP 請求都會帶上，主要用於伺服器需要知道的資訊（如登入狀態）。靜態網頁通常用 LocalStorage 就夠了。
+
+---
+
+### 安全警告
+
+<hr>
+
+> **千萬不要**在 LocalStorage 裡儲存密碼、信用卡號或其他敏感資訊
+
+- 任何執行在該頁面的 JavaScript **都能讀取**到這些資料
+- 若網站存在 **XSS 漏洞**，攻擊者可輕易竊取全部內容
+- LocalStorage 適合存**非敏感**的偏好設定或暫存資料
+
+Notes: XSS（Cross-Site Scripting）是最常見的網頁安全漏洞之一，攻擊者注入惡意 JS 後可直接呼叫 localStorage.getItem() 竊取資料。
+
+---
+
 ### SWP03 待辦清單（To-Do List）+ LocalStorage
 
 
@@ -1295,11 +1299,51 @@ Notes: 加入 localStorage 後，重新整理頁面清單仍會保留。這是 L
 
 <!-- _class: section-page -->
 
-## API
+## API (Application Programming Interface)
 
 ---
 
 ### 什麼是 API？
+
+應用程式介面（application program interface，API），廣義來說，能讓二個電腦系統進行互相溝通的方式就是API。
+
+![w:1100](assets/api-001.png)
+
+---
+
+### 什麼是 API？
+
+應用程式介面（application program interface，API），廣義來說，能讓二個電腦系統進行互相溝通的方式就是API。
+
+![w:1100](assets/api-002.png)
+
+---
+
+### 什麼是 API？
+
+應用程式介面（application program interface，API），廣義來說，能讓二個電腦系統進行互相溝通的方式就是API。
+
+![w:1100](assets/api-003.png)
+
+---
+
+### 什麼是 API？
+
+應用程式介面（application program interface，API），廣義來說，能讓二個電腦系統進行互相溝通的方式就是API。
+
+![w:1100](assets/api-004.png)
+
+---
+
+### 前端呼叫 API 的架構
+
+![w:1100](assets/api-client-server-001.png)
+
+---
+
+### 後端呼叫 API 的架構
+
+![w:1100](assets/api-client-server-002.png)
 
 ---
 
