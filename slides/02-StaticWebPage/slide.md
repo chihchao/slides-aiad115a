@@ -16,7 +16,6 @@ transition: slide
 
 ## 許智超
 
-
 <cchsu@mail.nsysu.edu.tw>
 
 ---
@@ -424,8 +423,6 @@ Notes: 選擇器有三種：tag、.class、#id，優先級依序提高。
 
 ## JavaScript
 
-<hr>
-
 讓網頁動起來的程式語言
 
 ---
@@ -480,10 +477,6 @@ Node.js 讓 JavaScript 走出瀏覽器、進入伺服器
 <!-- _class: "section-page" -->
 
 ## JavaScript 基礎語法
-
-<hr>
-
-從變數開始學起
 
 ---
 
@@ -1078,7 +1071,6 @@ Notes: AI 生成工具能大幅加速「從想法到雛形」的過程，但理�
 2. 開始/暫停按鈕
 3. 直接以 Gemini 共用連結分享
 
-
 </div>
 
 <div>
@@ -1134,7 +1126,7 @@ Notes: Google Sites 的嵌入程式碼是在 sandboxed iframe 中執行，部分
 
 <!-- _class: cols -->
 
-### 參考資源
+### 風格設計參考
 
 <div class="col-wrap">
 <div>
@@ -1221,6 +1213,7 @@ Notes: 除了購物車，常見應用還有：記住深色/淺色主題設定、
 - **容量限制** — 約 **5 MB**，適合設定、偏好、暫存資料，不能存大型檔案
 - **字串格式** — 只能存字串；物件或陣列需先用 `JSON.stringify()` 轉換
 - **網域隔離** — 網站 A 的資料，網站 B 完全讀不到，保護使用者隱私
+- **本機限定** — 清除網站資料、更換瀏覽器或電腦後資料會消失，不會自動同步到其他裝置
 
 ---
 
@@ -1275,7 +1268,7 @@ Notes: Cookies 因為容量小、且每次 HTTP 請求都會帶上，主要用�
 
 <hr>
 
-> **千萬不要**在 LocalStorage 裡儲存密碼、信用卡號或其他敏感資訊
+**千萬不要**在 LocalStorage 裡儲存密碼、信用卡號或其他敏感資訊
 
 - 任何執行在該頁面的 JavaScript **都能讀取**到這些資料
 - 若網站存在 **XSS 漏洞**，攻擊者可輕易竊取全部內容
@@ -1285,15 +1278,99 @@ Notes: XSS（Cross-Site Scripting）是最常見的網頁安全漏洞之一，�
 
 ---
 
-### SWP03 待辦清單（To-Do List）+ LocalStorage
+### 部署成 GitHub Pages (1/2)
 
+<hr>
 
-
-Notes: 加入 localStorage 後，重新整理頁面清單仍會保留。這是 LocalStorage 最常見的應用場景之一。
+- **準備單一網頁檔案**
+  - 將 HTML、CSS 與 JavaScript 放在同一個檔案中，命名為 `index.html`。
+  - 在瀏覽器開啟檔案，確認功能與版面正常。
+- **建立 GitHub 儲存庫**
+  - 登入 [GitHub](https://github.com)，點選右上角「+」 $\rightarrow$ 「New repository」。
+  - 輸入儲存庫名稱，設定為 Public，然後建立儲存庫。
+- **上傳網站檔案**
+  - 在儲存庫中點選「Add file」 $\rightarrow$ 「Upload files」。
+  - 上傳 `index.html`，再點選「Commit changes」。
 
 ---
 
+### 部署成 GitHub Pages (2/2)
+
+- **啟用 GitHub Pages**
+  - 進入「Settings」 $\rightarrow$ 「Pages」。
+  - 在 Build and deployment 選擇「Deploy from a branch」，分支選擇 `main` 與 `/ (root)`，按下「Save」。
+- **開啟公開網址**
+  - 等待約一分鐘，重新整理 Pages 設定頁面。
+  - 點選 GitHub 顯示的 `https://帳號名稱.github.io/儲存庫名稱/` 網址，即可查看網站。
+
+Notes: 首頁檔案必須命名為 `index.html`。之後只要重新上傳並 commit 新版本，GitHub Pages 會自動更新網站。
+
+---
+
+<!-- _class: cols -->
+
+### SWP03 待辦清單（To-Do List）+ LocalStorage
+
+<hr>
+
+<div class="col-wrap">
+<div>
+
+#### 任務
+
+製作一個「待辦清單」網頁，並使用靜態網頁技術與 LocalStorage 完成。
+
+#### 要求
+
+1. 可新增待辦事項
+2. 可標記已完成與刪除事項
+3. 重新整理頁面後清單內容仍會保留
+4. 部署成 GitHub Pages
+
+</div>
+
+<div>
+
+待辦清單（To-Do List）是一種用來記錄、整理與追蹤日常任務的工具。使用者可以隨時新增事項，完成後標記或刪除；透過 LocalStorage 將清單儲存在瀏覽器中，即使重新整理或關閉網頁，資料仍能在下次開啟時保留。
+
+Notes: 加入 LocalStorage 後，重新整理頁面清單仍會保留。這是 LocalStorage 最常見的應用場景之一。
+
+</div>
+</div>
+
+
+---
+
+<!-- _class: cols -->
+
 ### SWP04 便利貼看板
+
+<hr>
+
+<div class="col-wrap">
+<div>
+
+#### 任務
+
+製作一個「便利貼看板」網頁，並使用靜態網頁技術與 LocalStorage 完成。
+
+#### 要求
+
+1. 可新增不同顏色的便利貼
+2. 可編輯與刪除便利貼內容
+3. 重新整理後，便利貼內容仍會保留
+4. 部署成 GitHub Pages
+
+</div>
+
+<div>
+
+便利貼看板（Sticky Notes Board）是將零散想法、提醒事項或短期任務視覺化的工具。每張便利貼都是獨立資料；將它們儲存至 LocalStorage，可讓看板在關閉或重新開啟瀏覽器後，仍保有原本的內容與排列。
+
+</div>
+</div>
+
+Notes: 可嘗試用不同顏色區分工作、學習與生活事項；進一步挑戰可加入拖曳排序功能。
 
 ---
 
