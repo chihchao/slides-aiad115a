@@ -1,10 +1,35 @@
 ---
 marp: true
 theme: gaia-cust
-title: 人工智慧應用開發實務/Static Web Page
+title: 人工智慧應用開發實務 / Static Web Page
 size: 16:9
 paginate: true
 transition: slide
+---
+
+<!-- _class: cover -->
+<!-- _paginate: false -->
+<!-- _footer: "" -->
+
+# 人工智慧應用開發實務
+## Static Web Page
+許智超
+<cchsu@mail.nsysu.edu.tw>
+
+---
+
+### SWP05 資訊看板
+
+
+
+---
+
+### SWP06 地圖資訊 API
+
+---
+
+### 申請 Gemini API Key
+
 ---
 
 <!-- _class: cols -->
