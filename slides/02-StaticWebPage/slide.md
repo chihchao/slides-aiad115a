@@ -12,9 +12,9 @@ transition: slide
 <!-- _footer: "" -->
 
 # 人工智慧應用開發實務
-# Static Web Page
+## Static Web Page
 
-## 許智超
+許智超
 
 <cchsu@mail.nsysu.edu.tw>
 

@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: gaia-cust
-title: 人工智慧應用開發實務/Introduction
+title: 人工智慧應用開發實務 / Introduction
 size: 16:9
 paginate: true
 transition: slide
