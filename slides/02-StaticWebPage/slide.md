@@ -1372,6 +1372,40 @@ Notes: 可嘗試用不同顏色區分工作、學習與生活事項；進一步�
 
 ---
 
+<!-- _class: cols -->
+
+### SWP05 網頁小遊戲
+
+<hr>
+
+<div class="col-wrap">
+<div>
+
+#### 任務
+
+- 自行選擇一個遊戲主題（例如：貪食蛇、記憶翻牌或太空侵略者），製作一個可在瀏覽器中操作的網頁小遊戲。
+- 使用 HTML、CSS、JavaScript 與 LocalStorage 完成。
+
+Notes: 先做出可玩的最小版本，再逐步加入計分、倒數計時、音效或難度設定。
+</div>
+
+<div>
+
+#### 要求
+
+1. 提供明確的操作方式與開始／重新開始功能
+2. 顯示遊戲結果，例如分數、時間、過關或失敗訊息
+3. 使用 LocalStorage 儲存遊戲進度或最高分數
+4. 部署成 GitHub Pages
+
+</div>
+</div>
+
+
+
+
+---
+
 <!-- _class: section-page -->
 
 ## API (Application Programming Interface)
@@ -1420,5 +1454,8 @@ Notes: 可嘗試用不同顏色區分工作、學習與生活事項；進一步�
 
 ![w:1100](assets/api-client-server-002.png)
 
+---
 
+### API 範例
 
+- [Open-Meteo](https://open-meteo.com/) — 免費氣象 API / [高雄市氣象](https://api.open-meteo.com/v1/forecast?latitude=22.6273&longitude=120.3014&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTaipei)
