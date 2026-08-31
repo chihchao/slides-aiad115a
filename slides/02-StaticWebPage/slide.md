@@ -1459,3 +1459,7 @@ Notes: 先做出可玩的最小版本，再逐步加入計分、倒數計時、�
 ### API 範例
 
 - [Open-Meteo](https://open-meteo.com/) — 免費氣象 API / [高雄市氣象](https://api.open-meteo.com/v1/forecast?latitude=22.6273&longitude=120.3014&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTaipei)
+- [Frankfurter](https://frankfurter.dev/) — 免費匯率 API / [USD → TWD](https://api.frankfurter.app/latest?from=USD&to=TWD,EUR)
+- [DOG CEO](https://dog.ceo/) — 隨機狗狗圖片 API / [隨機狗狗圖片](https://dog.ceo/api/breeds/image/random)
+- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) — 假資料 API / [隨機使用者](https://jsonplaceholder.typicode.com/users/1)
+- [The RESTful Pokémon API](https://pokeapi.co/) — 寶可夢 API / [皮卡丘資料](https://pokeapi.co/api/v2/pokemon/pikachu)
