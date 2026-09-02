@@ -376,7 +376,7 @@ section.cols .col h2 {
   border-bottom: 1px solid var(--divider);
 }
 
-section.cols .col p { font-size: 0.4em; }
+section.cols .col p { font-size: 0.85em; }
 
 /* li's actual parent is <ul> (already 0.4286em of root), so its em is relative to that, not root */
 section.cols .col li { font-size: 0.9333em; }

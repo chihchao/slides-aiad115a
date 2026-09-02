@@ -26,9 +26,7 @@ transition: slide
 
 ### SWP06 地圖資訊 API
 
----
 
-### 申請 Gemini API Key
 
 ---
 
