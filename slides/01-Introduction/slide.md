@@ -25,7 +25,8 @@ transition: slide
 - 課程目標：
 培養應用人工智慧技術協助開發人工智慧應用系統的能力。
 - 課程網站：
-[中山網路大學](https://elearn.nsysu.edu.tw/)
+Google Classroom, 以**中山大學 gmail 帳號**登入
+課程式碼：`lgriyrge`
 - 計分方法
     - 出席: 10%
     - 作業: 75%
@@ -61,8 +62,6 @@ transition: slide
 - GitHub Copilot
   - [GitHub Education](https://github.com/education/students)
   - [Github Education 申請教學](https://hackmd.io/@ruiyang0630/HkVKvJQ9bx)
-
-
 
 ---
 
@@ -471,9 +470,9 @@ section p { text-align: center; font-size: 0.75em; }
 ### 有沒有注意到，老師一直講一個詞「函式」
 
 ![w:500](assets/image64.jpg)
-
-Functions describe the world. Everything is described by functions: the sound of my voice on your eardrum, the light that's hitting your eyeballs right now, and the entries you put in your random matrices. It's all function.
-By Thomas Garrity
+[Functions describe the world](https://www.youtube.com/watch?v=BWZTlfrneD8)
+> 函數描繪了整個世界。萬物皆可用函數來描述：我傳入你耳膜的話音、此刻落在你眼眸裡的光線，以及你填入隨機矩陣中的每一個數值。這一切，本質上都是函數。
+**Thomas Garrity**
 
 ---
 
