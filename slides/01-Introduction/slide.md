@@ -49,6 +49,11 @@ Google Classroom, 以**中山大學 gmail 帳號**登入
 - [GitHub](https://github.com/)
 - [Vercel](https://vercel.com/)
 - [VS Code](https://code.visualstudio.com/)
+- AI Coding Agents
+  - [Claude Code](https://www.anthropic.com/product/claude-code)
+  - [OpenAI Codex](https://openai.com/zh-Hant/codex/)
+  - [Google Antigravity](https://antigravity.google/)
+  - [GitHub Copilot](https://github.com/features/copilot)
 
 ---
 
