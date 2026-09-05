@@ -28,9 +28,7 @@ transition: slide
 Google Classroom, 以**中山大學 gmail 帳號**登入
 課程式碼：`lgriyrge`
 - 計分方法
-    - 出席: 10%
-    - 作業: 75%
-    - 專題: 15%
+    - 出席: 10%；作業: 75%；專題: 15%
 
 ---
 
