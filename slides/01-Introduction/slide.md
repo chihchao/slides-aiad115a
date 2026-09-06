@@ -1622,13 +1622,13 @@ section p { text-align: center; }
 
 - 真正決定一個 AI 系統能否穩定落地的，往往不是模型本身，而是包覆在模型外面的那套運行系統
 
-![w:600](https://cdn.pixabay.com/photo/2016/04/01/14/55/carriage-driving-1300900_1280.jpg)
+![w:550](https://cdn.pixabay.com/photo/2016/04/01/14/55/carriage-driving-1300900_1280.jpg)
 
 ---
 
-### Harness Engineering（韁繩工程）
+### Harness Engineering（控制工程）
 
-- **核心**：怎麼「搭系統」/模型在執行過程，能不能持續做對？誰來監督、約束與糾偏？
+- **核心**：怎麼「搭系統」/ 模型在執行過程，能不能持續做對？誰來監督、約束與糾偏？
 - **本質**：「Harness」原意為韁繩、馬具或約束裝置。大語言模型如果不加干預，就會像脫韁野馬一樣容易發散思維、產生嚴重幻覺，無法穩定地給出預期結果。因此，需要一套駕馭與控制模型執行過程的機制。這套用來控制、約束與驅動大模型穩定運作的外部系統，就被稱為 Harness。
 $\text{Agent} = \text{Model} + \text{Harness}$
 - **焦點**：Harness Engineering 的核心是「如何設計一套能讓模型穩定運作的系統」，而不是「如何訓練一個更強大的模型」。
@@ -1645,15 +1645,22 @@ section p { text-align: center; font-size: 0.7em; }
 [Agent Harness for Large Language Model Agents: A Survey. Preprints.](https://www.preprints.org/manuscript/202604.0428)
 
 ---
+<style scoped>
+section p { text-align: center; font-size: 0.5em; }
+</style>
 
-### 如果 AI Agent 的任務是「寫程式」？
+### 又有新名詞？
 
-- 目標：完成一個功能、修好一個 bug
-- 工具：讀寫檔案、執行終端機指令、跑測試、查文件...
-- 那麼「AI 能不能自主規劃、使用這些工具完成任務」，就是軟體工程被 AI 改變的關鍵分水嶺
+![w:800](https://media.licdn.com/dms/image/v2/D5612AQHFyr8-IYURjQ/article-cover_image-shrink_720_1280/B56Z.deNY6KoAU-/0/1785053374384?e=2147483647&v=beta&t=v4G5Om1iwMhhXNvslSD2RsRFNzIyi5yWLExfjTc-UIg)
+[Agent Harness Engineering vs. Loop Engineering vs. Graph Engineering](https://www.linkedin.com/pulse/agent-harness-engineering-vs-loop-graph-mahip-kakan-0dihc)
 
+---
 
+<!-- _class: lead -->
 
+### 能不能讓 AI Agent 協助程式設計？
+
+「AI 能不能自主規劃、使用工具完成任務」，就是軟體工程被 AI 改變的關鍵分水嶺。
 
 ---
 
@@ -1710,7 +1717,7 @@ AI 模型／API  +  使用者介面／應用邏輯／資料儲存  =  AI 應用�
 
 ### 這門課要做什麼？
 
-> 這門課的重點不是「訓練模型」，而是「運用現有 AI 能力，打造讓一般使用者可以運用的 AI 應用系統」
+這門課的重點不是「訓練模型」，而是「運用現有 AI 能力，打造讓一般使用者可以運用的 AI 應用系統」
 
 
 
