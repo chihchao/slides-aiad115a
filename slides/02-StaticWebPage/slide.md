@@ -31,6 +31,9 @@ transition: slide
 ### 開啟一個網頁時，發生了什麼事？
 
 ---
+<style scoped>
+section p { text-align: center; }
+</style>
 
 ### Client-Server 架構
 
@@ -39,12 +42,7 @@ transition: slide
 - **Client（用戶端）**：瀏覽器，負責發出請求、顯示畫面
 - **Server（伺服器）**：負責接收請求、處理邏輯、回傳資料
 
-<br />
-
-```text
-瀏覽器 (Client)  --- Request  --->  伺服器 (Server)
-瀏覽器 (Client)  <--- Response ---  伺服器 (Server)
-```
+![w:900](assets/client-server-architecture.svg)
 
 ---
 
@@ -52,7 +50,7 @@ transition: slide
 
 <hr>
 
-> HyperText Transfer Protocol，瀏覽器與伺服器溝通的共同語言
+HyperText Transfer Protocol，瀏覽器與伺服器溝通的共同語言
 
 - **Request（請求）**：方法（GET / POST...）、網址、附帶資料
 - **Response（回應）**：狀態碼（200 成功 / 404 找不到 / 500 伺服器錯誤）、回傳內容

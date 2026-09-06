@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 360" width="840" height="360" style="background-color: #ffffff; font-family: 'Comic Sans MS', 'Chalkboard SE', 'Casual', 'PingFang TC', 'Microsoft JhengHei', sans-serif;">
+  <defs>
+    <!-- Arrowhead markers -->
+    <marker id="arrow-request" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#1c7ed6" />
+    </marker>
+    <marker id="arrow-response" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1 L 10 5 L 0 9 z" fill="#37b24d" />
+    </marker>
+    <filter id="hand-drawn-shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="2" dy="3" stdDeviation="2" flood-color="#000000" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Title & Subtitle (拉開距離避免重疊) -->
+  <text x="80" y="55" font-size="24" font-weight="bold" fill="#1e1e1e">Client-Server 架構圖</text>
+  <text x="360" y="55" font-size="14" fill="#666666">(用戶端與伺服器交互流程)</text>
+
+  <!-- Client Box -->
+  <g transform="translate(80, 110)">
+    <rect width="250" height="180" rx="14" ry="14" fill="#e7f5ff" stroke="#1971c2" stroke-width="2.5" filter="url(#hand-drawn-shadow)" />
+    <!-- Header -->
+    <rect x="15" y="15" width="220" height="28" rx="6" fill="#d0ebff" />
+    <circle cx="30" cy="29" r="4" fill="#ff6b6b" />
+    <circle cx="42" cy="29" r="4" fill="#fcc419" />
+    <circle cx="54" cy="29" r="4" fill="#51cf66" />
+    <text x="125" y="34" font-size="15" font-weight="bold" fill="#1864ab" text-anchor="middle">瀏覽器 (Client)</text>
+    
+    <text x="125" y="78" font-size="14" fill="#1c7ed6" font-weight="bold" text-anchor="middle">用戶端</text>
+    <text x="30" y="112" font-size="13" fill="#333333">• 負責發出請求 (Request)</text>
+    <text x="30" y="140" font-size="13" fill="#333333">• 負責顯示畫面 (UI Render)</text>
+  </g>
+
+  <!-- Server Box -->
+  <g transform="translate(510, 110)">
+    <rect width="250" height="180" rx="14" ry="14" fill="#ebfbee" stroke="#2f9e44" stroke-width="2.5" filter="url(#hand-drawn-shadow)" />
+    <!-- Header -->
+    <rect x="15" y="15" width="220" height="28" rx="6" fill="#d3f9d8" />
+    <text x="125" y="34" font-size="15" font-weight="bold" fill="#2b8a3e" text-anchor="middle">伺服器 (Server)</text>
+    
+    <text x="125" y="78" font-size="14" fill="#2f9e44" font-weight="bold" text-anchor="middle">後端服務</text>
+    <text x="30" y="108" font-size="13" fill="#333333">• 接收請求 (Receive Request)</text>
+    <text x="30" y="133" font-size="13" fill="#333333">• 處理業務邏輯 (Business Logic)</text>
+    <text x="30" y="158" font-size="13" fill="#333333">• 回傳資料 (Return Response)</text>
+  </g>
+
+  <!-- Request Arrow (Client -> Server) -->
+  <g>
+    <!-- 箭頭線段 -->
+    <path d="M 340 175 L 500 175" stroke="#1c7ed6" stroke-width="3" fill="none" marker-end="url(#arrow-request)" />
+    <!-- 1. Request 標籤 (放在箭頭線段上方) -->
+    <rect x="360" y="144" width="120" height="22" rx="4" fill="#ffffff" stroke="#1c7ed6" stroke-width="1.5" />
+    <text x="420" y="160" font-size="12" font-weight="bold" fill="#1971c2" text-anchor="middle">1. Request (請求)</text>
+  </g>
+
+  <!-- Response Arrow (Server -> Client) -->
+  <g>
+    <!-- 箭頭線段 (位於 y = 225) -->
+    <path d="M 500 225 L 340 225" stroke="#37b24d" stroke-width="3" fill="none" marker-end="url(#arrow-response)" />
+    <!-- 2. Response 標籤 (移至箭頭線段下方 y = 236 ~ 258) -->
+    <rect x="360" y="236" width="120" height="22" rx="4" fill="#ffffff" stroke="#37b24d" stroke-width="1.5" />
+    <text x="420" y="252" font-size="12" font-weight="bold" fill="#2b8a3e" text-anchor="middle">2. Response (回應)</text>
+  </g>
+
+</svg>
