@@ -1598,6 +1598,18 @@ section p { text-align: center; }
 
 ---
 
+<style scoped>
+section p { text-align: center; }
+</style>
+
+### Harness Engineering
+
+- 真正決定一個 AI 系統能否穩定落地的，往往不是模型本身，而是包覆在模型外面的那套運行系統
+
+![w:550](https://cdn.pixabay.com/photo/2016/04/01/14/55/carriage-driving-1300900_1280.jpg)
+
+---
+
 ### Prompt Engineering（提示詞工程）
 
 - **核心**：怎麼「問問題」/模型有沒有聽懂你在說什麼？
@@ -1611,18 +1623,6 @@ section p { text-align: center; }
 - **核心**：怎麼「給信息」/模型有沒有拿到足夠且正確的信息？
 - **本質**：研究如何在最合適的時機，將最合適的內容放入大模型的上下文（Context）中。
 - **焦點**：優秀的上下文工程不只是「塞入更多資料」，關鍵技術包括「上下文壓縮」技術、或是動態檢索外部資料（RAG）、建立 Tool 列表，以及常見的 Agent Skills 實踐便採用「漸進式暴露」思路。
-
----
-
-<style scoped>
-section p { text-align: center; }
-</style>
-
-### Harness Engineering
-
-- 真正決定一個 AI 系統能否穩定落地的，往往不是模型本身，而是包覆在模型外面的那套運行系統
-
-![w:550](https://cdn.pixabay.com/photo/2016/04/01/14/55/carriage-driving-1300900_1280.jpg)
 
 ---
 
@@ -1671,6 +1671,12 @@ section p { text-align: center; }
 ### 軟體工程（SE）與 AI 結合的演進階段
 
 ![w:1150](assets/se_ai_evolution.svg)
+
+---
+
+<!-- _class: lead -->
+
+### Not only <u>Vibe Coding</u> but also <u>Agentic Coding</u>
 
 ---
 
