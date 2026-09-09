@@ -1681,7 +1681,7 @@ section p { font-size: 0.5em; }
 
 ### Not only <u>Vibe Coding</u> but also <u>Agentic Coding</u>
 
-![w:500](https://cdn-uploads.huggingface.co/production/uploads/67ddd80896ac367438d400a6/ASTag4z8Os01guAbKpxI6.jpeg)
+![w:700](https://cdn-uploads.huggingface.co/production/uploads/67ddd80896ac367438d400a6/ASTag4z8Os01guAbKpxI6.jpeg)
 [Vibe Coding vs. Agentic Coding: Fundamentals and Practical Implications of Agentic AI](https://huggingface.co/papers/2505.19443)
 
 
