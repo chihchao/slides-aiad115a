@@ -1400,9 +1400,6 @@ Notes: 先做出可玩的最小版本，再逐步加入計分、倒數計時、�
 </div>
 </div>
 
-
-
-
 ---
 
 <!-- _class: section-page -->
@@ -1623,4 +1620,259 @@ No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
 </div>
 </div>
+
+---
+
+### 地圖 API
+
+Leaflet.js + OpenStreetMap 是製作互動式地圖的常見組合。
+
+- **Leaflet.js**：輕量的 JavaScript 地圖函式庫，負責地圖、標記與互動
+- **OpenStreetMap（OSM）**：由社群維護的開放街圖資料
+- Leaflet 負責「怎麼顯示」，OSM 提供「顯示什麼地圖」
+
+---
+
+<!-- _class: cols3 -->
+
+### Leaflet 地圖的基本組成
+
+<div class="col-wrap">
+<div class="col alt">
+
+**地圖容器**
+
+HTML 預留一個 `div`，Leaflet 將地圖畫在裡面。
+
+</div>
+<div class="col alt">
+
+**圖磚圖層**
+
+從地圖服務載入一張張圖磚，拼成完整地圖。
+
+</div>
+<div class="col alt">
+
+**圖層與標記**
+
+加入 Marker、Popup、Circle 或 GeoJSON 資料。
+
+</div>
+</div>
+
+```text
+HTML 容器 → Leaflet 地圖 → OSM 圖磚
+↘ 標記、彈出視窗、路線
+```
+
+---
+
+### 使用 OpenStreetMap 的注意事項
+
+- 顯示圖磚時，必須保留 `OpenStreetMap` attribution
+- 遵守 [OpenStreetMap Tile Usage Policy](https://operations.osmfoundation.org/policies/tiles/)
+- 不要大量下載、快取或模擬正常使用者請求
+- 商業或高流量服務應選擇合適的圖磚服務商
+- OpenStreetMap 是地圖資料來源，不等於完整的導航或地址搜尋 API
+
+---
+
+<!-- _class: cols -->
+
+### SWP07 地圖資訊
+
+<hr>
+
+<div class="col-wrap">
+<div>
+
+#### 任務
+
+使用 Leaflet.js + OpenStreetMap，製作一個能在地圖上呈現即時資料點的網頁，例如 YouBike 站點、停車場空位或觀光景點。
+
+可搭配政府開放資料中「含經緯度欄位」的資料集，例如各縣市 YouBike 2.0 即時資料、公共停車場資訊等，讓地圖上的標記會隨資料更新。
+
+</div>
+
+<div>
+
+#### 要求
+
+1. 設定合理的初始中心點與縮放層級
+2. 至少串接一個含經緯度欄位的 API 或開放資料（例如 YouBike 即時資料）
+3. 將每筆資料以 Marker 標示在地圖上，點擊後以 Popup 顯示重點資訊（如站名、可借／可還數量）
+4. 部署成 GitHub Pages
+
+</div>
+</div>
+
+---
+
+<!-- _class: "section-page" -->
+
+## Teachable Machine
+
+讓機器學習模型走進靜態網頁
+
+---
+
+### 什麼是 Teachable Machine？
+
+<hr>
+
+- Google 推出的**免程式碼**機器學習訓練工具，網址：[https://teachablemachine.withgoogle.com](https://teachablemachine.withgoogle.com/)
+- 在瀏覽器裡收集範例資料，訓練「圖片／聲音／姿勢」分類模型
+- 背後技術是 **TensorFlow.js**，訓練完可直接匯出到網頁使用
+- 不需要寫訓練程式碼，也不需要 GPU 或安裝環境
+
+Notes: 訓練過程全部在瀏覽器內完成，資料不會上傳到 Google 的伺服器。
+
+---
+
+<!-- _class: "cols3" -->
+
+### 三種模型類型
+
+<hr>
+
+<div class="col-wrap">
+<div class="col alt">
+
+**Image Project**
+
+分類照片或即時攝影機畫面
+例：手勢、物品、表情
+
+</div>
+<div class="col alt">
+
+**Audio Project**
+
+分類聲音片段
+例：指令詞、環境音、拍手聲
+
+</div>
+<div class="col alt">
+
+**Pose Project**
+
+分類人體姿勢
+例：動作偵測、運動計數
+
+</div>
+</div>
+
+---
+
+<!-- _class: "cols3" -->
+
+### 訓練流程：Gather → Train → Export
+
+<hr>
+
+<div class="col-wrap">
+<div class="col alt">
+
+**1. 收集資料**
+
+為每個類別（Class）用攝影機／麥克風蒐集範例，類別間數量盡量平衡
+
+</div>
+<div class="col alt">
+
+**2. 訓練模型**
+
+在瀏覽器內按一鍵訓練，即時顯示準確率與訓練曲線
+
+</div>
+<div class="col alt">
+
+**3. 匯出模型**
+
+輸出成 TensorFlow.js／TFLite／TensorFlow 格式，取得可用的網址或檔案
+
+</div>
+</div>
+
+Notes: 這三步驟不需要離開瀏覽器；Export 之後才會需要把模型接到自己的網頁專案。
+
+---
+
+### 為什麼範例的「多樣性」很重要？
+
+<hr>
+
+- 光線、角度、背景、距離都要有變化，模型才不會只認得單一情境
+- 每個類別的範例數量要盡量平衡，避免模型偏向數量多的類別
+- 建議加入一個 **Background / Nothing** 類別，代表「什麼都不是」的情況
+- 訓練與實際使用的環境差太多時，模型準確率會明顯下降
+
+Notes: 這是機器學習常見的**過擬合（overfitting）**問題——模型記住的是訓練時的背景與角度，而不是真正的特徵。
+
+---
+
+### 把模型嵌入靜態網頁
+
+<hr>
+
+- Teachable Machine 匯出頁面的「TensorFlow.js」分頁，會直接提供一段可複製的範例程式碼
+- 透過 `<script>` 載入對應函式庫：`@teachablemachine/image`／`/audio`／`/pose`
+- 網頁端即時擷取攝影機或麥克風畫面，逐格丟進模型做預測（`predict()`）
+- 所有運算都在**使用者的瀏覽器**完成，不需要後端伺服器
+
+---
+
+### 使用時的注意事項
+
+<hr>
+
+- 使用攝影機／麥克風需要使用者主動授權，瀏覽器會跳出權限請求視窗
+- 呼叫 webcam／microphone API 需要 **HTTPS** 網站（GitHub Pages 部署後預設符合）
+- 模型分享設定若為「Private」，他人將無法載入該模型網址，依需求調整
+- 模型的準確率完全取決於訓練資料，正式使用前務必用不同情境實測
+
+> 用攝影機或麥克風蒐集他人資料前，務必告知並取得同意；不要在使用者不知情的狀況下錄影或錄音。
+
+---
+
+### Teachable Machine 能做什麼應用？
+
+<hr>
+
+- **手勢控制網頁**：比讚換頁、比 OK 播放音樂
+- **物品辨識小工具**：回收分類教學、教具/道具識別
+- **聲音指令觸發**：拍手計數、喊口令啟動特效
+- **姿勢辨識小遊戲**：深蹲計數、伸展提醒、體感互動
+
+---
+
+<!-- _class: cols -->
+
+### SWP08 手勢／聲音互動遊戲
+
+<hr>
+
+<div class="col-wrap">
+<div>
+
+#### 任務
+
+使用 Teachable Machine 訓練一個圖片、聲音或姿勢分類模型，將模型嵌入靜態網頁遊戲，做出會依辨識結果產生互動效果的遊戲。
+
+</div>
+
+<div>
+
+#### 要求
+
+1. 至少訓練 2 個類別，並說明怎麼進行遊戲或操作。
+2. 頁面顯示攝影機或麥克風畫面，以及目前辨識結果與信心分數
+3. 依辨識結果觸發至少一種畫面變化（換背景、播放音效、顯示訊息等）
+4. 部署成 GitHub Pages
+
+</div>
+</div>
+
+
 
