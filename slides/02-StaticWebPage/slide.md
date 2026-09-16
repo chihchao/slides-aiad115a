@@ -1355,7 +1355,7 @@ Notes: 加入 LocalStorage 後，重新整理頁面清單仍會保留。這是 L
 
 1. 可新增不同顏色的便利貼
 2. 可編輯與刪除便利貼內容
-3. 重新整理後，便利貼內容仍會保留
+3. 重新整理後，便利貼內容仍會保留（LocalStorage）
 4. 部署成 GitHub Pages
 
 </div>
@@ -1459,7 +1459,7 @@ Notes: 先做出可玩的最小版本，再逐步加入計分、倒數計時、�
 - [The RESTful Pokémon API](https://pokeapi.co/) — 寶可夢 API / [皮卡丘資料](https://pokeapi.co/api/v2/pokemon/pikachu)
 - [Lorem Picsum](https://picsum.photos/) - 圖片 / [隨機圖片 1920*1080](https://picsum.photos/1920/1080)
 
-**Notes:** 如果使用 API 需要金鑰（API Key），請務必保護好，不要放在公開的程式碼中。
+**Notes:** 如果使用 API 需要金鑰（API Key），請務必保護好，不要放在公開的程式碼中。那如何在前端使用 API Key 呢？
 
 ---
 
