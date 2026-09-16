@@ -1587,10 +1587,9 @@ Access to fetch at 'https://api.example.com/data' from origin
 No 'Access-Control-Allow-Origin' header is present on the requested resource.
 ```
 
-- 這不是你的程式碼語法錯誤，資料其實有送出、伺服器也有回應
-- 問題出在**伺服器沒有回傳允許的標頭**，前端無法自行修正
-- 練習時的因應方式：
-  1. 優先選擇文件中**明確支援 CORS** 或設計給前端直接呼叫的公開 API
+- 這不是你的程式碼語法錯誤，資料其實有送出、伺服器也有回應，問題出在**伺服器沒有回傳允許的標頭**。
+- 練習時的因應方式：（[檢測工具](https://sites.google.com/view/cors-check/)）
+  1. 優先選擇文件中**明確支援 CORS** 或設計給前端直接呼叫的公開 API。
   2. 若必須串接不支援 CORS 的資料源，改由**後端伺服器代為請求**（Full-Stack 章節會介紹）
 
 ---
