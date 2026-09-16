@@ -35,3 +35,13 @@ Harness engineering 的相關措施
 顯示你的短期記憶，目前的context window
 顯示你旳長期記憶，知識點以及過去的對話紀錄
 說明一下你的記憶層
+
+環境安裝：
+git, node.js, python
+
+CLI
+firebase, vercel, clasp, superbase
+
+Skill:
+mattpocock/skills
+
