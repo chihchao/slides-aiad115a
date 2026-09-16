@@ -981,7 +981,7 @@ AI 只能自由發揮，結果通常很陽春、
 
 ```
 製作 html/css/js 網頁。
-網頁內容是咖啡店的 Landing Page，要有：
+網頁內容是 [咖啡店] 的 Landing Page，要有：
 - 頂部大圖 + 店名標語
 - 三個特色介紹卡片
 - 「立即預約」按鈕
@@ -1013,7 +1013,7 @@ Notes: 和寫程式一樣，需求描述得越具體（版面、內容、配色�
 
 <hr>
 
-- Canvas 產生的程式碼可以**下載成 .html / 拆成三個檔案**
+- Canvas 產生的程式碼可以**下載成 .html**
 - 下載後就是一般的靜態網頁，可以用 VS Code 打開繼續修改
 - 部署方式與一般靜態網頁相同：GitHub Pages、Netlify、Vercel…
 
@@ -1091,6 +1091,7 @@ Notes: 和寫程式一樣，需求描述得越具體（版面、內容、配色�
 #### 要求
 
 - 任意主題的 Landing Page
+- 挑選設計風格並使用線上圖片
 - 部署至 Google Sites
 
 </div>
@@ -1457,7 +1458,170 @@ Notes: 先做出可玩的最小版本，再逐步加入計分、倒數計時、�
 ### API 範例
 
 - [Open-Meteo](https://open-meteo.com/) — 免費氣象 API / [高雄市氣象](https://api.open-meteo.com/v1/forecast?latitude=22.6273&longitude=120.3014&current=temperature_2m,relative_humidity_2m,apparent_temperature,precipitation,weather_code,wind_speed_10m&daily=weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max&timezone=Asia%2FTaipei)
-- [Frankfurter](https://frankfurter.dev/) — 免費匯率 API / [USD → TWD](https://api.frankfurter.app/latest?from=USD&to=TWD,EUR)
 - [DOG CEO](https://dog.ceo/) — 隨機狗狗圖片 API / [隨機狗狗圖片](https://dog.ceo/api/breeds/image/random)
-- [JSONPlaceholder](https://jsonplaceholder.typicode.com/) — 假資料 API / [隨機使用者](https://jsonplaceholder.typicode.com/users/1)
 - [The RESTful Pokémon API](https://pokeapi.co/) — 寶可夢 API / [皮卡丘資料](https://pokeapi.co/api/v2/pokemon/pikachu)
+- [Lorem Picsum](https://picsum.photos/) - 圖片 / [隨機圖片 1920*1080](https://picsum.photos/1920/1080)
+
+**Notes:** 如果使用 API 需要金鑰（API Key），請務必保護好，不要放在公開的程式碼中。
+
+---
+
+### 政府資料開放平台
+
+政府機關將可公開、可再利用的資料，以標準化格式放到網路上，讓民眾、研究者與開發者自由查詢和應用。
+
+- 平台：[data.gov.tw](https://data.gov.tw/)
+- 資料來源：中央與地方政府機關
+- 常見主題：交通、空氣品質、觀光、教育、醫療、人口統計
+- 核心精神：**公開透明、資料再利用、促進創新**
+
+---
+
+<!-- _class: cols3 -->
+
+### 如何使用政府開放資料？
+
+<div class="col-wrap">
+<div class="col alt">
+
+**1. 找資料**
+
+- 用關鍵字或分類搜尋資料集
+- 查看資料提供機關與更新日期
+- 確認資料是否符合需求
+
+</div>
+<div class="col alt">
+
+**2. 讀資料**
+
+- 選擇下載檔案或 API
+- 閱讀欄位說明與使用規則
+- 確認格式、編碼與更新頻率
+
+</div>
+<div class="col alt">
+
+**3. 做應用**
+
+- 用 JavaScript `fetch()` 取得資料
+- 將 JSON 轉成網頁上的圖表或清單
+- 標示資料來源與最後更新時間
+
+</div>
+</div>
+
+---
+
+### 開放資料的常見格式
+
+| 格式 | 適合用途 | 特點 |
+|---|---|---|
+| **CSV** | 試算表、統計分析 | 表格直觀，容易用 Excel 開啟 |
+| **JSON** | 網頁與 API | 適合程式讀取，能表示巢狀資料 |
+| **XML** | 系統交換、既有服務 | 結構明確，但文字較冗長 |
+| **GeoJSON** | 地圖與地理資料 | 可描述點、線、面與座標 |
+
+**使用前要檢查：**資料欄位、編碼（通常是 UTF-8）、更新時間、授權條款與資料來源。
+
+---
+
+### 從開放資料到網頁
+
+![w:900](assets/open-data-architecture.svg)
+```js
+fetch("資料集的 API 網址")
+  .then(response => response.json())
+  .then(data => { console.log(data); });
+```
+
+---
+
+### 使用政府資料時的責任
+
+- **確認來源**：顯示資料提供機關與原始連結
+- **確認時效**：資料可能延遲、停更或尚未完整更新
+- **確認定義**：讀懂欄位說明、單位與統計範圍
+- **尊重授權**：依資料集的授權條款使用與再發布
+- **保護個資**：不嘗試還原或推測可識別個人的資訊
+
+> 開放資料不代表「不需要查證」；它是應用程式的原料，品質與解讀仍需要負責任地確認。
+
+---
+
+### 開放資料範例
+
+- [每月盛產農產品產地](https://data.moa.gov.tw/open_detail.aspx?id=061)
+全台農產盛產期與產地資訊，非常適合拿來做程式開發、資料視覺化、節氣食譜應用或農產地圖網頁。
+- [動物認領養](https://data.moa.gov.tw/open_detail.aspx?id=QcbUEzN6E6DL)
+包含全台各公立動物收容所內待認養動物的詳細資訊，用來設計即時的流浪動物協尋、溫馨領養媒合通知介面。
+- [個股日成交資訊](https://data.gov.tw/dataset/11549)
+透過政府開放資料的 CSV/JSON 格式進行串接，打造個人化的股市看板、技術指標分析工具或自動化爬蟲腳本。
+
+---
+
+### 瀏覽器的安全限制：CORS
+
+<hr>
+
+**CORS**（Cross-Origin Resource Sharing，跨來源資源共享）是瀏覽器內建的安全機制。
+
+- 瀏覽器預設遵守**同源政策（Same-Origin Policy）**：網頁只能自由存取「相同來源」的資源
+- **來源（Origin）** = 協定 + 網域 + 埠號，三者都相同才算同源
+  例：`https://a.com` 呼叫 `https://api.b.com` 就是**跨來源**
+- 用 `fetch()` 呼叫別的網域的 API 時，瀏覽器會檢查該伺服器的回應標頭是否**明確允許**你的網站存取
+
+Notes: CORS 限制的是瀏覽器端的 JavaScript，不是伺服器本身；用 Postman 或後端程式呼叫同一個 API 通常不會被擋。
+
+---
+
+### CORS 錯誤長什麼樣子？
+
+<hr>
+
+在瀏覽器的開發者工具 Console 常會看到：
+
+```text
+Access to fetch at 'https://api.example.com/data' from origin
+'https://your-site.github.io' has been blocked by CORS policy:
+No 'Access-Control-Allow-Origin' header is present on the requested resource.
+```
+
+- 這不是你的程式碼語法錯誤，資料其實有送出、伺服器也有回應
+- 問題出在**伺服器沒有回傳允許的標頭**，前端無法自行修正
+- 練習時的因應方式：
+  1. 優先選擇文件中**明確支援 CORS** 或設計給前端直接呼叫的公開 API
+  2. 若必須串接不支援 CORS 的資料源，改由**後端伺服器代為請求**（Full-Stack 章節會介紹）
+
+---
+
+<!-- _class: cols -->
+
+### SWP06 資訊看板
+
+<hr>
+
+<div class="col-wrap">
+<div>
+
+#### 任務
+
+使用靜態網頁技術，串接至少一個 API 或政府開放資料，製作一個資訊看板。
+
+資訊看板（Dashboard）：把即時或定期更新的資料轉化成一目了然的畫面。無論是氣象、寵物領養或農產品產地，重點都在於誠實標示來源、留意資料的更新頻率，並在請求失敗時給使用者明確的回饋，而不是留下一片空白。
+
+</div>
+
+<div>
+
+#### 要求
+
+1. 至少串接一個 API 或開放資料集，頁面明確標示資料來源
+2. 將資料轉換為適合閱讀的呈現方式（列表、卡片或圖表皆可）
+3. 處理載入中與請求失敗時的提示（例如來源暫時掛掉）
+4. 部署成 GitHub Pages
+
+
+</div>
+</div>
+
