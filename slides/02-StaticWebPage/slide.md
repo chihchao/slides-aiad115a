@@ -1090,9 +1090,9 @@ Notes: 和寫程式一樣，需求描述得越具體（版面、內容、配色�
 
 #### 要求
 
-- 任意主題的 Landing Page
-- 挑選設計風格並使用線上圖片
-- 部署至 Google Sites
+1. 任意主題的 Landing Page
+2. 挑選設計風格並使用線上圖片
+3. 部署至 Google Sites
 
 </div>
 <div>
@@ -1306,7 +1306,7 @@ Notes: 首頁檔案必須命名為 `index.html`。之後只要重新上傳並 co
 
 <!-- _class: cols -->
 
-### SWP03 待辦清單（To-Do List）+ LocalStorage
+### SWP03 待辦清單（To-Do List）
 
 <hr>
 
@@ -1321,7 +1321,7 @@ Notes: 首頁檔案必須命名為 `index.html`。之後只要重新上傳並 co
 
 1. 可新增待辦事項
 2. 可標記已完成與刪除事項
-3. 重新整理頁面後清單內容仍會保留
+3. 重新整理頁面後清單內容仍會保留（LocalStorage）
 4. 部署成 GitHub Pages
 
 </div>
