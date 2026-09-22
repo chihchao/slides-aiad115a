@@ -1874,5 +1874,155 @@ Notes: 這是機器學習常見的**過擬合（overfitting）**問題——模�
 </div>
 </div>
 
+---
+
+<!-- _class: "section-page" -->
+
+## Web Speech API
+
+讓網頁開口說話，也聽得懂你說的話
+
+---
+
+### 什麼是 Web Speech API？
+
+<hr>
+
+瀏覽器**原生內建**的語音功能，不需外部服務或安裝套件
+
+- **SpeechSynthesis**：文字轉語音（Text-to-Speech），讓網頁「念」出文字
+- **SpeechRecognition**：語音轉文字（Speech-to-Text），讓網頁「聽懂」使用者說的話
+- 目前以 **Chrome／Edge** 等 Chromium 系瀏覽器支援最完整
+
+Notes: Web Speech API 是 W3C 的規範草案，尚未所有瀏覽器都完整支援，例如 Safari 對 SpeechRecognition 的支援就相當有限，建議開發與展示都用 Chrome。
+
+---
+
+<!-- _class: "cols" -->
+
+### 兩大功能比較
+
+<hr>
+
+<div class="col-wrap">
+<div class="col alt">
+
+**SpeechSynthesis（朗讀）**
+
+文字 → 語音
+輸入一段文字，瀏覽器用語音唸出來
+例：唸出單字、朗讀文章
+
+</div>
+<div class="col alt">
+
+**SpeechRecognition（聽寫）**
+
+語音 → 文字
+開啟麥克風錄音，轉成文字辨識結果
+例：語音輸入、跟讀評分
+
+</div>
+</div>
+
+---
+
+<style scoped>
+pre code { font-size: 0.6em; line-height: 1.2; }
+</style>
+
+### 語音合成：SpeechSynthesis
+
+<hr>
+
+```javascript
+const utterance = new SpeechSynthesisUtterance("Hello, world!");
+utterance.lang = "en-US";   // 語言（發音腔調）
+utterance.rate = 1;         // 語速，範圍 0.1 ~ 10
+utterance.pitch = 1;        // 音調，範圍 0 ~ 2
+
+speechSynthesis.speak(utterance); // 開始朗讀
+```
+
+Notes: speechSynthesis.getVoices() 可以列出瀏覽器內建的語音包，挑選不同語言或語者（部分語音包需等頁面載入後才會就緒）。
+
+---
+
+<style scoped>
+pre code { font-size: 0.55em; line-height: 1.2; }
+</style>
+
+### 語音辨識：SpeechRecognition
+
+<hr>
+
+```javascript
+const recognition = new webkitSpeechRecognition(); // Chrome 需加上 webkit 前綴
+recognition.lang = "en-US";
+recognition.interimResults = false; // true 可即時顯示辨識中的結果
+
+recognition.onresult = (event) => {
+  const text = event.results[0][0].transcript;
+  console.log("辨識結果：", text);
+};
+
+recognition.start(); // 開始錄音並辨識
+```
+
+Notes: 第一次呼叫 start() 時，瀏覽器會跳出麥克風授權請求；辨識結果的準確率會受口音、語速、環境噪音影響。
+
+---
+
+### 使用時的注意事項
+
+<hr>
+
+- 呼叫麥克風（SpeechRecognition）需要 **HTTPS** 網站，GitHub Pages 部署後預設符合
+- 使用前瀏覽器會跳出麥克風授權請求視窗，需使用者主動同意
+- SpeechRecognition 主要支援 **Chrome／Edge**，其他瀏覽器相容性較差，展示前務必先測試
+- `lang` 屬性建議明確指定（如 `"en-US"`、`"zh-TW"`），發音與辨識才會準確
+
+> 語音辨識過程可能將錄音送到瀏覽器背後的雲端服務處理，避免用來錄製機敏或個資內容
+
+---
+
+### Web Speech API 能做什麼應用？
+
+<hr>
+
+- **語言學習**：單字／例句聽讀、口說跟讀練習
+- **語音助理**：用語音下指令操作網頁
+- **無障礙輔助**：螢幕內容報讀、免手動輸入
+- **語音筆記**：口述內容即時轉成文字紀錄
+
+---
+
+<!-- _class: cols -->
+
+### SWP09 英文單字聽讀 APP
+
+<hr>
+
+<div class="col-wrap">
+<div>
+
+#### 任務
+
+製作一個英文單字聽讀練習網頁，結合 SpeechSynthesis 朗讀單字，並用 SpeechRecognition 讓使用者跟讀，自動比對發音是否正確。
+
+</div>
+
+<div>
+
+#### 要求
+
+1. 提供一份英文單字（或片語）清單，可點擊播放正確發音
+2. 使用者可按下錄音鍵跟讀，透過 SpeechRecognition 將語音轉成文字
+3. 比對辨識結果與正確單字，顯示念對／念錯，並統計練習的正確率
+4. 部署成 GitHub Pages
+
+</div>
+</div>
+
 
 
