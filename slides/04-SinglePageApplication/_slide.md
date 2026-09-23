@@ -22,26 +22,29 @@ transition: slide
 
 <span class="num">01</span>
 
-## 認識你的 AI Agent
+## Agentic Coding Systems
 
 <hr>
 
 ---
 
 
-Harness engineering 的相關措施
-顯示你現在的 Rules
-目前 Context 裡預先注入了那些內容
-顯示你的短期記憶，目前的context window
-顯示你旳長期記憶，知識點以及過去的對話紀錄
-說明一下你的記憶層
+
 
 環境安裝：
 git, node.js, python
 
-CLI
-firebase, vercel, clasp, superbase
+介紹 CLI, MCP, Skill
 
-Skill:
+安裝 CLI:
+firebase
+
+介紹 firestore 資料庫
+介紹 firebase auth, hosting
+
+介紹 grill-me Skill:
 mattpocock/skills
 
+介紹 由介面引導開發 google stitch
+
+Package code into an App: PWA
