@@ -1371,6 +1371,22 @@ Notes: 可嘗試用不同顏色區分工作、學習與生活事項；進一步�
 
 ---
 
+### 使用軟體開發技能協助需求分析
+
+在進行軟體開發時，需求分析是確保最終產品符合使用者需求的重要步驟。在 Google Gemini 如何使用軟體開發技能協助需求分析？請先製作一個「grill me」開發程式的技能。
+
+**Skills For Real Engineers**
+https://github.com/mattpocock/skills
+
+```
+撰寫一個 grill me 開發程式的 skill。使用繁體中文，參考以下的 skill:
+https://github.com/mattpocock/skills
+```
+
+製作技能之後，引用技能來開發程式專案。
+
+---
+
 <!-- _class: cols -->
 
 ### SWP05 網頁小遊戲
