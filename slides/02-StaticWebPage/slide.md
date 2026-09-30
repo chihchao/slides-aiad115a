@@ -1402,8 +1402,8 @@ https://github.com/mattpocock/skills
 - 使用 HTML、CSS、JavaScript 與 LocalStorage 完成。
 
 Notes: 先做出可玩的最小版本，再逐步加入計分、倒數計時、音效或難度設定。
-</div>
 
+</div>
 <div>
 
 #### 要求
@@ -1415,6 +1415,8 @@ Notes: 先做出可玩的最小版本，再逐步加入計分、倒數計時、�
 
 </div>
 </div>
+
+
 
 ---
 
