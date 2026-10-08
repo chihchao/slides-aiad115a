@@ -1476,6 +1476,7 @@ Notes: 先做出可玩的最小版本，再逐步加入計分、倒數計時、�
 - [DOG CEO](https://dog.ceo/) — 隨機狗狗圖片 API / [隨機狗狗圖片](https://dog.ceo/api/breeds/image/random)
 - [The RESTful Pokémon API](https://pokeapi.co/) — 寶可夢 API / [皮卡丘資料](https://pokeapi.co/api/v2/pokemon/pikachu)
 - [Lorem Picsum](https://picsum.photos/) - 圖片 / [隨機圖片 1920*1080](https://picsum.photos/1920/1080)
+- [APILayer - Public APIs](https://github.com/public-apis/public-apis)
 
 **Notes:** 如果使用 API 需要金鑰（API Key），請務必保護好，不要放在公開的程式碼中。那如何在前端使用 API Key 呢？
 
