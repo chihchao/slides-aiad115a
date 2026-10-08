@@ -1379,7 +1379,7 @@ Notes: 可嘗試用不同顏色區分工作、學習與生活事項；進一步�
 https://github.com/mattpocock/skills
 
 ```
-撰寫一個 grill me 開發程式的 skill。使用繁體中文，參考以下的 skill:
+撰寫一個 grill me 的開發程式 skill。使用繁體中文，參考以下的 github repo:
 https://github.com/mattpocock/skills
 ```
 
@@ -1639,6 +1639,22 @@ No 'Access-Control-Allow-Origin' header is present on the requested resource.
 
 </div>
 </div>
+
+---
+
+### 使用軟體開發技能協助程式碼審查
+
+在進行軟體開發時，程式碼審查（Code Review）是透過他人檢查與回饋，提前發現錯誤、提升程式品質、確保可維護性與一致性，從而降低風險並強化團隊協作。在 Google Gemini 如何使用軟體開發技能協助程式碼審查？請先製作一個「code review」程式碼審查的技能。
+
+**Skills For Real Engineers**
+https://github.com/mattpocock/skills
+
+```
+撰寫一個 code-review 的程式碼審查 skill。使用繁體中文，參考以下的 github repo:
+https://github.com/mattpocock/skills
+```
+
+製作技能之後，引用技能來審查程式專案。
 
 ---
 
