@@ -260,7 +260,36 @@ transition: slide
 </div>
 </div>
 
+---
 
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.7em; }
+</style>
+
+<!-- _class: cols -->
+
+### GAS03 學生成績自動處理
+
+<hr>
+
+<div class="col-wrap">
+<div class="col">
+
+#### 表單送出觸發器實作
+自訂一個報名或問卷主題（如活動報名、課程意見調查），以 Google 表單收集資料，送出後自動整理並寄確認信給填寫者。
+
+</div>
+
+<div class="col alt">
+
+- 學生資料
+- 自動計算：一鍵自動計算總分、平均、排名（需計算加權）
+- 不及格背景加顏色
+- 側邊欄查詢學生成績
+- 一鍵生成學生成績單
+
+</div>
+</div>
 
 
 

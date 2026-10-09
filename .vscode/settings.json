@@ -2,5 +2,15 @@
   "markdown.marp.themes": [
     "themes/corporate.css",
     "themes/gaia-cust.css"
-  ]
+  ],
+  "chat.tools.terminal.autoApprove": {
+    "/^git status --short && echo '---' && git branch --show-current && echo '---' && git remote -v$/": {
+      "approve": true,
+      "matchCommandLine": true
+    },
+    "/^git add \\.vscode/settings\\.json slides/03-GoogleAppsScript/_slide\\.md && git commit -m \"chore: update VS Code settings and GAS slides\" && git push origin main$/": {
+      "approve": true,
+      "matchCommandLine": true
+    }
+  }
 }
