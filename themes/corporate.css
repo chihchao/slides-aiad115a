@@ -187,9 +187,20 @@ pre {
   border-left: 5px solid var(--navy);
   padding: 16px 20px;
   margin: 0 0 16px;
+  /* wrap long lines instead of overflowing the slide or a grid column */
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  min-width: 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
-pre code { background: transparent; padding: 0; color: var(--text); }
+/* grid items default to min-width:auto and would grow to fit a long code
+   line; allow them to shrink so the code wraps inside the column */
+section .col, section .item, section .stat { min-width: 0; }
+
+pre code { background: transparent; padding: 0; color: var(--text); white-space: inherit; }
 
 /* ── Slide type: cover ──────────────────────────────────────────
    Usage:
@@ -353,7 +364,7 @@ section.section-page .num {
 
 section.cols .col-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 24px;
 }
 
@@ -396,7 +407,7 @@ section.cols .col li { font-size: 0.9333em; }
 section.triplet .triplet-wrap,
 section.cols3 .col-wrap {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -443,7 +454,7 @@ section.cols3 .col li { font-size: 0.85em; }
 
 section.quad .quad-wrap {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
@@ -479,7 +490,7 @@ section.quad .item li { font-size: 0.9em; }
 
 section.stats .stat-wrap {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
 }
 

@@ -20,6 +20,469 @@ transition: slide
 
 <!-- _class: section-page -->
 
+<span class="num">05</span>
+
+## 資料庫基本觀念
+
+<hr>
+
+---
+
+<!-- _class: stats -->
+
+### 什麼是資料庫？
+
+<hr>
+資料庫是一個有組織、可長期保存的資料集合，讓程式能有系統地儲存、查詢與管理資料。
+
+<div class="stat-wrap">
+<div class="stat">
+
+#### 結構化儲存
+<hr>
+
+以固定的欄位格式儲存大量資料，避免雜亂無章。
+
+</div>
+<div class="stat hi">
+
+#### 方便查詢與管理
+<hr>
+
+可依條件搜尋、排序、篩選，快速取得所需資料。
+
+</div>
+<div class="stat">
+
+#### 支援程式化存取
+<hr>
+
+程式可自動讀寫資料，實現自動化與跨系統整合。
+
+</div>
+</div>
+
+---
+
+<!-- _class: cols -->
+
+### 為什麼需要資料庫？
+
+<hr>
+
+<div class="col-wrap">
+<div class="col">
+
+#### 沒有資料庫
+
+- **資料會消失**：變數與頁面狀態在程式結束或重新整理後就不見了。
+- **難以累積**：聊天紀錄、訂單與成績無法長期保存，也無法回頭查詢。
+- **無法共用**：每位使用者各自一份，彼此看不到對方的資料。
+- **容易混亂**：資料散落在多個檔案，格式不一、重複又難以更新。
+
+</div>
+<div class="col alt">
+
+#### 有了資料庫
+
+- **持久保存**：資料寫入後長期保留，下次執行仍可讀取。
+- **集中管理**：多位使用者與多個程式共用同一份資料，確保一致。
+- **快速查詢**：依條件搜尋、排序、統計，不必逐筆人工翻找。
+- **支援應用**：為會員系統、聊天紀錄、訂單、報表等應用提供資料基礎。
+
+</div>
+</div>
+
+---
+
+<!-- _class: quad -->
+
+### CRUD：資料庫的四大基本操作
+
+<hr>
+
+<div class="quad-wrap">
+<div class="item">
+
+#### Create 新增
+
+寫入一筆新的記錄
+
+</div>
+<div class="item">
+
+#### Read 讀取
+
+查詢並取出既有的資料
+
+</div>
+<div class="item">
+
+#### Update 更新
+
+修改既有記錄的內容
+
+</div>
+<div class="item">
+
+#### Delete 刪除
+
+移除不再需要的記錄
+
+</div>
+</div>
+
+---
+
+<!-- _class: quad -->
+
+### 資料庫的基本結構
+
+<hr>
+
+<div class="quad-wrap">
+<div class="item">
+
+#### 資料表 Table
+
+儲存同一類資料的集合
+
+</div>
+<div class="item">
+
+#### 記錄 Record
+
+資料表中的一列，代表一筆資料
+
+</div>
+<div class="item">
+
+#### 欄位 Field
+
+資料表中的一欄，代表一種屬性
+
+</div>
+<div class="item">
+
+#### 主鍵 Primary Key
+
+用來唯一識別每一筆記錄的欄位
+
+</div>
+</div>
+
+---
+
+### GAS 把試算表當資料庫
+
+<hr>
+
+**概念對應**：試算表的工作表就像資料表，一列就像一筆記錄，一欄就像一個欄位。我們可以使用 GAS 存取試算表資料
+
+| 資料庫概念 | 試算表對應 |
+| --- | --- |
+| 資料表 (Table) | 工作表 (Sheet) |
+| 記錄 (Record) | 一列資料 (Row) |
+| 欄位 (Field) | 一欄資料 (Column) |
+| 綱要 (Schema) | 標題列 (Header Row) |
+| 主鍵 (Primary Key) | 具唯一值的欄位，如「編號」欄 |
+
+---
+
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.7em; }
+</style>
+
+<!-- _class: cols -->
+
+### 關聯式資料庫與正規化
+
+<hr>
+
+<div class="col-wrap">
+<div class="col">
+
+#### 關聯式資料庫 (RDB)
+
+將資料分門別類存放在多張資料表中，再以**主鍵與外鍵**建立表與表之間的關聯。
+
+- **資料表**：每張表只描述一種主題，如學生、活動。
+- **關聯**：以外鍵指向另一張表的主鍵，需要時再串接查詢。
+- **常見系統**：MySQL、PostgreSQL、SQL Server，查詢語言為 SQL。
+
+</div>
+<div class="col alt">
+
+#### 正規化 (Normalization)
+
+將資料拆分、整理成多張結構良好的資料表，減少重複並避免異常。
+
+- **每格一值**：每個欄位只存放單一、不可再分的值。
+- **依賴主鍵**：非主鍵欄位要完整描述該筆記錄的主鍵。
+- **各表一題**：資料不重複存放，一項事實只記錄在一個地方。
+- **目的**：節省空間、維持一致、避免更新、新增與刪除異常。
+
+</div>
+</div>
+
+---
+
+<style scoped>
+table { font-size: 0.5em; }
+</style>
+
+### 範例：校園社團活動報名系統
+
+<hr>
+
+**痛點情境**：把所有資訊塞進同一張「活動報名清單」大表格。
+
+| 報名編號 | 學號 | 姓名 | 系所 | 手機 | 活動名稱 | 活動地點 | 活動日期 | 費用 | 主辦幹部 | 幹部電話 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| R001 | B11201 | 王小明 | 資工系 | 0912-345-678 | 程式設計營 | 資電館 | 11/05 | 100 | 陳大華 | 0922-111-222 |
+| R002 | B11201 | 王小明 | 資工系 | 0912-345-678 | 迎新露營 | 烏來 | 11/18 | 800 | 李佳玲 | 0933-222-333 |
+| R003 | B11201 | 王小明 | 資工系 | 0912-345-678 | 社團成果展 | 學生活動中心 | 12/02 | 0 | 林志偉 | 0955-444-555 |
+| R004 | B11305 | 陳怡君 | 企管系 | 0987-654-321 | 程式設計營 | 資電館 | 11/05 | 100 | 陳大華 | 0922-111-222 |
+
+同一位學生、同一個活動的資料不斷**重複出現**。
+
+---
+
+<!-- _class: stats -->
+
+### 大表格的三種異常
+
+<hr>
+
+<div class="stat-wrap">
+<div class="stat">
+
+#### 更新異常
+<hr>
+
+學生報名 3 個活動，手機號碼改了要改幾次？漏改一筆，資料就前後不一致。
+
+</div>
+<div class="stat hi">
+
+#### 新增異常
+<hr>
+
+新活動還沒人報名時，系統裡看得到這個活動的資訊嗎？沒有報名記錄就無處可存。
+
+</div>
+<div class="stat">
+
+#### 刪除異常
+<hr>
+
+活動唯一的報名記錄被刪除時，活動名稱、地點與費用也跟著消失。
+
+</div>
+</div>
+
+---
+
+<style scoped>
+.stat li, .stat p { font-size: 0.7em; }
+</style>
+
+<!-- _class: stats -->
+
+### 正規化：拆成 3 張資料表
+
+<hr>
+
+<div class="stat-wrap">
+<div class="stat">
+
+#### 學生表 Students
+<hr>
+
+- 學號（**PK**）
+- 姓名
+- 系所
+- 手機
+
+</div>
+<div class="stat hi">
+
+#### 活動表 Events
+<hr>
+
+- 活動 ID（**PK**）
+- 活動名稱
+- 地點、日期、費用
+- 主辦幹部
+
+</div>
+<div class="stat">
+
+#### 報名關聯表 Registrations
+<hr>
+
+- 報名 ID（**PK**）
+- 學號（**FK**）
+- 活動 ID（**FK**）
+- 報名時間、繳費狀態
+
+</div>
+</div>
+
+---
+
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.7em; }
+</style>
+
+<!-- _class: cols -->
+
+### 資料表如何連結？
+
+<hr>
+
+<div class="col-wrap">
+<div class="col">
+
+#### 主鍵與外鍵
+
+- **主鍵 PK**：唯一識別一筆記錄，如學號、活動 ID、報名 ID。
+- **外鍵 FK**：存放另一張表的主鍵，用來指向對應的記錄。
+- **關聯表**：報名表只記錄「誰（學號）報名了哪個活動（活動 ID）」，需要詳細資料時再依鍵值回頭查詢。
+
+</div>
+<div class="col alt">
+
+#### 異常如何解決
+
+- **更新**：手機只存在學生表一處，改一次即可。
+- **新增**：活動資料存於活動表，沒人報名也能先建立。
+- **刪除**：刪除報名記錄不會影響學生與活動資料。
+- **重複**：同一筆資料只存一次，節省空間且保持一致。
+
+</div>
+</div>
+
+---
+
+### 試算表實作 (1/3)：用 XLOOKUP 實現關聯
+
+<hr>
+
+在「報名表」輸入學號與活動 ID，自動帶出姓名與活動名稱，等同 SQL 的 **JOIN**。
+
+| 報名表欄位 | A | B | C | D | E | F | G | H | I |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 內容 | 報名 ID | 學號 (FK) | 活動 ID (FK) | 報名時間 | 繳費狀態 | 姓名 | 活動名稱 | 系所 | 費用 |
+
+```
+F2：=XLOOKUP(B2, Students!A:A, Students!B:B, "查無此學號")
+G2：=XLOOKUP(C2, Events!A:A, Events!B:B, "查無此活動")
+```
+
+- **舊版寫法**：`=VLOOKUP(B2, Students!A:B, 2, FALSE)`，查詢鍵必須位於範圍最左欄。
+- **效果**：學生手機或系所只維護在學生表，報名表自動同步。
+
+---
+
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.7em; }
+</style>
+
+<!-- _class: cols -->
+
+### 試算表實作 (2/3)：多對多關係與中繼表
+
+<hr>
+
+<div class="col-wrap">
+<div class="col">
+
+#### 為什麼需要中繼表？
+
+- **學生 → 活動**：一位學生可報名多個活動。
+- **活動 → 學生**：一個活動可有多位學生報名。
+- **無法直接存放**：把學生欄位放進活動表，或把活動欄位放進學生表，都會出現重複或欄位不夠用。
+
+</div>
+<div class="col alt">
+
+#### 解法：報名關聯表
+
+- 將「多對多」拆成兩個「一對多」：學生表 → 報名表、活動表 → 報名表。
+- 每筆報名記錄一組（學號、活動 ID）。
+- 報名時間、繳費狀態屬於「這位學生報名這個活動」，也只能存放在中繼表。
+
+</div>
+</div>
+
+---
+
+### 試算表實作 (3/3)：聚合分析
+
+<hr>
+
+**目標**：統計「各系所報名總人次」與「各活動已繳費收入」。
+
+- **樞紐分析表**：選取報名表資料，插入樞紐分析表，列放「系所」或「活動名稱」，值放「報名 ID 計數」或「費用總和」。
+- **QUERY 公式**（報名表 A1:I 為資料範圍，第 1 列為標題）：
+
+```
+各系所報名總人次：
+=QUERY(報名表!A1:I, "select H, count(A) where A is not null group by H label count(A) '報名人次'", 1)
+
+各活動已繳費收入：
+=QUERY(報名表!A1:I, "select G, sum(I) where E = '已繳費' group by G label sum(I) '已繳費收入'", 1)
+```
+
+---
+
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.6em; }
+</style>
+
+<!-- _class: cols -->
+
+### GAS08 外送平台點餐訂單系統
+
+<hr>
+
+<div class="col-wrap">
+<div class="col">
+
+#### 任務
+
+**以 Google 試算表設計外送點餐資料庫**
+仿 Uber Eats、Foodpanda，建立「訂單主檔」與「訂單明細」的 1 對多關係，並以 GAS 實作新增訂單功能。
+
+**資料架構（4 張工作表）**
+- **Products**：餐點 ID (PK)、餐點名稱、單價、分類
+- **Customers**：顧客 ID (PK)、姓名、外送地址、電話
+- **Orders**：訂單 ID (PK)、顧客 ID (FK)、下單時間、外送地址、外送費、訂單狀態
+- **Order_Items**：明細 ID (PK)、訂單 ID (FK)、餐點 ID (FK)、數量、購買當下單價
+
+**思考題**：若飲料明天漲價 5 元，過去訂單的單價該不該變動？為什麼？
+</div>
+
+<div class="col alt">
+
+#### 要求
+
+- **資料表與測試資料**：依架構建立 4 張工作表，至少 10 項餐點、5 位顧客、10 張訂單，且每張訂單至少 2 筆明細。
+- **計算小計**：在 Order_Items 以公式算出「小計 = 數量 × 購買單價」。
+- **關聯匯總**：在 Orders 以 `SUMIFS` 依訂單 ID 加總明細小計，並加上外送費，算出訂單總額。
+- **關聯帶入**：以 `XLOOKUP` 依顧客 ID、餐點 ID 帶出顧客姓名與餐點名稱，ID 欄位以資料驗證限制輸入。
+- **新增訂單**：建立自訂選單「新增訂單」，輸入顧客 ID 與多項餐點及數量，GAS 一次寫入 Orders 與 Order_Items，ID 自動編號。
+- **價格快照**：購買當下單價由 GAS 從 Products 複製為「數值」，不可用公式；修改菜單價格後，舊訂單金額必須維持不變。
+- **思考題作答**：以文字說明快照的作法與理由，並示範修改價格前後的訂單金額截圖。
+
+</div>
+</div>
+
+---
+
+<!-- _class: section-page -->
+
 <span class="num">01</span>
 
 ## 認識 ChatGPT
@@ -599,278 +1062,16 @@ transition: slide
 
 ---
 
----
-
-<!-- _class: section-page -->
-
-<span class="num">03</span>
-
-## Gemini API
-
-<hr>
-
----
-<style scoped>
-.col-wrap .col li, .col p { font-size: 0.7em; }
-</style>
-
-<!-- _class: cols -->
-
-### Gemini API 簡介
-
-<hr>
-<div class="col-wrap">
-<div class="col">
-
-#### Gemini API
-
-Gemini API 是 Google 提供的一套雲端程式介面，讓開發者與企業能將 Gemini 系列大語言模型的能力，直接整合進自己的軟體、網站、App 或後台系統中。
 
 
-</div>
-<div class="col alt">
 
-#### 核心能力與特性
 
-- 多模態處理：能同時接收並理解文字、圖片、音訊、影片、PDF 文件以及程式碼。
-- 超長上下文視窗：支援最高百萬級 Token 的上下文長度。
-- 結構化輸出：支援強制回傳符合特定 Schema 的 JSON 格式。
-- 函式呼叫（Function Calling）：讓模型能主動調用外部 API、資料庫或自定義工具。
-- 嵌入向量：提供語意向量生成，用於建立語意搜尋、文件問答系統（RAG）或推薦引擎。
-</div>
-</div>
-
----
-
-### 申請 Gemini API Key
-
-<hr>
-
-**準備事項**
-使用個人 Google 帳號登入；API Key 是存取 Gemini 的密碼，不能公開貼在網站、GitHub 或投影片中。
-
-- **進入 Google AI Studio**
-  - 開啟 [aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)，並以 Google 帳號登入。
-- **建立 API Key**
-  - 點選「Create API key」，選擇既有 Google Cloud 專案，或建立新專案。
-- **在 GAS 中安全設定**
-  - 開啟「專案設定」→「指令碼屬性」，新增 `GEMINI_API_KEY`；程式以 `PropertiesService` 讀取，不要把金鑰直接寫進程式碼。
-
----
-
-### 部署為網絡應用程式 (Web App)
-
-<hr>
-
-> **將 GAS 變成線上網站或 API**
-
-1. **點選部署**
-   - 編輯器右上角點選「部署」 $\rightarrow$ 「新建部署」。
-2. **設定類型與存取權限**
-   - **類型**：選擇「網絡應用程式 (Web App)」。
-   - **執行身分**：以「我」或存取使用者身分執行。
-   - **存取權限**：設定「僅限自己」、「任何擁有 Google 帳戶的人」或「所有人 (含匿名)」。
-3. **取得專屬 URL**
-   - 完成後即可獲得一組網址，做為網頁入口或 API 端點。
-
----
-
-### GAS Gemini Chatbot
-
----
-
-### Gemini File Search
-
-<hr>
-
-> **受管理的 RAG（檢索增強生成）工具**
-> 讓 Gemini 先從自有文件找出相關內容，再依據內容回答；適合課程講義、規章、產品文件與內部知識庫。
-
-1. **建立 File Search Store**
-  - 建立專屬的文件儲存庫，作為可被語意搜尋的知識庫。
-2. **上傳並建立索引**
-  - 將 PDF、Word、試算表、文字或程式碼等檔案匯入；系統會自動分塊、產生嵌入向量並建立索引。
-3. **提問時啟用 `file_search` 工具**
-  - Gemini 將問題轉成嵌入向量，找出語意最相關的文件片段，再據以生成回答。
-4. **取得可追溯的回答**
-  - 回應可附帶 `file_citation` 引文；PDF 還可取得引用頁碼，方便核對來源。
-
-**注意**：原始 `File` 物件會在 48 小時後刪除，但已匯入儲存庫的索引資料會保留至手動刪除；單一文件上限為 100 MB，目前不支援音訊與影片。
-
----
-
-### GAS File Search and Chatbot
-
----
-
-### GAS File Search Manager
 
 
 ---
 
 ### GAS Line Bot
 
----
-
-<!-- _class: section-page -->
-
-<span class="num">03</span>
-
-## 資料庫基本觀念
-
-<hr>
-
----
-
-<!-- _class: stats -->
-
-### 什麼是資料庫？
-
-<hr>
-
-<div class="stat-wrap">
-<div class="stat">
-
-#### 結構化儲存
-<hr>
-
-以固定的欄位格式儲存大量資料，避免雜亂無章。
-
-</div>
-<div class="stat hi">
-
-#### 方便查詢與管理
-<hr>
-
-可依條件搜尋、排序、篩選，快速取得所需資料。
-
-</div>
-<div class="stat">
-
-#### 支援程式化存取
-<hr>
-
-程式可自動讀寫資料，實現自動化與跨系統整合。
-
-</div>
-</div>
-
----
-
-<!-- _class: quad -->
-
-### 資料庫的基本結構
-
-<hr>
-
-<div class="quad-wrap">
-<div class="item">
-
-#### 資料表 Table
-
-儲存同一類資料的集合
-
-</div>
-<div class="item">
-
-#### 記錄 Record
-
-資料表中的一列，代表一筆資料
-
-</div>
-<div class="item">
-
-#### 欄位 Field
-
-資料表中的一欄，代表一種屬性
-
-</div>
-<div class="item">
-
-#### 主鍵 Primary Key
-
-用來唯一識別每一筆記錄的欄位
-
-</div>
-</div>
-
----
-
-<!-- _class: quad -->
-
-### CRUD：資料庫的四大基本操作
-
-<hr>
-
-<div class="quad-wrap">
-<div class="item">
-
-#### Create 新增
-
-寫入一筆新的記錄
-
-</div>
-<div class="item">
-
-#### Read 讀取
-
-查詢並取出既有的資料
-
-</div>
-<div class="item">
-
-#### Update 更新
-
-修改既有記錄的內容
-
-</div>
-<div class="item">
-
-#### Delete 刪除
-
-移除不再需要的記錄
-
-</div>
-</div>
-
----
-
-<!-- _class: section-page -->
-
-<span class="num">04</span>
-
-## Google 試算表作為資料庫
-
-<hr>
-
----
-
-### 為什麼可以把試算表當資料庫？
-
-<hr>
-
-> **概念對應**
-> 試算表的「工作表」就像資料表，「一列」就像一筆記錄，「一欄」就像一個欄位。
-
-| 資料庫概念 | 試算表對應 |
-| --- | --- |
-| 資料表 (Table) | 工作表 (Sheet) |
-| 記錄 (Record) | 一列資料 (Row) |
-| 欄位 (Field) | 一欄資料 (Column) |
-| 綱要 (Schema) | 標題列 (Header Row) |
-| 主鍵 (Primary Key) | 具唯一值的欄位，如「編號」欄 |
-
----
-
-### 用 GAS 存取試算表資料
-
-<hr>
-
-- **取得工作表**：`SpreadsheetApp.getActiveSpreadsheet().getSheetByName("名稱")`
-- **讀取整批資料**：`sheet.getDataRange().getValues()`，回傳二維陣列
-- **新增一列**：`sheet.appendRow([欄位1, 欄位2, ...])`
-- **修改單一儲存格**：`sheet.getRange(列, 欄).setValue(新值)`
-- **刪除整列**：`sheet.deleteRow(列號)`
 
 ---
 
