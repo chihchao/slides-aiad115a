@@ -11,6 +11,11 @@ node_modules/
 # macOS
 .DS_Store
 
+# Synology NAS index / extended-attribute folders
+@eaDir/
+*@SynoEAStream
+*@SynoResource
+
 # Template folder contents (keep folder, ignore contents)
 slides/_template/*
 !slides/_template/.gitkeep
