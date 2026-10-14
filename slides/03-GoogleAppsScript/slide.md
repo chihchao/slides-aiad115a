@@ -463,6 +463,43 @@ section p { text-align: center; }
 3. **避免：重複「新建部署」**
    - 每次新建都會產生**新的網址**，舊網址仍執行舊版本，容易造成混亂。
 
+---
+
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.6em; }
+</style>
+
+<!-- _class: cols -->
+
+### GAS05 相簿 Web APP
+
+<hr>
+
+<div class="col-wrap">
+<div class="col">
+
+#### 任務
+
+**公開相簿網站**
+部署一個 Web App，讓任何人都能批次上傳照片，並以響應式網格瀏覽相簿、點擊查看大圖。照片存放於 Google Drive 指定資料夾。
+
+**架構**：前端（HTML / JavaScript / CSS）負責選檔、縮圖與展示；後端（Apps Script）負責儲存與讀取，兩者以 `google.script.run` 溝通。
+</div>
+
+<div class="col alt">
+
+#### 要求
+
+- **批次選檔**：支援單張與多張選取，限制 `image/*`；非圖檔須在前端即時攔截並警示。
+- **前端縮圖**：以 `<canvas>` 等比壓縮，最長邊不超過 800px；原圖寬高皆小於 800px 時不放大。
+- **佇列上傳**：轉為 Base64 後逐張依序上傳，不可併發，並顯示上傳進度。
+- **後端儲存**：解析 Base64 建立 Blob，存入資料夾並設為「知道連結者可檢視」；資料夾 ID 由指令碼屬性 `FOLDER_ID` 讀取，未設定時回傳明確錯誤提示。
+- **相簿展示**：讀取資料夾內所有圖檔（ID、檔名、建立時間、預覽連結），以網格呈現，點擊開啟大圖 Lightbox。
+- **部署設定**：執行身分「我」、存取權限「所有人（含匿名）」。
+- **範圍限制**：不做刪除／編輯、登入驗證，也不使用資料庫或試算表記錄。
+
+</div>
+</div>
 
 ---
 
@@ -484,7 +521,7 @@ p { text-align: center; }
 
 <!-- _class: cols -->
 
-### GAS05 AI Chatbot
+### GAS06 AI Chatbot
 
 <hr>
 
@@ -544,7 +581,7 @@ p { text-align: center; }
 
 <!-- _class: cols -->
 
-### GAS06 File Search Manager
+### GAS07 File Search Manager
 
 <hr>
 
@@ -582,7 +619,7 @@ p { text-align: center; }
 
 <!-- _class: cols -->
 
-### GAS07 知識庫問答 Chatbot
+### GAS08 知識庫問答 Chatbot
 
 <hr>
 
@@ -591,10 +628,10 @@ p { text-align: center; }
 
 #### 任務
 
-**讓 GAS05 chatbot 使用 GAS06 的知識庫**
-改良 GAS05 的 AI Chatbot，串接 GAS06 建立的 File Search 知識庫，讓機器人能依據自有文件回答問題，並標示答案出自哪份文件；當知識庫查不到時，再視情況連網搜尋。
+**讓 GAS06 chatbot 使用 GAS07 的知識庫**
+改良 GAS06 的 AI Chatbot，串接 GAS07 建立的 File Search 知識庫，讓機器人能依據自有文件回答問題，並標示答案出自哪份文件；當知識庫查不到時，再視情況連網搜尋。
 
-**測試資料**：沿用 GAS06 的文件與知識庫，另設計至少 5 個問題：3 個能在文件中找到答案、1 個文件中沒有、1 個需最新資訊。
+**測試資料**：沿用 GAS07 的文件與知識庫，另設計至少 5 個問題：3 個能在文件中找到答案、1 個文件中沒有、1 個需最新資訊。
 </div>
 
 <div class="col alt">
