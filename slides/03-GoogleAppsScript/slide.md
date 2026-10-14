@@ -1,7 +1,7 @@
 ---
 marp: true
 theme: corporate
-title: 人工智慧應用開發實務/Google Apps Script
+title: 人工智慧應用開發實務 / Google Apps Script
 paginate: true
 transition: slide
 ---
@@ -189,7 +189,7 @@ transition: slide
 
 <!-- _class: cols -->
 
-### GAS01：每日行程彙整 Email — 任務與要求
+### GAS01 每日行程彙整 Email
 
 <hr>
 
