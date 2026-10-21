@@ -284,7 +284,7 @@ table { font-size: 0.5em; }
 ---
 
 <style scoped>
-.stat li, .stat p { font-size: 0.7em; }
+.stat li, .stat p { font-size: 0.75em; text-align: left; }
 </style>
 
 <!-- _class: stats -->
@@ -296,8 +296,9 @@ table { font-size: 0.5em; }
 <div class="stat-wrap">
 <div class="stat">
 
-#### 學生表 Students
+#### 學生表
 <hr>
+Students
 
 - 學號（**PK**）
 - 姓名
@@ -305,10 +306,11 @@ table { font-size: 0.5em; }
 - 手機
 
 </div>
-<div class="stat hi">
+<div class="stat">
 
-#### 活動表 Events
+#### 活動表
 <hr>
+Events
 
 - 活動 ID（**PK**）
 - 活動名稱
@@ -318,8 +320,9 @@ table { font-size: 0.5em; }
 </div>
 <div class="stat">
 
-#### 報名關聯表 Registrations
+#### 報名關聯表
 <hr>
+Registrations
 
 - 報名 ID（**PK**）
 - 學號（**FK**）

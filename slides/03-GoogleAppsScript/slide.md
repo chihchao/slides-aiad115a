@@ -258,8 +258,8 @@ transition: slide
 - **建立表單**：至少 5 個題目，須含姓名、Email 與一題選擇題，並連結回覆試算表。
 - **表單送出觸發器**：建立「表單送出時」觸發器，由事件物件取得填寫內容。
 - **確認信**：寄信給填寫者，主旨含表單名稱，內文列出填寫內容與送出時間。
+- **額外資訊**：在確認信中加上一段因選擇題選擇結果不同給予不同的回覆。
 - **回寫狀態**：在試算表新增「確認信狀態」欄，寄出後標記「已寄出」與寄信時間。
-- **資料檢核**：Email 格式不正確或必填欄位空白時，不寄信並標記「資料有誤」。
 
 </div>
 </div>
@@ -285,6 +285,8 @@ transition: slide
 建立「成績工具」自訂選單，一鍵完成成績計算、統計圖表繪製，並為每位學生輸出個人成績單 PDF。
 
 **資料格式**：至少 60 位學生，含學號、姓名與 5 科以上成績，並另設「權重」列。
+
+**測試資料**：[gas03.csv](assets/gas03.csv)
 </div>
 
 <div class="col alt">
@@ -305,100 +307,6 @@ transition: slide
 <!-- _class: section-page -->
 
 <span class="num">03</span>
-
-## Gemini API
-
-<hr>
-
----
-<style scoped>
-.col-wrap .col li, .col p { font-size: 0.7em; }
-</style>
-
-<!-- _class: cols -->
-
-### Gemini API 簡介
-
-<hr>
-<div class="col-wrap">
-<div class="col">
-
-#### Gemini API
-
-Gemini API 是 Google 提供的一套雲端程式介面，讓開發者與企業能將 Gemini 系列大語言模型的能力，直接整合進自己的軟體、網站、App 或後台系統中。
-
-
-</div>
-<div class="col alt">
-
-#### 核心能力與特性
-
-- 多模態處理：能同時接收並理解文字、圖片、音訊、影片、PDF 文件以及程式碼。
-- 超長上下文視窗：支援最高百萬級 Token 的上下文長度。
-- 結構化輸出：支援強制回傳符合特定 Schema 的 JSON 格式。
-- 函式呼叫（Function Calling）：讓模型能主動調用外部 API、資料庫或自定義工具。
-- 嵌入向量：提供語意向量生成，用於建立語意搜尋、文件問答系統（RAG）或推薦引擎。
-</div>
-</div>
-
----
-
-### 申請 Gemini API Key
-
-<hr>
-
-**準備事項**
-使用個人 Google 帳號登入；API Key 是存取 Gemini 的密碼，不能公開貼在網站、GitHub 或投影片中。
-
-- **進入 Google AI Studio**
-  - 開啟 [https://aistudio.google.com/app/api-keys](https://aistudio.google.com/app/api-keys)，並以 Google 帳號登入。
-- **建立 API Key**
-  - 點選「Create API key」，選擇既有 Google Cloud 專案，或建立新專案。
-- **在 GAS 中安全設定**
-  - 開啟「專案設定」→「指令碼屬性」，新增 `GEMINI_API_KEY`；程式以 `PropertiesService` 讀取，不要把金鑰直接寫進程式碼。
-
----
-
-<style scoped>
-.col-wrap .col li, .col p { font-size: 0.6em; }
-</style>
-
-<!-- _class: cols -->
-
-### GAS04 AI 自動分類客服訊息
-
-<hr>
-
-<div class="col-wrap">
-<div class="col">
-
-#### 任務
-
-**AI 客服訊息自動分類**
-建立「AI 客服」自訂選單，將所有客服訊息一次交給 Gemini API，由 AI 批次回傳每則的分類、緊急程度與回覆草稿。
-
-**資料格式**：Google 試算表至少 200 則訊息，含編號、時間、客戶姓名、訊息內容；另設「處理結果」欄位。
-</div>
-
-<div class="col alt">
-
-#### 要求
-
-- **批次請求**：選單執行後，將所有「未處理」訊息（含編號）組成單一提示詞，只呼叫一次 API，不可逐則詢問。
-- **分類欄位**：寫回類別（如 訂單查詢、退換貨、技術問題、客訴、其他）、緊急程度（高／中／低）與回覆草稿。
-- **結構化輸出**：要求模型回傳 JSON 陣列，每筆含訊息編號，程式依編號對應填回各列；格式錯誤時顯示提示並中止。
-- **金鑰安全**：API Key 存於指令碼屬性，不可寫在程式碼中。
-- **視覺標示**：緊急程度「高」的整列自動標紅色背景。
-- **統計摘要**：另建工作表，統計各類別訊息數量並繪製圓餅圖。
-
-</div>
-</div>
-
----
-
-<!-- _class: section-page -->
-
-<span class="num">04</span>
 
 ## GAS Web APPs
 
@@ -471,7 +379,7 @@ section p { text-align: center; }
 
 <!-- _class: cols -->
 
-### GAS05 相簿 Web APP
+### GAS04 相簿 Web APP
 
 <hr>
 
@@ -484,6 +392,8 @@ section p { text-align: center; }
 部署一個 Web App，讓任何人都能批次上傳照片，並以響應式網格瀏覽相簿、點擊查看大圖。照片存放於 Google Drive 指定資料夾。
 
 **架構**：前端（HTML / JavaScript / CSS）負責選檔、縮圖與展示；後端（Apps Script）負責儲存與讀取，兩者以 `google.script.run` 溝通。
+
+**範圍限制**：不做刪除／編輯、登入驗證，也不使用資料庫或試算表記錄。
 </div>
 
 <div class="col alt">
@@ -495,11 +405,108 @@ section p { text-align: center; }
 - **佇列上傳**：轉為 Base64 後逐張依序上傳，不可併發，並顯示上傳進度。
 - **後端儲存**：解析 Base64 建立 Blob，存入資料夾並設為「知道連結者可檢視」；資料夾 ID 由指令碼屬性 `FOLDER_ID` 讀取，未設定時回傳明確錯誤提示。
 - **相簿展示**：讀取資料夾內所有圖檔（ID、檔名、建立時間、預覽連結），以網格呈現，點擊開啟大圖 Lightbox。
-- **部署設定**：執行身分「我」、存取權限「所有人（含匿名）」。
-- **範圍限制**：不做刪除／編輯、登入驗證，也不使用資料庫或試算表記錄。
+- **部署上線**：部署為 Web App 並提供可使用的網址。
 
 </div>
 </div>
+
+---
+
+<!-- _class: section-page -->
+
+<span class="num">04</span>
+
+## Gemini API
+
+<hr>
+
+---
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.7em; }
+</style>
+
+<!-- _class: cols -->
+
+### Gemini API 簡介
+
+<hr>
+<div class="col-wrap">
+<div class="col">
+
+#### Gemini API
+
+Gemini API 是 Google 提供的一套雲端程式介面，讓開發者與企業能將 Gemini 系列大語言模型的能力，直接整合進自己的軟體、網站、App 或後台系統中。
+
+
+</div>
+<div class="col alt">
+
+#### 核心能力與特性
+
+- 多模態處理：能同時接收並理解文字、圖片、音訊、影片、PDF 文件以及程式碼。
+- 超長上下文視窗：支援最高百萬級 Token 的上下文長度。
+- 結構化輸出：支援強制回傳符合特定 Schema 的 JSON 格式。
+- 函式呼叫（Function Calling）：讓模型能主動調用外部 API、資料庫或自定義工具。
+- 嵌入向量：提供語意向量生成，用於建立語意搜尋、文件問答系統（RAG）或推薦引擎。
+</div>
+</div>
+
+---
+
+### 申請 Gemini API Key
+
+<hr>
+
+**準備事項**
+使用個人 Google 帳號登入；API Key 是存取 Gemini 的密碼，不能公開貼在網站、GitHub 或投影片中。
+
+- **進入 Google AI Studio**
+  - 開啟 [https://aistudio.google.com/app/api-keys](https://aistudio.google.com/app/api-keys)，並以 Google 帳號登入。
+- **建立 API Key**
+  - 點選「Create API key」，選擇既有 Google Cloud 專案，或建立新專案。
+- **在 GAS 中安全設定**
+  - 開啟「專案設定」→「指令碼屬性」，新增 `GEMINI_API_KEY`；程式以 `PropertiesService` 讀取，不要把金鑰直接寫進程式碼。
+
+---
+
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.6em; }
+</style>
+
+<!-- _class: cols -->
+
+### GAS05 AI 自動分類客服訊息
+
+<hr>
+
+<div class="col-wrap">
+<div class="col">
+
+#### 任務
+
+**AI 客服訊息自動分類**
+建立「AI 客服」自訂選單，將所有客服訊息一次交給 Gemini API，由 AI 批次回傳每則的分類、緊急程度與回覆草稿。
+
+**資料格式**：Google 試算表至少 200 則訊息，含編號、時間、客戶姓名、訊息內容；另設「處理結果」欄位。
+
+**測試資料**：[gas05.csv](assets/gas05.csv)
+
+</div>
+
+<div class="col alt">
+
+#### 要求
+
+- **批次請求**：選單執行後，將所有「未處理」訊息（含編號）組成單一提示詞，只呼叫一次 API，不可逐則詢問。
+- **分類欄位**：寫回類別（如 訂單查詢、退換貨、技術問題、客訴、其他）、緊急程度（高／中／低）與回覆草稿。
+- **結構化輸出**：要求模型回傳 JSON 陣列，每筆含訊息編號，程式依編號對應填回各列；格式錯誤時顯示提示並中止。
+- **金鑰安全**：API Key 存於指令碼屬性，不可寫在程式碼中。
+- **視覺標示**：緊急程度「高」的整列自動標紅色背景。
+- **統計摘要**：另建工作表，統計各類別訊息數量並繪製圓餅圖。
+
+</div>
+</div>
+
 
 ---
 
@@ -638,10 +645,9 @@ p { text-align: center; }
 
 #### 要求
 
-- **指定知識庫**：Store 名稱存於指令碼屬性，呼叫 `generateContent` 時於 `file_search` 工具帶入，不可寫死在程式碼中。
+- **指定知識庫**：Store 名稱存於指令碼屬性，不可寫死在程式碼中。
 - **文件引用**：回答下方列出引用的文件名稱與片段，取自回應的 `groundingMetadata`。
 - **範圍控制**：以系統提示詞要求優先依據知識庫回答；文件查無相關內容時，需明確告知，不可憑空編造。
-- **知識庫切換**：介面提供下拉選單，可選擇不同知識庫，或同時檢索多個 Store。
 - **連網補充**：知識庫查無答案時才連網搜尋，並在回答中標示資訊來源為「知識庫」或「網路」。
 - **對話記憶與錯誤處理**：保留前幾輪對話；Store 不存在或呼叫失敗時顯示友善提示。
 - **測試紀錄**：提交 5 個測試問題的截圖，並說明各自引用的來源。
