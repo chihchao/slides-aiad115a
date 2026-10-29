@@ -421,6 +421,62 @@ section p { text-align: center; }
 <hr>
 
 ---
+
+### 為什麼連接大型語言模型？
+
+<hr>
+
+![h:400](assets/gemini-api-01.png)
+
+---
+
+### 為什麼連接大型語言模型？
+
+<hr>
+
+![h:400](assets/gemini-api-02.png)
+
+---
+
+### 為什麼連接大型語言模型？
+
+<hr>
+
+![h:250](assets/gemini-api-03.png)
+
+---
+
+### 為什麼連接大型語言模型？
+
+<hr>
+
+![h:250](assets/gemini-api-04.png)
+
+---
+
+### 連接大型語言模型可以做什麼？
+
+<hr>
+
+![h:300](assets/gemini-api-05.png)
+
+---
+
+### 使用語言模型網站和連接語言模型會有什麼差別？
+
+<hr>
+
+![h:400](assets/gemini-api-07.png)
+
+---
+
+### 如何連接大型語言模型？
+
+<hr>
+
+![h:300](assets/gemini-api-06.png)
+
+---
 <style scoped>
 .col-wrap .col li, .col p { font-size: 0.7em; }
 </style>
