@@ -658,7 +658,10 @@ p { text-align: center; }
 **Gemini File Search 知識庫管理工具**
 以 GAS 網頁應用程式（Web App）建立管理介面，能管理自己的 File Search 檔案知識庫，包含上傳檔案建立知識庫、修改知識庫、刪除知識庫，並可直接提問測試知識庫內容。
 
-**測試資料**：準備至少 3 份自選文件（如課程講義、規章、產品說明 PDF），建立兩個以上知識庫。
+**測試資料**：準備至少 3 份自選文件（如課程講義、規章、產品說明 PDF）建立知識庫。
+
+- [iPAS AI 應用規劃師 - 學習資源](https://ipd.nat.gov.tw/ipas/certification/AIAP/learning-resources)
+
 </div>
 
 <div class="col alt">
