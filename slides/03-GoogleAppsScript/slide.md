@@ -1134,25 +1134,6 @@ G2：=XLOOKUP(C2, Events!A:A, Events!B:B, "查無此活動")
 
 ---
 
-### 試算表實作 (3/3)：聚合分析
-
-<hr>
-
-**目標**：統計「各系所報名總人次」與「各活動已繳費收入」。
-
-- **樞紐分析表**：選取報名表資料，插入樞紐分析表，列放「系所」或「活動名稱」，值放「報名 ID 計數」或「費用總和」。
-- **QUERY 公式**（報名表 A1:I 為資料範圍，第 1 列為標題）：
-
-```
-各系所報名總人次：
-=QUERY(報名表!A1:I, "select H, count(A) where A is not null group by H label count(A) '報名人次'", 1)
-
-各活動已繳費收入：
-=QUERY(報名表!A1:I, "select G, sum(I) where E = '已繳費' group by G label sum(I) '已繳費收入'", 1)
-```
-
----
-
 <style scoped>
 .col-wrap .col li, .col p { font-size: 0.6em; }
 </style>
