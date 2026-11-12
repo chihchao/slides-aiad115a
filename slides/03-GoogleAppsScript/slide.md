@@ -1081,7 +1081,7 @@ Registrations
 
 ---
 
-### 試算表實作 (1/3)：用 XLOOKUP 實現關聯
+### 試算表實作：用 XLOOKUP 實現關聯
 
 <hr>
 
@@ -1107,7 +1107,7 @@ G2：=XLOOKUP(C2, Events!A:A, Events!B:B, "查無此活動")
 
 <!-- _class: cols -->
 
-### 試算表實作 (2/3)：多對多關係與中繼表
+### 試算表實作：多對多關係與中繼表
 
 <hr>
 
