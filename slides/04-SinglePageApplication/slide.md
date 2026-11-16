@@ -215,6 +215,18 @@ firebase deploy --only hosting
 
 ---
 
+### Coding Agent
+
+<hr>
+
+| Coding Tool | Claude Code | Codex | Antigravity |
+|---|---|---|---|
+| **開發者** | Anthropic | OpenAI | Google |
+| **模型** | Claude 系列 | GPT 系列 | Gemini 為主 |
+| **下載** | [claude.com](https://code.claude.com/docs/zh-TW/desktop-quickstart) | [codex](https://openai.com/zh-Hant/codex/) | [antigravity](https://antigravity.google/download/) |
+
+---
+
 <!-- _class: section-page -->
 
 <span class="num">02</span>
@@ -292,64 +304,25 @@ opencode
 
 ---
 
-<!-- _class: stats -->
+### 申請免費模型
 
-### 什麼是 OpenRouter？
-
-<hr>
-
-<div class="stat-wrap">
-<div class="stat">
-
-#### 統一的模型入口
-<hr>
-
-一個平台、一組 API Key，即可呼叫來自多家供應商的上百種模型。
-
-</div>
-<div class="stat hi">
-
-#### 相容 OpenAI API 格式
-<hr>
-
-多數工具只需更換 Base URL 與金鑰，就能切換模型。
-
-</div>
-<div class="stat">
-
-#### 集中計費與管理
-<hr>
-
-預付額度、統一帳單，可查看各模型的用量與費用。
-
-</div>
-</div>
+- [OpenCode Console](https://opencode.ai/console)
+- [Nvidia Build](https://build.nvidia.com/)
+- [OpenRouter](https://openrouter.ai/)
 
 ---
 
-### 為什麼 Agentic Coding 需要 OpenRouter？
+### 在 OpenCode 介接語言模型
 
-<hr>
+設定步驟：
+- OpenCode 首頁 ⭢ 設定 ⭢ 提供者
 
-- **不必逐一註冊**：不用分別申請 Anthropic、OpenAI、Google 等帳號與金鑰
-- **自由比較模型**：同一個工具中，依任務換用不同模型，比較品質與價格
-- **有免費模型可試用**：部分模型提供免費額度，適合課堂練習
-- **容錯與備援**：某供應商不穩定時，可自動改走其他路徑
-- **控管成本**：設定額度上限，避免 Agent 大量呼叫造成超支
-
-> 注意：Agent 會大量消耗 token，請妥善保管 API Key，勿上傳至 GitHub。
-
----
-
-### 在 OpenCode 使用 OpenRouter
-
-<hr>
-
-1. 到 openrouter.ai 註冊帳號，並儲值或選用免費模型
-2. 建立 **API Key**
-3. 啟動 OpenCode，輸入 `/connect`，選擇 **OpenRouter**
-4. 貼上 API Key
-5. 輸入 `/models`，選擇要使用的模型
+設定方式：
+- OpenCode Console
+- Nvidia
+- OpenRouter
+- GitHub Copilot
+- 其他（Anthropic, OpenAI, Google）
 
 ---
 
@@ -388,6 +361,9 @@ opencode
 
 ---
 
+<style scoped>
+.col-wrap .col li, .col p { font-size: 0.8em; }
+</style>
 <!-- _class: cols -->
 
 ### Matt Pocock Skills 與 Superpowers：兩套 Skill 的取向
@@ -397,7 +373,7 @@ opencode
 <div class="col-wrap">
 <div class="col">
 
-#### Matt Pocock Skills（以 grill-me 為代表）
+#### Matt Pocock Skills
 
 - **定位**：小型、可組合的 Skill 集合，可自行挑選、修改。
 - **流程**：grill-me → to-spec → to-tickets → implement (TDD) → code-review。
@@ -419,6 +395,10 @@ opencode
 
 ---
 
+<style scoped>
+td, p { font-size: 0.7em; }
+</style>
+
 ### Matt Pocock Skills 與 Superpowers 比較
 
 <hr>
@@ -429,11 +409,11 @@ opencode
 | **觸發方式** | 以手動指令為主（如 `/grill-me`），部分由模型判斷 | 自動觸發 |
 | **需求釐清** | `grill-me`：一次一題、附建議答案；`grill-with-docs` 另產出名詞表與 ADR | `brainstorming`：釐清意圖後分段呈現設計請你核准 |
 | **規劃拆解** | `to-spec`、`to-tickets`：依使用者功能垂直切片 | `writing-plans`：拆成含檔案路徑與驗證步驟的小任務 |
-| **實作與審查** | `implement` (TDD)、`code-review` | 子 Agent 實作並互相審查、TDD、`requesting-code-review` |
+| **實作與審查** | `implement` (TDD)、`code-review` | SubAgent 實作並互相審查、TDD、`requesting-code-review` |
 | **人的角色** | 每一站都親自把關 | 核准設計後，多由 Agent 自主執行 |
 | **學習成本** | 低，可從 `grill-me` 單一指令開始 | 較高，需熟悉整套流程 |
 
-> 兩者都先釐清需求再動工；差別在於前者由你逐站掌控，後者自動化程度高。本課程從 `grill-me` 入手：輕量，且重點是學會「先把需求講清楚」。
+> 兩者都先釐清需求再動工；差別在於前者由你逐站掌控，後者自動化程度高。
 
 ---
 
@@ -449,7 +429,7 @@ opencode
 - **附建議答案**：每題都附 AI 的建議與理由，你以「審查提案」的方式決策
 - **先不寫程式**：共識達成前，不做任何修改
 
-> 用法：在專案資料夾啟動 Agent，輸入 `/grill-me` 並簡述想做的 SPA，逐題回答即可。
+用法：在專案資料夾啟動 Agent，輸入 `/grill-me` 並簡述想做的 SPA，逐題回答即可。
 
 ---
 
@@ -464,27 +444,6 @@ grill-me 是起點，可再串接 mattpocock/skills 的其他指令：
 3. **to-tickets**：依「使用者功能」垂直切片拆成可獨立驗收的任務
 4. **implement**：以 TDD 實作，先寫測試再寫功能，避免 AI 寫出配合錯誤結果的假測試
 5. **code-review**：以平行子代理檢查專案規範與是否忠實實現規格
-
-> 本課程以 grill-me 為主；寫程式時可改用 grill-with-docs。
-
----
-
-### 範例：用 grill-me 規劃一個 SPA
-
-<hr>
-
-> **你**：`/grill-me` 我想做一個班級相簿網站。
->
-> **Agent**：誰可以上傳照片？需要登入嗎？
-> **你**：只有老師能上傳，同學可瀏覽。
->
-> **Agent**：照片要如何分類？以活動、日期，還是標籤？
-> **你**：以活動分類。
->
-> **Agent**：資料存放在哪裡？是否需要即時更新？
-
-- 過程中逐步釐清**使用者角色、資料結構、頁面、驗證方式**
-- 這些答案，正是後續 Firestore、Auth 設計的依據
 
 ---
 
@@ -681,6 +640,10 @@ grill-me 是起點，可再串接 mattpocock/skills 的其他指令：
 
 ---
 
+<style scoped>
+pre, code { font-size: 0.7em; }
+</style>
+
 ### React 程式碼範例
 
 <hr>
@@ -717,12 +680,191 @@ function Counter() {
 ---
 
 
-安裝 CLI:
-firebase
 
-介紹 firestore 資料庫
-介紹 firebase auth, hosting
 
-介紹 由介面引導開發 google stitch
 
-Package code into an App: PWA
+<!-- _class: section-page -->
+
+<span class="num">04</span>
+
+## Firebase 後端服務
+
+<hr>
+
+---
+
+### 什麼是 Firebase？
+
+<hr>
+
+- **定義**：Google 提供的 BaaS (Backend as a Service)，不必自建伺服器
+- **為何適合 SPA**：前端直接呼叫 SDK，即可使用資料庫、登入與部署
+- **本課程使用三項服務**：
+  - **Firestore**：儲存資料
+  - **Authentication**：使用者登入
+  - **Hosting**：發布網站
+- **搭配 React**：官方 Web SDK 以 JavaScript 呼叫，Agent 熟悉度高
+
+---
+
+<!-- _class: stats -->
+
+### Firebase 三項服務的角色
+
+<hr>
+
+<div class="stat-wrap">
+<div class="stat">
+
+#### Firestore：資料
+<hr>
+
+NoSQL 文件資料庫，資料即時同步到各個畫面。
+
+</div>
+<div class="stat hi">
+
+#### Auth：身分
+<hr>
+
+提供 Email、Google 等登入方式，辨識「誰在使用」。
+
+</div>
+<div class="stat">
+
+#### Hosting：上線
+<hr>
+
+將建置好的 SPA 發布到公開網址，並自動提供 HTTPS。
+
+</div>
+</div>
+
+---
+
+### Firestore：文件資料庫
+
+<hr>
+
+- **結構**：Collection（集合）→ Document（文件）→ Field（欄位）
+- **不需預先定義表格**：欄位可彈性增減
+- **即時同步**：資料變動時，畫面自動更新
+- **安全規則 (Security Rules)**：定義誰能讀寫哪些資料
+- **範例**：`todos` 集合中，每筆待辦事項是一份文件
+
+```js
+await addDoc(collection(db, 'todos'), { title: '買牛奶', done: false })
+```
+
+---
+
+### Authentication：使用者登入
+
+<hr>
+
+- **功能**：處理註冊、登入、登出，不需自行儲存密碼
+- **常見登入方式**：Email／密碼、Google 帳號
+- **登入狀態**：SDK 提供使用者資訊，React 依此切換畫面
+- **搭配 Firestore**：規則可限制「只能讀寫自己的資料」
+- **注意**：登入方式需先在 Firebase Console 啟用
+
+```js
+await signInWithPopup(auth, new GoogleAuthProvider())
+```
+
+---
+
+### Hosting：發布 SPA
+
+<hr>
+
+- **適合靜態資源**：發布 React 建置後的 HTML、JS、CSS
+- **內建 HTTPS 與 CDN**：上線即安全、速度快
+- **SPA 重寫規則**：所有網址都導向 `index.html`，讓前端 Router 接手
+- **一行指令部署**：
+
+```bash
+npm run build
+firebase deploy --only hosting
+```
+
+---
+
+### 安裝 Firebase CLI
+
+<hr>
+
+- **Firebase CLI**：以指令操作 Firebase 專案的工具，也是 Agent 的「雙手」
+- **前置需求**：已安裝 Node.js
+
+```bash
+# 安裝
+npm install -g firebase-tools
+
+# 確認版本
+firebase --version
+
+# 登入 Google 帳號（會開啟瀏覽器授權）
+firebase login
+```
+
+---
+
+### 常用 Firebase CLI 指令
+
+<hr>
+
+| 指令 | 用途 |
+|---|---|
+| `firebase projects:list` | 列出可用的專案 |
+| `firebase init` | 在專案資料夾設定 Hosting、Firestore 等 |
+| `firebase emulators:start` | 在本機模擬服務，先測試再上線 |
+| `firebase deploy --only hosting` | 部署網站 |
+| `firebase deploy --only firestore:rules` | 部署 Firestore 安全規則 |
+
+---
+
+### 讓 Coding Agent 自動操控 Firebase
+
+<hr>
+
+- **做法**：登入後，在專案資料夾啟動 Agent，用自然語言下達任務
+- **Agent 會做的事**：執行 `firebase init`、修改設定檔與規則、建置並部署
+- **提示詞範例**：
+
+> 這是用 Vite 建立的 React SPA。請用 Firebase CLI 設定 Hosting（SPA 模式）與 Firestore，撰寫「只能讀寫自己資料」的安全規則，建置後部署，並回報網址。
+
+- **可再加上**：Firebase MCP，讓 Agent 直接查詢專案與資料
+
+---
+
+### 人工把關與注意事項
+
+<hr>
+
+- **登入由你完成**：`firebase login` 需在瀏覽器授權，Agent 不應代為處理帳密
+- **部分設定需在 Console**：如啟用登入方式、綁定計費帳戶
+- **審查安全規則**：避免 Agent 寫成「任何人都可讀寫」
+- **部署前先確認**：要求 Agent 說明將執行的指令與影響範圍
+- **勿提交金鑰**：`.env` 等機密檔加入 `.gitignore`
+
+---
+
+### SPA01 Grill Me Spec
+
+<hr>
+
+- 和 AI 討論適合用來做為 SPA + React.js + Firebase Auth + Firestore + Hosting 的專案主題。
+- 用 grill-me 及 to-spec 技能產出 Spec。
+
+---
+
+### SPA02 SPA Project
+
+<hr>
+
+- 延續 grill me 的 spec，to-tickets 和 implement 完成專案。
+
+
+
+
