@@ -306,6 +306,8 @@ opencode
 
 ### 申請免費模型
 
+<hr>
+
 - [OpenCode Console](https://opencode.ai/console)
 - [Nvidia Build](https://build.nvidia.com/)
 - [OpenRouter](https://openrouter.ai/)
@@ -313,6 +315,8 @@ opencode
 ---
 
 ### 在 OpenCode 介接語言模型
+
+<hr>
 
 設定步驟：
 - OpenCode 首頁 ⭢ 設定 ⭢ 提供者
@@ -323,6 +327,8 @@ opencode
 - OpenRouter
 - GitHub Copilot
 - 其他（Anthropic, OpenAI, Google）
+
+選用模型
 
 ---
 
@@ -679,10 +685,6 @@ function Counter() {
 
 ---
 
-
-
-
-
 <!-- _class: section-page -->
 
 <span class="num">04</span>
@@ -865,6 +867,162 @@ firebase login
 
 - 延續 grill me 的 spec，to-tickets 和 implement 完成專案。
 
+---
+
+<!-- _class: section-page -->
+
+<span class="num">05</span>
+
+## PWA 漸進式網頁應用程式
+
+<hr>
+
+---
+
+### 什麼是 PWA？
+
+<hr>
+
+- **全名**：Progressive Web App，漸進式網頁應用程式
+- **定義**：用網頁技術開發，卻能像原生 App 一樣安裝與使用
+- **漸進式**：瀏覽器支援多少功能就提供多少，不支援時仍是正常網頁
+- **與 SPA 的關係**：SPA 負責頁面體驗，PWA 再補上「安裝」與「離線」能力
+- **一套程式碼**：同時應用於電腦與手機，不必分別開發 iOS、Android
+
+---
+
+### 一般網頁 vs. PWA vs. 原生 App
+
+<hr>
+
+| | 一般網頁 | PWA | 原生 App |
+|---|---|---|---|
+| **安裝方式** | 不需安裝 | 瀏覽器加入主畫面 | 應用程式商店 |
+| **離線使用** | 通常不行 | 可（需 Service Worker） | 可 |
+| **開發成本** | 低 | 低，一套程式碼 | 高，需分平台開發 |
+| **更新** | 重新整理即更新 | 自動更新 | 需使用者更新 |
+| **硬體功能** | 有限 | 有限，視瀏覽器而定 | 完整 |
+
+---
+
+<style scoped>
+td, th { font-size: 0.6em; }
+p { font-size: 0.7em; }
+</style>
+
+### 製作 App 的技術比較
+
+<hr>
+
+| | 原生開發 | 跨平台框架 | 混合式封裝 | PWA |
+|---|---|---|---|---|
+| **代表技術** | Swift (iOS)、Kotlin (Android) | React Native、Flutter | Capacitor、Cordova | Vite + React + Service Worker |
+| **程式語言** | 各平台各自語言 | JavaScript／Dart | HTML、CSS、JavaScript | HTML、CSS、JavaScript |
+| **程式碼共用** | 低，需維護兩套 | 高 | 高，沿用網頁程式 | 最高，一套網頁 |
+| **效能與體驗** | 最佳 | 接近原生 | 取決於 WebView | 取決於瀏覽器 |
+| **硬體功能** | 完整 | 大部分 | 透過外掛 | 有限 |
+| **上架與發布** | 應用程式商店 | 應用程式商店 | 應用程式商店 | 網址即可，免審核 |
+| **適合情境** | 重度效能、深度整合系統功能 | 需商店上架的新 App | 已有網頁，想包成 App | 快速上線、內部工具 |
+
+<br>
+
+> 課程的 SPA 已是網頁，加上 PWA 成本最低；需要上架商店時，再考慮用 Capacitor 封裝。
+
+---
+
+<!-- _class: stats -->
+
+### PWA 的三項核心條件
+
+<hr>
+
+<div class="stat-wrap">
+<div class="stat">
+
+#### HTTPS
+安全
+<hr>
+
+網站須以 HTTPS 提供，Firebase Hosting 預設即支援。
+
+</div>
+<div class="stat hi">
+
+#### Manifest
+身分
+<hr>
+
+描述 App 名稱、圖示、顏色，讓瀏覽器知道如何安裝。
+
+</div>
+<div class="stat">
+
+#### Service Worker
+離線
+<hr>
+
+在背景運作的腳本，負責快取資源與離線使用。
+
+</div>
+</div>
+
+---
+
+<style scoped>
+pre, code { font-size: 0.8em; }
+</style>
+
+### Web App Manifest
+
+<hr>
+
+- **形式**：一個 JSON 檔（如 `manifest.webmanifest`），在 HTML 中引用
+- **內容**：名稱、圖示、啟動網址、顯示模式、主題色
+- **效果**：使用者可「加入主畫面」，以獨立視窗開啟，沒有網址列
+
+```json
+{
+  "name": "待辦事項",
+  "short_name": "Todo",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1a73e8",
+  "icons": [{ "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }]
+}
+```
+
+---
+
+### Service Worker
+
+<hr>
+
+- **定義**：瀏覽器在背景執行的 JavaScript，位於網頁與網路之間
+- **主要用途**：
+  - **快取資源**：離線時仍能開啟 App 的外殼
+  - **加快載入**：重複造訪時直接讀取快取
+  - **進階功能**：推播通知、背景同步
+- **注意**：更新策略需設計好，否則使用者可能看到舊版畫面
+- **實務做法**：多半交給工具產生，不自行手寫
+
+
+
+---
+
+### 用 Vite 與 Agent 將 SPA 變成 PWA
+
+<hr>
+
+- **做法**：在 Vite 專案加入 `vite-plugin-pwa`，自動產生 manifest 與 Service Worker
+- **提示詞範例**：
+
+> 請為這個 Vite + React 專案加入 PWA 支援：使用 vite-plugin-pwa，設定 manifest 與圖示，讓 App 可離線開啟外殼，最後建置並部署到 Firebase Hosting。
+
+- **驗證**：以 Chrome 開發者工具的 Application 面板檢查 Manifest 與 Service Worker
+- **安裝**：網址列會出現安裝圖示，手機則選「加入主畫面」
+- **提醒**：iOS 的 PWA 功能（如推播）受限較多，需實機測試
+
+---
 
 
 
