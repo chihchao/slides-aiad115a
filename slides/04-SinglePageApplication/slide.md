@@ -402,7 +402,7 @@ opencode
 ---
 
 <style scoped>
-td, p { font-size: 0.7em; }
+td, p { font-size: 0.6em; }
 </style>
 
 ### Matt Pocock Skills 與 Superpowers 比較
@@ -418,6 +418,8 @@ td, p { font-size: 0.7em; }
 | **實作與審查** | `implement` (TDD)、`code-review` | SubAgent 實作並互相審查、TDD、`requesting-code-review` |
 | **人的角色** | 每一站都親自把關 | 核准設計後，多由 Agent 自主執行 |
 | **學習成本** | 低，可從 `grill-me` 單一指令開始 | 較高，需熟悉整套流程 |
+
+<br>
 
 > 兩者都先釐清需求再動工；差別在於前者由你逐站掌控，後者自動化程度高。
 
@@ -588,6 +590,14 @@ grill-me 是起點，可再串接 mattpocock/skills 的其他指令：
 
 ---
 
+### SPA 可以介接資料庫嗎？
+
+<hr>
+
+![w:1100](assets/api-client-server-001.png)
+
+---
+
 ### 常見 SPA 應用與技術
 
 <hr>
@@ -611,12 +621,12 @@ grill-me 是起點，可再串接 mattpocock/skills 的其他指令：
 #### 建構使用者介面的函式庫
 <hr>
 
-由 Meta（原 Facebook）開發的開源 JavaScript 函式庫，是最普及的前端技術之一。
+由 Meta 開發的開源 JavaScript 函式庫，是最普及的前端技術之一。
 
 </div>
 <div class="stat hi">
 
-#### 元件化 (Component)
+#### 元件化
 <hr>
 
 把畫面拆成可重複使用的小零件，如按鈕、卡片、表單，再組合成完整頁面。
@@ -638,7 +648,7 @@ grill-me 是起點，可再串接 mattpocock/skills 的其他指令：
 
 <hr>
 
-- **元件 (Component)**：以函式描述一塊畫面，可重複使用與組合
+- **元件**：以函式描述一塊畫面，可重複使用與組合
 - **JSX**：在 JavaScript 中以類似 HTML 的語法描述畫面
 - **State**：元件內的資料，改變後畫面自動重新繪製
 - **Router**：如 React Router，依網址切換元件，達成「換頁但不重載」
@@ -689,7 +699,7 @@ function Counter() {
 
 <span class="num">04</span>
 
-## Firebase 後端服務
+## Firebase
 
 <hr>
 
