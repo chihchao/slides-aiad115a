@@ -1318,7 +1318,7 @@ p, li, th, td { font-size: 0.7em; }
 
 ---
 
-### SPA03 3D RPG 設計規格
+### SPA03 3D RPG Game 設計規格
 
 <hr>
 
@@ -1328,17 +1328,7 @@ p, li, th, td { font-size: 0.7em; }
 
 ---
 
-<!-- _class: section-page -->
-
-<span class="num">階段 4</span>
-
-## 技術規劃與實作
-
-<hr>
-
----
-
-### 階段四：先做一條可玩流程
+### 階段四 技術規劃與實作：先做一條可玩流程
 
 <hr>
 
@@ -1356,7 +1346,7 @@ p, li, th, td { font-size: 0.7em; }
 pre, code { font-size: 0.66em; }
 </style>
 
-### 階段四：提示詞
+### 階段四 技術規劃與實作：提示詞
 
 <hr>
 
@@ -1379,26 +1369,7 @@ pre, code { font-size: 0.66em; }
 
 ---
 
-### 階段四：建議的程式結構
-
-<hr>
-
-```text
-src/
-  game/    純 TypeScript：任務狀態機、道具、對話、碰撞
-  scene/   React Three Fiber：地形、角色、NPC、相機
-  ui/      React：選單、對話框、HUD、觸控搖桿
-  store/   zustand 遊戲狀態
-  data/    任務與對話資料（沿用 Q01、ITEM01 編號）
-```
-
-- **邏輯與畫面分離**：任務規則不依賴 3D 畫面，才容易用 Vitest 測試
-- **編號一致**：程式與規格使用同一組名稱，方便對照
-- **你不必寫這些**，但要能看懂結構，檢查 Agent 是否照規格做
-
----
-
-### 階段四：你如何驗收與回報
+### 階段四 技術規劃與實作：你如何驗收與回報
 
 <hr>
 
@@ -1415,17 +1386,7 @@ src/
 
 ---
 
-<!-- _class: section-page -->
-
-<span class="num">階段 5</span>
-
-## 測試與修正
-
-<hr>
-
----
-
-### 階段五：測什麼？
+### 階段五 測試與修正：測什麼？
 
 <hr>
 
@@ -1443,7 +1404,7 @@ src/
 pre, code { font-size: 0.68em; }
 </style>
 
-### 階段五：提示詞
+### 階段五 測試與修正：提示詞
 
 <hr>
 
@@ -1467,7 +1428,7 @@ pre, code { font-size: 0.68em; }
 
 ---
 
-### 階段五：觀察同學試玩
+### 階段五 測試與修正：觀察同學試玩
 
 <hr>
 
@@ -1481,17 +1442,7 @@ pre, code { font-size: 0.68em; }
 
 ---
 
-<!-- _class: section-page -->
-
-<span class="num">階段 6</span>
-
-## PWA 與部署
-
-<hr>
-
----
-
-### 階段六：遊戲也要變成 PWA
+### 階段六 PWA 與部署：遊戲也要變成 PWA
 
 <hr>
 
@@ -1510,7 +1461,7 @@ pre, code { font-size: 0.68em; }
 pre, code { font-size: 0.68em; }
 </style>
 
-### 階段六：提示詞
+### 階段六 PWA 與部署：提示詞
 
 <hr>
 
@@ -1533,7 +1484,7 @@ pre, code { font-size: 0.68em; }
 
 ---
 
-### 階段六：驗收清單
+### 階段六  PWA 與部署：驗收清單
 
 <hr>
 
@@ -1549,51 +1500,7 @@ pre, code { font-size: 0.68em; }
 
 ---
 
-<!-- _class: cols -->
-
-### 素材：Agent 能做與需要你協助
-
-<hr>
-
-<div class="col-wrap">
-<div class="col">
-
-#### Agent 可直接處理
-
-- 以程式組合的幾何模型（方塊、圓柱、膠囊）
-- 程式生成的地形、道路與光影
-- 以 Web Audio 合成的簡單音效
-- 下載授權明確的素材並整合
-- 壓縮圖片、整理檔名與資料夾
-
-</div>
-<div class="col alt">
-
-#### 需要你協助或另行取得
-
-- Blender 手動建模與貼圖繪製
-- 圖像與音樂生成（需外部工具與帳號）
-- **授權確認**：優先 CC0，如 Kenney、Quaternius
-- 模型格式使用 glTF／GLB
-- 清單記錄來源、授權與狀態：「待取得」或「已整合」
-
-</div>
-</div>
-
-
-
----
-
-### SPA04 3D RPG 實作與測試
-
-<hr>
-
-- 依規格完成階段四與五：先做第一條可玩流程，再擴充至結局
-- 重要規則有自動化測試，並找一位同學試玩
-
----
-
-### SPA05 PWA 部署與上線驗證
+### SPA04 3D RPG Game 部署與上線驗證
 
 <hr>
 

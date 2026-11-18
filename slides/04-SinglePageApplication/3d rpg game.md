@@ -6,7 +6,7 @@
 
 | 面向 | 評估 | 說明 |
 |---|---|---|
-| 3D 渲染 | 可行 | Three.js（建議搭配 React Three Fiber）不需另外安裝引擎 |
+| 3D 渲染 | 可行 | Three.js + React Three Fiber（R3F）+ drei，不需另外安裝引擎 |
 | Agent 撰寫程式 | 可行 | 遊戲邏輯與畫面分離後，Agent 與測試都容易處理 |
 | 整合 SPA / Firebase | 可行 | 沿用 React、Auth、Firestore、Hosting；存檔可跟著帳號走 |
 | PWA 離線 | 有條件 | 模型與音檔較大，需設計快取；Workbox 預設只預先快取 2 MiB 以下的檔案 |
@@ -28,12 +28,13 @@
 
 ### 建議技術棧
 
-Vite + React + TypeScript、three + @react-three/fiber + drei、zustand（遊戲狀態）、Vitest + Playwright（測試）、Firebase Auth / Firestore（選用存檔）、vite-plugin-pwa、Firebase Hosting。不引入物理引擎或遊戲引擎，碰撞以簡單的圓形與方塊判斷處理。
+Vite + React + TypeScript、three + @react-three/fiber + drei、zustand（遊戲狀態）、Vitest + Playwright（測試）、Firebase Auth / Firestore（登入與存檔）、vite-plugin-pwa、Firebase Hosting。3D 模型優先以程式幾何體（方塊、圓柱、錐體）組成，必要時以 Blender 製作少數關鍵模型並匯出 GLB（以 drei 的 useGLTF 載入）；採不依賴圖片貼圖的 Low-Poly 風格（單色材質或頂點色）。不引入物理引擎或遊戲引擎，碰撞以簡單的圓形與方塊判斷處理。
 
 ### 對下方提示詞的調整
 
 - **階段一**：原提示詞的平台只寫 Three.js，已改為 React SPA、Firebase Hosting、PWA。
-- **階段四**：加入 React Three Fiber 技術方向；存檔規則（何時存檔、重新開始是否清除存檔）若採用，需在階段二規格中先決定。
+- **階段三**：統一交代完整技術與美術限制（React、Firebase Auth / Firestore / Hosting、three.js + React Three Fiber、程式幾何體優先與選用 Blender、Low-Poly），寫入 `03_場景與UI規格.md` 的「技術與美術限制」章節。
+- **階段四**：技術方向改為讀取階段三的技術限制並確認；存檔規則（何時存檔、重新開始是否清除存檔）需在階段二規格中先以功能描述決定。
 - **階段六**：加入 PWA 任務（離線、安裝、快取更新）與手機音訊驗證。
 - **技能名稱**：已對照 [mattpocock/skills](https://github.com/mattpocock/skills)，grill-me、grill-with-docs、to-tickets、implement、tdd、diagnosing-bugs、code-review 皆存在。
 
@@ -230,7 +231,8 @@ Vite + React + TypeScript、three + @react-three/fiber + drei、zustand（遊戲
 | 鏡頭與移動規則 | 視角、跟隨方式、移動範圍及碰撞規則 |
 | 互動提示 | 可互動的距離、對象判定及提示文字 |
 | UI 規格 | 各畫面元素、位置、文字、按鈕行為與顯示條件 |
-| 素材需求清單 | 模型、圖像、音效與音樂的編號、用途及規格 |
+| 技術與美術限制 | 平台、後端服務、3D 製作工具與 Low-Poly 風格規範 |
+| 素材需求清單 | 模型、音效與音樂的編號、用途及規格（不使用圖片貼圖） |
 | 驗收條件 | 場景、動線、鏡頭、UI 與目標裝置的檢查標準 |
 | 設計決策與待確認問題 | 選擇理由、尚未決定及待技術驗證事項 |
 
@@ -262,6 +264,20 @@ Vite + React + TypeScript、three + @react-three/fiber + drei、zustand（遊戲
 5. 不自行增加新任務或新玩法。
 6. 設計數值可以先提出建議，但須區分「已確認」與「待測試調整」。
 
+【技術與美術限制】（已確定，請直接遵守，不需重新討論）
+- 平台：React SPA，部署於 Firebase Hosting。
+- 登入與存檔：Firebase Auth + Firestore。
+- 3D：three.js + React Three Fiber（含 drei）。
+- 模型：優先以程式幾何體（方塊、圓柱、錐體）組成；
+  必要時才用 Blender 製作少數關鍵模型（如角色），匯出 GLB。
+  Blender 為進階選項，不得因此阻擋遊戲主流程。
+- 美術風格：低多邊形（Low-Poly），不依賴圖片貼圖，
+  以單色材質或頂點色表現，模型面數保持精簡。
+- UI：以 HTML/CSS 實作，不依賴圖片素材。
+- 若設計與上述限制衝突，請先指出，由我決定如何調整。
+- 請將這些限制整理成「03_場景與UI規格.md」的「技術與美術限制」章節，
+  並補充每項限制對場景、模型、UI 與存檔的具體影響。
+
 【需要完成的場景設計】
 1. 視覺風格、主要色彩、造型與氣氛。
 2. 場景區域、出生點、NPC、任務物件、道路、障礙與終點。
@@ -284,7 +300,7 @@ Vite + React + TypeScript、three + @react-three/fiber + drei、zustand（遊戲
 - 文字可讀性與不只靠顏色傳達資訊的做法。
 
 【素材與驗收】
-1. 建立模型、圖像、音效與音樂需求清單。
+1. 建立模型、音效與音樂需求清單（不使用圖片貼圖）。
 2. 列出素材編號、用途、出現位置、需求規格與預計取得方式。
 3. 尚未取得的素材標示「待製作」或「待取得」，不要聲稱已完成。
 4. 為場景動線、鏡頭、互動提示及 UI 撰寫可檢查的驗收條件。
@@ -417,7 +433,10 @@ Vite + React + TypeScript、three + @react-three/fiber + drei、zustand（遊戲
 
 2. 用我能理解的方式說明建議技術棧：
    包含每項工具的用途、選擇理由，以及目前是否可使用。
-   技術方向為 React + Three.js（React Three Fiber）的 SPA。
+   技術限制已在 03_場景與UI規格.md 的「技術與美術限制」確定
+   （React、Firebase Auth / Firestore / Hosting、three.js + React Three Fiber、
+   程式幾何體優先、選用 Blender、Low-Poly）。
+   請確認這些限制可行，並提出需要補充的工具，不要擅自增加物理引擎等額外套件。
    不必為了使用更多工具而增加複雜度。
 
 3. 閱讀 https://github.com/mattpocock/skills 中準備採用的
@@ -434,7 +453,7 @@ Vite + React + TypeScript、three + @react-three/fiber + drei、zustand（遊戲
 
 5. 第一條流程可以遊玩後，再逐步加入其他任務、
    結局、正式模型、UI、音效及背景音樂。
-   初期可使用簡單幾何模型與暫代素材。
+   初期一律使用程式幾何體，Blender 模型待主流程完成後再逐一替換。
 
 6. 需要 Blender、音訊生成或外部素材時，
    先確認工具能力與素材授權。
