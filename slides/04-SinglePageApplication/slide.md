@@ -1318,6 +1318,16 @@ p, li, th, td { font-size: 0.7em; }
 
 ---
 
+### SPA03 3D RPG 設計規格
+
+<hr>
+
+- 以 grill-me 完成階段一至三，產出三份 Markdown 規格
+- 規格寫明：範圍、任務與驗收條件、地圖、鏡頭、UI 與素材清單
+- 交付前請 Agent 交叉檢查三份文件的名稱、編號與規則是否一致
+
+---
+
 <!-- _class: section-page -->
 
 <span class="num">階段 4</span>
@@ -1570,15 +1580,7 @@ pre, code { font-size: 0.68em; }
 </div>
 </div>
 
----
 
-### SPA03 3D RPG 設計規格
-
-<hr>
-
-- 以 grill-me 完成階段一至三，產出三份 Markdown 規格
-- 規格寫明：範圍、任務與驗收條件、地圖、鏡頭、UI 與素材清單
-- 交付前請 Agent 交叉檢查三份文件的名稱、編號與規則是否一致
 
 ---
 
