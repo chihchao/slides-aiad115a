@@ -288,14 +288,7 @@ firebase deploy --only hosting
 
 <hr>
 
-```bash
-# 安裝（需先安裝 Node.js）
-npm install -g opencode-ai
-
-# 進入專案資料夾後啟動
-cd my-spa-project
-opencode
-```
+[Open Code](https://opencode.ai/) 下載 Desktop 版
 
 - `/connect`：連接模型供應商並登入／設定金鑰
 - `/models`：選擇要使用的模型
@@ -318,17 +311,14 @@ opencode
 
 <hr>
 
-設定步驟：
-- OpenCode 首頁 ⭢ 設定 ⭢ 提供者
-
-設定方式：
-- OpenCode Console
-- Nvidia
-- OpenRouter
-- GitHub Copilot
-- 其他（Anthropic, OpenAI, Google）
-
-選用模型
+- 設定步驟
+- 設定方式：
+  - OpenCode Console
+  - Nvidia
+  - OpenRouter
+  - GitHub Copilot
+  - 其他（Anthropic, OpenAI, Google）
+- 選用模型
 
 ---
 
