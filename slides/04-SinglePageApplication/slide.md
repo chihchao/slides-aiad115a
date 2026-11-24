@@ -852,6 +852,27 @@ firebase login
 
 ---
 
+### 專案開發環境與規則初始化
+
+<hr>
+
+建立專案規則與工作說明書 `AGENTS.md`
+```markdown
+請在專案資料夾建立 `AGENTS.md`，內容如下：
+
+## 規則
+- 一律使用繁體中文進行對話與撰寫註解。
+- 修改程式碼前，先簡要說明修改計畫。
+- 環境變數及 API Keys 必須放 .env.local，嚴禁硬編碼在程式碼裡
+
+## 技術棧
+- 前端：React + Vite + TypeScript + Tailwind
+- 驗證與資料庫：Firebase Auth + Cloud Firestore
+- 部署：Firebase Hosting
+```
+
+---
+
 ### SPA01 Grill Me Spec
 
 <hr>
@@ -1048,12 +1069,11 @@ pre, code { font-size: 0.8em; }
   - PWA（安裝與離線）
 - **任務**：決定故事與玩法、確認設計、試玩驗收；程式由 Agent 實作
 - **成果**：一個公開網址，別人能用電腦或手機開啟、安裝並玩到結局
-- **範圍原則**：**小而完整**，一張地圖、三到五個任務，優於大而未完成
 
 ---
 
 <style scoped>
-td, th { font-size: 0.65em; }
+td, th { font-size: 0.8em; }
 </style>
 
 ### 技術棧
@@ -1129,8 +1149,8 @@ td, th { font-size: 0.65em; }
 使用 `/grill-me`，並加上規則：
 
 ```text
-- 每輪最多三題，有先後依賴的問題等前一題決定後再問
-- 每題附選項、建議與理由，由你做最後決定
+- 有先後依賴的問題等前一題決定後再問
+- 每題附選項、建議與理由，由我做最後決定
 - 重要決策說明理由，不要只回答「是」
 - 聽不懂就說：「我不知道，請先解釋或舉例」
 - 範圍要小：不確定能不能做的內容，放進「可選」或「不做」
@@ -1140,7 +1160,7 @@ td, th { font-size: 0.65em; }
 ---
 
 <style scoped>
-pre, code { font-size: 0.68em; }
+pre, code { font-size: 0.8em; }
 </style>
 
 ### 階段一 世界觀與故事：提示詞
