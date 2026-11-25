@@ -514,8 +514,6 @@ grill-me 是起點，可再串接 mattpocock/skills 的其他指令：
 
 ---
 
-<!-- _class: cols -->
-
 ### 靜態網頁 vs. SPA：不一樣在哪？
 
 <hr>
@@ -527,6 +525,8 @@ grill-me 是起點，可再串接 mattpocock/skills 的其他指令：
 | **換頁方式** | 每個頁面是獨立 `.html` 檔 | 同一頁內由 JavaScript 切換畫面 |
 | **資料更新** | 需手動修改檔案並重新上傳 | 即時從資料庫讀寫，畫面自動更新 |
 | **適合情境** | 公司簡介、說明文件、部落格 | 管理系統、訂單、相簿等應用程式 |
+
+<br>
 
 > 兩者都可部署在靜態主機（如 Firebase Hosting）；差別在於 SPA 的畫面由 JavaScript 動態產生，並連接後端服務。
 
@@ -671,7 +671,7 @@ grill-me 是起點，可再串接 mattpocock/skills 的其他指令：
 ---
 
 <style scoped>
-pre, code { font-size: 0.7em; }
+pre, code { font-size: 0.8em; }
 </style>
 
 ### React 程式碼範例
@@ -683,7 +683,6 @@ import { useState } from 'react'
 
 function Counter() {
   const [count, setCount] = useState(0)
-
   return (
     <button onClick={() => setCount(count + 1)}>
       點擊次數：{count}
